@@ -1,0 +1,132 @@
+{
+  "savedAt": "2026-09-04T01:49:31.180Z",
+  "agentName": "agentCbSeeds",
+  "stepId": 101,
+  "planning": {
+    "planId": "cb-gen-seeds-w3-r1-1788486548540",
+    "dependsOn": [],
+    "executionMode": "sequential",
+    "executionHost": "client"
+  },
+  "status": "waiting_after_prompt",
+  "interaction": {
+    "cost": 0.0059,
+    "inputTokens": 15164,
+    "outputTokens": 2379,
+    "model": "code"
+  },
+  "counters": null,
+  "payload": {
+    "type": "flexible",
+    "result": {
+      "toolName": "submitSeedScenario",
+      "arguments": {
+        "status": "ok",
+        "result": {
+          "summary": "Three coherent comments linked to the three previously seeded open support tickets and assigned attendants.",
+          "localTables": [
+            {
+              "tableId": "Comentario",
+              "rows": [
+                {
+                  "key": "comentario-1",
+                  "columns": [
+                    {
+                      "name": "comentario_id",
+                      "value": "comentario-1"
+                    },
+                    {
+                      "name": "chamado_id",
+                      "value": {
+                        "ref": "local:Chamado.chamado-1"
+                      }
+                    },
+                    {
+                      "name": "atendente_id",
+                      "value": {
+                        "ref": "mdm:Atendente.atendente-1"
+                      }
+                    }
+                  ],
+                  "details": [
+                    {
+                      "name": "conteudo",
+                      "value": "We are investigating the reported access issue and will provide an update shortly."
+                    }
+                  ],
+                  "children": []
+                },
+                {
+                  "key": "comentario-2",
+                  "columns": [
+                    {
+                      "name": "comentario_id",
+                      "value": "comentario-2"
+                    },
+                    {
+                      "name": "chamado_id",
+                      "value": {
+                        "ref": "local:Chamado.chamado-2"
+                      }
+                    },
+                    {
+                      "name": "atendente_id",
+                      "value": {
+                        "ref": "mdm:Atendente.atendente-2"
+                      }
+                    }
+                  ],
+                  "details": [
+                    {
+                      "name": "conteudo",
+                      "value": "The support team requested additional diagnostic information from the requester."
+                    }
+                  ],
+                  "children": []
+                },
+                {
+                  "key": "comentario-3",
+                  "columns": [
+                    {
+                      "name": "comentario_id",
+                      "value": "comentario-3"
+                    },
+                    {
+                      "name": "chamado_id",
+                      "value": {
+                        "ref": "local:Chamado.chamado-3"
+                      }
+                    },
+                    {
+                      "name": "atendente_id",
+                      "value": {
+                        "ref": "mdm:Atendente.atendente-3"
+                      }
+                    }
+                  ],
+                  "details": [
+                    {
+                      "name": "conteudo",
+                      "value": "The ticket remains in progress while the proposed configuration change is being validated."
+                    }
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ],
+          "mdmEntities": []
+        },
+        "questions": [],
+        "trace": [
+          "Comentario rows reference only Chamado rows and Atendente MDM rows supplied by prior waves.",
+          "All required entity fields are represented; conteudo is stored in the table details payload."
+        ]
+      }
+    },
+    "status": "completed",
+    "stepId": 9,
+    "interaction": null,
+    "nextSteps": null
+  }
+}

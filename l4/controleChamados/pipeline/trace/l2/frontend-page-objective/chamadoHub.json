@@ -1,0 +1,49 @@
+{
+  "savedAt": "2026-09-04T02:02:34.048Z",
+  "pageId": "chamadoHub",
+  "genome": "page21",
+  "objective": {
+    "actor": "Atendente ou operador de suporte responsável por acompanhar chamados.",
+    "jobToBeDone": "Localizar um chamado relevante e compreender seu estado e histórico de comentários para decidir o próximo encaminhamento.",
+    "primaryDecision": "Selecionar o chamado que precisa ser inspecionado e confirmar se ele está aberto ou fechado antes de agir.",
+    "decisiveInfo": [
+      "chamadoId",
+      "titulo",
+      "descricao",
+      "status",
+      "comentarioId",
+      "atendenteId",
+      "conteudo"
+    ],
+    "usageFrequency": "Uso operacional recorrente, em sessões de triagem e acompanhamento de chamados.",
+    "informationHierarchy": [
+      "Resumo da carteira por estado",
+      "Lista de chamados com título, descrição e status",
+      "Chamado selecionado e seu contexto",
+      "Comentários relacionados",
+      "Controles secundários de ordenação"
+    ],
+    "successCriteria": "O operador encontra o chamado desejado com pouca varredura, identifica seu estado imediatamente e acessa os comentários relacionados sem sair da página ou preencher identificadores manualmente.",
+    "antiPatterns": [
+      "Separar a busca de comentários em uma etapa ou formulário independente",
+      "Permitir edição manual de chamadoId, comentarioId ou status",
+      "Exibir status como um select livre de todos os estados",
+      "Empilhar consultas como páginas desconectadas",
+      "Ocultar o estado do chamado na listagem principal"
+    ],
+    "criticalActions": [
+      {
+        "action": "Encontrar e ordenar chamados",
+        "presentation": "summary-first com controles de ordenação integrados à superfície principal"
+      },
+      {
+        "action": "Selecionar um chamado para inspeção",
+        "presentation": "master-detail com seleção direta de registro"
+      },
+      {
+        "action": "Consultar comentários do chamado selecionado",
+        "presentation": "contextual-detail-panel acionado pelo contexto da seleção"
+      }
+    ]
+  }
+}

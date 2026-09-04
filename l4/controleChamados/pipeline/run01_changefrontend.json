@@ -1,0 +1,21 @@
+{
+  "savedAt": "2026-09-04T02:09:56.993Z",
+  "moduleName": "controleChamados",
+  "agent": "agentChangeFrontend",
+  "command": "run",
+  "startedAt": null,
+  "finishedAt": "2026-09-04T02:09:56.991Z",
+  "verdict": "completed",
+  "reason": "pagesDone=5; ownersDone=30; skippedPages=0; l5/config.json frontend merged (15 page route(s), 1 module(s)); addLanguage: not needed (single language); moduleCompile=25 file(s) with no blocking Monaco errors; compiled with Monaco (strict=true like tsc; skipLibCheck=false vs tsc true; noEmitOnError not set; host localStorage may override; unresolved imports degrade to any and hide TS2339/TS2353); released 0 borrowed model(s)[agentCfeCreateFinalize] Agent build: 102020@869a81e9 (140 source(s), agentChangeFrontend.ts=178818672013, 132 source(s) edited locally; last push 2026-09-03T19:36:29.196Z).",
+  "counts": {
+    "planned": 5,
+    "generated": 5,
+    "ownersDone": 30,
+    "skipped": 0,
+    "blocked": 0,
+    "declared": 0,
+    "repairs": 0,
+    "compiled": 25
+  },
+  "degradations": []
+}

@@ -1,0 +1,54 @@
+{
+  "savedAt": "2026-09-04T02:02:58.590Z",
+  "pageId": "registrarComentarioChamado",
+  "genome": "page31",
+  "objective": {
+    "actor": "Atendente responsável pelo acompanhamento de chamados",
+    "jobToBeDone": "Selecionar um chamado aberto, revisar seu contexto e registrar rapidamente um comentário atribuído ao atendente correto.",
+    "primaryDecision": "Enviar o comentário para o chamado aberto selecionado.",
+    "decisiveInfo": [
+      "chamadoId",
+      "titulo",
+      "descricao",
+      "status",
+      "atendenteId",
+      "platformUserId",
+      "conteudo"
+    ],
+    "usageFrequency": "Ocasional durante o atendimento, com necessidade de conclusão rápida e sem edição administrativa de status.",
+    "informationHierarchy": [
+      "Chamado aberto selecionado e seu status atual",
+      "Título e descrição para confirmar o contexto",
+      "Identidade do atendente autor",
+      "Conteúdo do comentário",
+      "Confirmação de registro ou erro"
+    ],
+    "successCriteria": "O atendente confirma visualmente que está comentando no chamado aberto correto, escolhe ou reconhece sua autoria, envia apenas o conteúdo necessário e recebe feedback claro com atualização do contexto.",
+    "antiPatterns": [
+      "Campo de chamadoId digitado manualmente",
+      "Campo de status editável ou status select",
+      "Formulário CRUD expondo ids técnicos como decisões",
+      "Formulário de transição separado do chamado selecionado",
+      "Ocultar o contexto do chamado antes do envio",
+      "Solicitar dados além do conteúdo e da autoria necessária"
+    ],
+    "criticalActions": [
+      {
+        "action": "Selecionar e confirmar o chamado aberto",
+        "presentation": "master-detail com seleção e painel contextual somente leitura"
+      },
+      {
+        "action": "Escolher o atendente autor",
+        "presentation": "picker contextual com identificação reconhecível"
+      },
+      {
+        "action": "Registrar o comentário",
+        "presentation": "contextual-transition-actions no painel do chamado selecionado com ação primária de envio"
+      },
+      {
+        "action": "Recarregar o chamado após o registro",
+        "presentation": "refresh contextual após sucesso com feedback textual descartável"
+      }
+    ]
+  }
+}

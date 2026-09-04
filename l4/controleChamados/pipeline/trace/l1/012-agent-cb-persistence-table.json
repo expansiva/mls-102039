@@ -1,0 +1,129 @@
+{
+  "savedAt": "2026-09-04T01:42:58.515Z",
+  "agentName": "agentCbPersistenceTable",
+  "stepId": 12,
+  "planning": {
+    "planId": "cb-gen-table",
+    "dependsOn": [
+      "cb-gen-port"
+    ],
+    "executionMode": "sequential",
+    "executionHost": "client"
+  },
+  "status": "waiting_after_prompt",
+  "interaction": {
+    "cost": 0.0036,
+    "inputTokens": 5464,
+    "outputTokens": 1464,
+    "model": "code"
+  },
+  "counters": null,
+  "payload": {
+    "type": "flexible",
+    "result": {
+      "toolName": "submitPersistenceTables",
+      "arguments": {
+        "status": "ok",
+        "result": {
+          "items": [
+            {
+              "tableId": "Chamado",
+              "tableName": "controlechamados_chamado",
+              "columns": [
+                {
+                  "name": "chamado_id",
+                  "type": "uuid",
+                  "nullable": false,
+                  "description": "Primary key / foreign key identifier"
+                },
+                {
+                  "name": "status",
+                  "type": "text",
+                  "nullable": false,
+                  "description": "Chamado status"
+                }
+              ],
+              "primaryKey": [
+                "chamado_id"
+              ],
+              "indexes": [
+                {
+                  "indexName": "controlechamados_chamado_status_idx",
+                  "columns": [
+                    "status"
+                  ],
+                  "unique": false
+                }
+              ],
+              "detailsColumn": {
+                "enabled": true,
+                "columnName": "details",
+                "childCollections": []
+              },
+              "appendOnly": false,
+              "purpose": "controle",
+              "retentionDays": 0
+            },
+            {
+              "tableId": "Comentario",
+              "tableName": "controlechamados_comentario",
+              "columns": [
+                {
+                  "name": "comentario_id",
+                  "type": "uuid",
+                  "nullable": false,
+                  "description": "Primary key / foreign key identifier"
+                },
+                {
+                  "name": "chamado_id",
+                  "type": "uuid",
+                  "nullable": false,
+                  "description": "Chamado foreign key"
+                },
+                {
+                  "name": "atendente_id",
+                  "type": "uuid",
+                  "nullable": false,
+                  "description": "Atendente foreign key"
+                }
+              ],
+              "primaryKey": [
+                "comentario_id"
+              ],
+              "indexes": [
+                {
+                  "indexName": "controlechamados_comentario_chamado_id_idx",
+                  "columns": [
+                    "chamado_id"
+                  ],
+                  "unique": false
+                },
+                {
+                  "indexName": "controlechamados_comentario_atendente_id_idx",
+                  "columns": [
+                    "atendente_id"
+                  ],
+                  "unique": false
+                }
+              ],
+              "detailsColumn": {
+                "enabled": true,
+                "columnName": "details",
+                "childCollections": []
+              },
+              "appendOnly": false,
+              "purpose": "controle",
+              "retentionDays": 0
+            }
+          ]
+        },
+        "questions": [],
+        "trace": []
+      }
+    },
+    "status": "completed",
+    "stepId": 9,
+    "interaction": null,
+    "nextSteps": null
+  }
+}

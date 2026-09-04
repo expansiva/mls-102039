@@ -1,0 +1,48 @@
+{
+  "savedAt": "2026-09-04T02:04:26.253Z",
+  "phase": "materialize-phase-shared-verify",
+  "lastRoundPlanId": "materialize-phase-shared-verify-v2",
+  "attempt": 2,
+  "final": true,
+  "allClear": true,
+  "blockedCount": 0,
+  "repairedCount": 2,
+  "declaredCount": 0,
+  "passedCount": 5,
+  "passed": [
+    {
+      "planId": "materialize-chamadocatalogue-l2-shared",
+      "typecheck": "passed"
+    },
+    {
+      "planId": "materialize-chamadohub-l2-shared",
+      "typecheck": "passed"
+    },
+    {
+      "planId": "materialize-registrarcomentariochamado-l2-shared",
+      "typecheck": "passed"
+    },
+    {
+      "planId": "materialize-atendentecatalogue-l2-shared",
+      "typecheck": "passed"
+    },
+    {
+      "planId": "materialize-comentariocatalogue-l2-shared",
+      "typecheck": "passed"
+    }
+  ],
+  "repaired": [
+    {
+      "planId": "materialize-atendentecatalogue-l2-shared",
+      "typecheck": "passed"
+    },
+    {
+      "planId": "materialize-comentariocatalogue-l2-shared",
+      "typecheck": "passed"
+    }
+  ],
+  "declared": [],
+  "brokenCount": 0,
+  "broken": [],
+  "agent": "agentCfeMaterializePhase"
+}

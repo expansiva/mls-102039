@@ -1,0 +1,47 @@
+{
+  "planId": "e4-relationship-bindings",
+  "moduleName": "controleChamados",
+  "reviewRound": 1,
+  "bindings": [
+    {
+      "relationshipId": "comentarioSobreChamado",
+      "realization": {
+        "kind": "fieldReference",
+        "ownerEntity": "Comentario",
+        "from": {
+          "entityId": "Comentario",
+          "fieldIds": [
+            "chamadoId"
+          ]
+        },
+        "to": {
+          "entityId": "Chamado",
+          "fieldIds": [
+            "chamadoId"
+          ]
+        },
+        "description": "Comentario.chamadoId referencia o identificador do Chamado ao qual o comentário pertence."
+      }
+    },
+    {
+      "relationshipId": "comentarioRegistradoPorAtendente",
+      "realization": {
+        "kind": "fieldReference",
+        "ownerEntity": "Comentario",
+        "from": {
+          "entityId": "Comentario",
+          "fieldIds": [
+            "atendenteId"
+          ]
+        },
+        "to": {
+          "entityId": "Atendente",
+          "fieldIds": [
+            "atendenteId"
+          ]
+        },
+        "description": "Comentario.atendenteId referencia o identificador MDM do Atendente que registrou o comentário."
+      }
+    }
+  ]
+}

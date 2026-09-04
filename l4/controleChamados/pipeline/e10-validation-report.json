@@ -1,0 +1,213 @@
+{
+  "schemaVersion": "2026-08-15-ns4-e10-validation-report-v2",
+  "moduleName": "controleChamados",
+  "userLanguage": "pt-BR",
+  "finalStatus": "passed",
+  "checks": [
+    {
+      "checkId": "A1-resolution",
+      "status": "passed",
+      "errorCount": 0,
+      "warningCount": 0,
+      "registrarCount": 0
+    },
+    {
+      "checkId": "A2-journeys",
+      "status": "passed",
+      "errorCount": 0,
+      "warningCount": 0,
+      "registrarCount": 0
+    },
+    {
+      "checkId": "A3-decisions",
+      "status": "passed",
+      "errorCount": 0,
+      "warningCount": 0,
+      "registrarCount": 0
+    },
+    {
+      "checkId": "A4-disclosure",
+      "status": "passed",
+      "errorCount": 0,
+      "warningCount": 0,
+      "registrarCount": 0
+    },
+    {
+      "checkId": "A5-fsm",
+      "status": "passed",
+      "errorCount": 0,
+      "warningCount": 0,
+      "registrarCount": 0
+    },
+    {
+      "checkId": "A6-staleness",
+      "status": "passed",
+      "errorCount": 0,
+      "warningCount": 0,
+      "registrarCount": 0
+    },
+    {
+      "checkId": "A7-warnings",
+      "status": "passed",
+      "errorCount": 0,
+      "warningCount": 0,
+      "registrarCount": 0
+    },
+    {
+      "checkId": "A8-dormant-commands",
+      "status": "passed",
+      "errorCount": 0,
+      "warningCount": 0,
+      "registrarCount": 0
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "registrars": [],
+  "policyDecisions": [
+    {
+      "decisionId": "closedChamadoFinalityPolicy",
+      "generatedChoice": "O fechamento é definitivo e o chamado não pode ser reaberto.",
+      "selectedChoice": "O fechamento é definitivo e o chamado não pode ser reaberto.",
+      "selectedBy": "auto",
+      "selectedAt": "2026-09-04T01:37:46.174Z"
+    },
+    {
+      "decisionId": "commentingAfterClosurePolicy",
+      "generatedChoice": "Somente chamados abertos podem receber comentários.",
+      "selectedChoice": "Somente chamados abertos podem receber comentários.",
+      "selectedBy": "auto",
+      "selectedAt": "2026-09-04T01:37:46.174Z"
+    },
+    {
+      "decisionId": "demoteRegistrarChamadoToRecordCatalogue",
+      "generatedChoice": "Tela de cadastro padrão de Chamado",
+      "selectedChoice": "Tela de cadastro padrão de Chamado",
+      "selectedBy": "auto",
+      "selectedAt": "2026-09-04T01:37:46.174Z"
+    }
+  ],
+  "systemDecisions": [
+    {
+      "decisionId": "catalogueAudienceAtendente",
+      "stage": "e8-workspaces",
+      "question": "Nenhuma jornada opera Atendente: quem mantém esse cadastro?",
+      "chosen": "internalProfiles",
+      "alternatives": [
+        "internalProfiles",
+        "restrictToNamedProfile"
+      ],
+      "decidedBy": "system",
+      "findingRef": "NS4_E8_CATALOGUE_AUDIENCE:atendenteCatalogue",
+      "changeHint": "Adicione no E3 uma autoridade sobre Atendente para restringir esse cadastro a um perfil específico."
+    },
+    {
+      "decisionId": "hubCompositionChamadoHub",
+      "stage": "e8-workspaces",
+      "question": "A composição proposta para o painel de Chamado não respeitou o catálogo; usar a ordem padrão?",
+      "chosen": "keepDerivedComposition",
+      "alternatives": [
+        "keepDerivedComposition",
+        "reviewDashboardComposition"
+      ],
+      "decidedBy": "system",
+      "findingRef": "NS4_E8_HUB_COMPOSITION:chamadoHub",
+      "changeHint": "Revisar a ordem e os destaques do painel de Chamado no próximo round."
+    }
+  ],
+  "sourceHashes": {
+    "journeys": [
+      {
+        "journeyId": "fecharChamado",
+        "businessHash": "sha256:65b1b28dd1c7c349261f5cadf1ea2eccca8394522ee802ca6910241b7bfee449"
+      },
+      {
+        "journeyId": "registrarChamado",
+        "businessHash": "sha256:7843bec8f6e0eda2307bd451a4ba6c4ae2a6408532e3db6317bd45c3620b3e55"
+      },
+      {
+        "journeyId": "registrarComentarioChamado",
+        "businessHash": "sha256:5d02ae674902d80323c1ed7b60fc17d313a6a4a972e6bae90150ed0d5f901395"
+      }
+    ],
+    "accessHash": "sha256:5a1c5d95dd8f305952cc1f782cb119ee70e9f53e8ec30cc1b14b16fefb1452b0",
+    "ontologyHash": "sha256:db66c55cfead4b983d579fbe9bf6b5467c976164c1965b365179468c886515bb",
+    "rulesHash": "sha256:4137fabbb0184526410eb8e712b7cb5f09420d1227ff372f286d86b52b5eebf9"
+  },
+  "counts": {
+    "journeys": 3,
+    "workspaces": 5,
+    "operations": 19,
+    "contracts": 25,
+    "decisions": 5
+  },
+  "menuPreview": {
+    "moduleId": "controleChamados",
+    "basePath": "/controleChamados",
+    "userLanguage": "pt-BR",
+    "navigation": [
+      {
+        "id": "atendenteCatalogue",
+        "label": "Atendente",
+        "href": "/controleChamados/atendenteCatalogue",
+        "description": "Cadastro de Atendente.",
+        "actors": [
+          "atendente"
+        ],
+        "workspaceId": "atendenteCatalogue",
+        "scenarioId": "recordList",
+        "sectionId": "recordCatalogue"
+      },
+      {
+        "id": "chamadoCatalogue",
+        "label": "Chamado",
+        "href": "/controleChamados/chamadoCatalogue",
+        "description": "Cadastro de Chamado.",
+        "actors": [
+          "atendente"
+        ],
+        "workspaceId": "chamadoCatalogue",
+        "scenarioId": "recordList",
+        "sectionId": "acompanhamentoChamados"
+      },
+      {
+        "id": "chamadoHub",
+        "label": "Chamado",
+        "href": "/controleChamados/chamadoHub",
+        "description": "Painel de Chamado.",
+        "actors": [
+          "atendente"
+        ],
+        "workspaceId": "chamadoHub",
+        "scenarioId": "collection",
+        "sectionId": "hub",
+        "hub": "Chamado"
+      },
+      {
+        "id": "comentarioCatalogue",
+        "label": "Comentário",
+        "href": "/controleChamados/comentarioCatalogue",
+        "description": "Cadastro de Comentário.",
+        "actors": [
+          "atendente"
+        ],
+        "workspaceId": "comentarioCatalogue",
+        "scenarioId": "recordList",
+        "sectionId": "recordCatalogue"
+      }
+    ],
+    "headerLinks": [
+      {
+        "id": "headerChamadoHub",
+        "label": "Chamado",
+        "href": "/controleChamados/chamadoHub",
+        "actors": [
+          "atendente"
+        ],
+        "manageable": true,
+        "hub": "Chamado"
+      }
+    ]
+  },
+  "reportHash": "sha256:b6a733821a0748e60cf72d8025c2faa6c4f710894c33a5d2806443be184acd54"
+}

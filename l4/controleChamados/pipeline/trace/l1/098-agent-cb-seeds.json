@@ -1,0 +1,97 @@
+{
+  "savedAt": "2026-09-04T01:48:34.560Z",
+  "agentName": "agentCbSeeds",
+  "stepId": 98,
+  "planning": {
+    "planId": "cb-gen-seeds",
+    "dependsOn": [],
+    "executionMode": "sequential",
+    "executionHost": "client"
+  },
+  "status": "waiting_after_prompt",
+  "interaction": {
+    "cost": 0.0058,
+    "inputTokens": 14197,
+    "outputTokens": 2277,
+    "model": "code"
+  },
+  "counters": null,
+  "payload": {
+    "type": "flexible",
+    "result": {
+      "toolName": "submitSeedScenario",
+      "arguments": {
+        "status": "ok",
+        "result": {
+          "summary": "Three active attendants mapped to the supplied platform-user identities.",
+          "localTables": [],
+          "mdmEntities": [
+            {
+              "entityId": "Atendente",
+              "rows": [
+                {
+                  "key": "atendente-1",
+                  "fields": [
+                    {
+                      "name": "platformUserId",
+                      "value": {
+                        "ref": "actor:atendente.u1"
+                      }
+                    },
+                    {
+                      "name": "status",
+                      "value": "Active"
+                    }
+                  ],
+                  "relationships": []
+                },
+                {
+                  "key": "atendente-2",
+                  "fields": [
+                    {
+                      "name": "platformUserId",
+                      "value": {
+                        "ref": "actor:atendente.u2"
+                      }
+                    },
+                    {
+                      "name": "status",
+                      "value": "Active"
+                    }
+                  ],
+                  "relationships": []
+                },
+                {
+                  "key": "atendente-3",
+                  "fields": [
+                    {
+                      "name": "platformUserId",
+                      "value": {
+                        "ref": "actor:atendente.u3"
+                      }
+                    },
+                    {
+                      "name": "status",
+                      "value": "Active"
+                    }
+                  ],
+                  "relationships": []
+                }
+              ]
+            }
+          ]
+        },
+        "questions": [],
+        "trace": [
+          "Planning wave 1 contains only the Atendente MDM entity and no local tables.",
+          "Seeded three active MDM rows, one for each supplied platform-user identity.",
+          "No Comentario rows were created because Comentario is outside the current wave."
+        ]
+      }
+    },
+    "status": "completed",
+    "stepId": 9,
+    "interaction": null,
+    "nextSteps": null
+  }
+}

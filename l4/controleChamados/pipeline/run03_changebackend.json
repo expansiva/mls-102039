@@ -1,0 +1,32 @@
+{
+  "savedAt": "2026-09-04T02:01:19.515Z",
+  "moduleName": "controleChamados",
+  "agent": "agentChangeBackend",
+  "command": "run",
+  "startedAt": null,
+  "finishedAt": "2026-09-04T02:01:19.513Z",
+  "verdict": "completed",
+  "reason": "agentChangeBackend: run complete. owners done = 19 in controleChamados (all marked done after defs generation; materialization validated by cb-validate-all). l5/config.json backend merged (1 module(s)) cost $1.48 in 138 call(s) — by phase: materialize 103 call(s) $1.27, gen-usecase 23 call(s) $0.13, seeds 4 call(s) $0.02, judge 3 call(s) $0.03, gen-domain 2 call(s) $0.01, gen-port 1 call(s) $0.00, gen-table 1 call(s) $0.00, gen-adapter 1 call(s) $0.01; priciest: materialize $1.27 Agent build: 102021@1104277e (183 source(s), agentChangeBackend.ts=178844167299, 176 source(s) edited locally; last push 2026-09-03T13:21:13.007Z).",
+  "counts": {
+    "ownersDone": 19,
+    "ownersFlipped": 0,
+    "findings": 0,
+    "findingList": [],
+    "degraded": 0,
+    "repairs": 48,
+    "globalAttempts": 2,
+    "noWork": false
+  },
+  "degradations": [],
+  "scanWarnings": [],
+  "todoReadBack": {
+    "summary": "read-back 19 owner(s) of l5/controleChamados/todoBackend.defs.ts: stor ok, no model",
+    "retried": 0,
+    "lostUpdate": false,
+    "stor": "ok",
+    "model": "absent",
+    "divergences": [],
+    "afterRetry": null,
+    "message": ""
+  }
+}

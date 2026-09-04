@@ -1,0 +1,24 @@
+{
+  "draftVersion": "2026-08-10-ns4-usecase-draft-minimal-v3",
+  "planId": "e7-usecase",
+  "moduleName": "controleChamados",
+  "useCaseId": "locateChamado",
+  "title": "Localizar o chamado aberto",
+  "kind": "query",
+  "compiledFrom": [
+    "fecharChamado.locateChamado",
+    "registrarComentarioChamado.locateChamado"
+  ],
+  "description": "Localiza um chamado em estado aberto e o disponibiliza como chamado selecionado para acompanhamento ou conclusão.",
+  "contexts": {
+    "requires": [],
+    "provides": [
+      "selectedChamado"
+    ]
+  },
+  "entityRefs": [
+    "Chamado"
+  ],
+  "useRules": [],
+  "transitions": []
+}

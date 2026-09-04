@@ -1,0 +1,15 @@
+{
+  "savedAt": "2026-09-04T02:06:26.115Z",
+  "planId": "materialize-chamadocatalogue-page21-l2-page",
+  "attempt": 2,
+  "findings": [
+    "cmdUpdateChamado button is clickable with empty required chamadoId: bind ?disabled to cmdUpdateChamadoChamadoId and set title to the missing-precondition hint",
+    "cmdDeleteChamado button is clickable with empty required chamadoId: bind ?disabled to cmdDeleteChamadoChamadoId and set title to the missing-precondition hint",
+    "cmdCloseChamado disabled button has no title hint for empty chamadoId",
+    "chamadoCatalogue: generated page does not render textual mutation feedback: cmdCreateChamado",
+    "chamadoCatalogue: generated page does not render textual mutation feedback: cmdUpdateChamado",
+    "chamadoCatalogue: generated page does not render textual mutation feedback: cmdDeleteChamado",
+    "chamadoCatalogue: generated page does not render textual mutation feedback: cmdCloseChamado",
+    "a <form is outside <Scene — every command form must live inside a Scene"
+  ]
+}

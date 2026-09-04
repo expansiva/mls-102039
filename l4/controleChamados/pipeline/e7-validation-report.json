@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "2026-08-12-ns4-e7-validation-report-v4",
+  "moduleName": "controleChamados",
+  "attempts": [
+    {
+      "round": 0,
+      "checkedAt": "2026-09-04T01:40:21.033Z",
+      "valid": 4,
+      "invalid": 0,
+      "results": [
+        {
+          "useCaseId": "closeChamado",
+          "status": "valid",
+          "issues": []
+        },
+        {
+          "useCaseId": "locateChamado",
+          "status": "valid",
+          "issues": []
+        },
+        {
+          "useCaseId": "registerChamado",
+          "status": "valid",
+          "issues": []
+        },
+        {
+          "useCaseId": "registerComentario",
+          "status": "valid",
+          "issues": []
+        }
+      ],
+      "lifecycleIssues": []
+    }
+  ],
+  "finalStatus": "passed",
+  "updatedAt": "2026-09-04T01:40:21.033Z"
+}

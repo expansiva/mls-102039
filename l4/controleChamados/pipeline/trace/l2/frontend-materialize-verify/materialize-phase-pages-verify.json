@@ -1,0 +1,246 @@
+{
+  "savedAt": "2026-09-04T02:06:26.095Z",
+  "planId": "materialize-phase-pages-verify",
+  "attempt": 1,
+  "brokenCount": 12,
+  "broken": [
+    {
+      "planId": "materialize-atendentecatalogue-l2-page",
+      "defPath": "_102039_/l2/controleChamados/web/desktop/page11/atendenteCatalogue.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page11/atendenteCatalogue.ts",
+      "typecheck": "passed",
+      "errors": [
+        "cmdUpdateAtendente disabled button has no title hint for empty atendenteId",
+        "cmdInactivateAtendente disabled button has no title hint for empty atendenteId",
+        "cmdReactivateAtendente disabled button has no title hint for empty atendenteId"
+      ],
+      "warnings": [
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdCreateAtendente",
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdUpdateAtendente",
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdInactivateAtendente",
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdReactivateAtendente"
+      ],
+      "severity": "repair"
+    },
+    {
+      "planId": "materialize-chamadocatalogue-l2-page",
+      "defPath": "_102039_/l2/controleChamados/web/desktop/page11/chamadoCatalogue.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page11/chamadoCatalogue.ts",
+      "typecheck": "passed",
+      "errors": [
+        "cmdDeleteChamado error feedback discards the envelope: render cmdDeleteChamadoError (error.message) or this.msg[error.code], never the HTTP status",
+        "cmdUpdateChamado button is clickable with empty required chamadoId: bind ?disabled to cmdUpdateChamadoChamadoId and set title to the missing-precondition hint",
+        "cmdDeleteChamado button is clickable with empty required chamadoId: bind ?disabled to cmdDeleteChamadoChamadoId and set title to the missing-precondition hint",
+        "cmdCloseChamado button is clickable with empty required chamadoId: bind ?disabled to cmdCloseChamadoChamadoId and set title to the missing-precondition hint"
+      ],
+      "warnings": [
+        "chamadoCatalogue: generated page does not render textual mutation feedback: cmdCreateChamado",
+        "chamadoCatalogue: generated page does not render textual mutation feedback: cmdUpdateChamado",
+        "chamadoCatalogue: generated page does not render textual mutation feedback: cmdDeleteChamado",
+        "chamadoCatalogue: generated page does not render textual mutation feedback: cmdCloseChamado",
+        "a <form is outside <Scene — every command form must live inside a Scene"
+      ],
+      "severity": "repair"
+    },
+    {
+      "planId": "materialize-chamadohub-l2-page",
+      "defPath": "_102039_/l2/controleChamados/web/desktop/page11/chamadoHub.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page11/chamadoHub.ts",
+      "typecheck": "passed",
+      "errors": [
+        "contract field missing -> `item.atendenteId` is not declared by qryListChamado: its output is chamadoId, descricao, status, titulo. A field that only exists in the output of a COMMAND is read from that command's state, never from the query record",
+        "contract field missing -> `item.conteudo` is not declared by qryListChamado: its output is chamadoId, descricao, status, titulo. A field that only exists in the output of a COMMAND is read from that command's state, never from the query record",
+        "status is a closed domain (open|closed) painted as the stored code in a list cell: show the enumLabels/lifecycleLabels rótulo (fallback: the code); never ${item.status} or a generic displayValue on that column",
+        "qryListChamado.sortBy is collection wiring (pagination/sorting) but is bound to a form control: drive it from the surface's own pager/sorter, never an input",
+        "qryListChamado.sortOrder is collection wiring (pagination/sorting) but is bound to a form control: drive it from the surface's own pager/sorter, never an input"
+      ],
+      "warnings": [],
+      "severity": "repair"
+    },
+    {
+      "planId": "materialize-comentariocatalogue-l2-page",
+      "defPath": "_102039_/l2/controleChamados/web/desktop/page11/comentarioCatalogue.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page11/comentarioCatalogue.ts",
+      "typecheck": "passed",
+      "errors": [
+        "qryChamadoPicker.sortBy is collection wiring (pagination/sorting) but is bound to a form control: drive it from the surface's own pager/sorter, never an input",
+        "qryChamadoPicker.sortOrder is collection wiring (pagination/sorting) but is bound to a form control: drive it from the surface's own pager/sorter, never an input",
+        "cmdDeleteComentario error feedback discards the envelope: render cmdDeleteComentarioError (error.message) or this.msg[error.code], never the HTTP status",
+        "cmdUpdateComentario.comentarioId has no selection control: click a list row (visible selected state + setCmdUpdateComentarioComentarioId(id)) or render a <select> bound to cmdUpdateComentarioComentarioId — never a dead table",
+        "cmdDeleteComentario.comentarioId has no selection control: click a list row (visible selected state + setCmdDeleteComentarioComentarioId(id)) or render a <select> bound to cmdDeleteComentarioComentarioId — never a dead table",
+        "cmdCreateComentario disabled button has no title hint for empty chamadoId",
+        "cmdCreateComentario disabled button has no title hint for empty atendenteId",
+        "cmdUpdateComentario disabled button has no title hint for empty comentarioId",
+        "cmdUpdateComentario disabled button has no title hint for empty chamadoId",
+        "cmdUpdateComentario disabled button has no title hint for empty atendenteId",
+        "cmdDeleteComentario button is clickable with empty required comentarioId: bind ?disabled to cmdDeleteComentarioComentarioId and set title to the missing-precondition hint"
+      ],
+      "warnings": [
+        "comentarioCatalogue: generated page does not render textual mutation feedback: cmdCreateComentario",
+        "comentarioCatalogue: generated page does not render textual mutation feedback: cmdUpdateComentario",
+        "comentarioCatalogue: generated page does not render textual mutation feedback: cmdDeleteComentario"
+      ],
+      "severity": "repair"
+    },
+    {
+      "planId": "materialize-atendentecatalogue-page21-l2-page",
+      "defPath": "_102039_/l2/controleChamados/web/desktop/page21/atendenteCatalogue.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page21/atendenteCatalogue.ts",
+      "typecheck": "not-applicable",
+      "errors": [
+        "cmdInactivateAtendente.atendenteId has no selection control: click a list row (visible selected state + setCmdInactivateAtendenteAtendenteId(id)) or render a <select> bound to cmdInactivateAtendenteAtendenteId — never a dead table",
+        "cmdReactivateAtendente.atendenteId has no selection control: click a list row (visible selected state + setCmdReactivateAtendenteAtendenteId(id)) or render a <select> bound to cmdReactivateAtendenteAtendenteId — never a dead table",
+        "cmdInactivateAtendente button is clickable with empty required atendenteId: bind ?disabled to cmdInactivateAtendenteAtendenteId and set title to the missing-precondition hint",
+        "cmdReactivateAtendente button is clickable with empty required atendenteId: bind ?disabled to cmdReactivateAtendenteAtendenteId and set title to the missing-precondition hint"
+      ],
+      "warnings": [
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdCreateAtendente",
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdUpdateAtendente",
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdInactivateAtendente",
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdReactivateAtendente"
+      ],
+      "severity": "repair"
+    },
+    {
+      "planId": "materialize-chamadocatalogue-page21-l2-page",
+      "defPath": "_102039_/l2/controleChamados/web/desktop/page21/chamadoCatalogue.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page21/chamadoCatalogue.ts",
+      "typecheck": "not-applicable",
+      "errors": [
+        "cmdUpdateChamado button is clickable with empty required chamadoId: bind ?disabled to cmdUpdateChamadoChamadoId and set title to the missing-precondition hint",
+        "cmdDeleteChamado button is clickable with empty required chamadoId: bind ?disabled to cmdDeleteChamadoChamadoId and set title to the missing-precondition hint",
+        "cmdCloseChamado disabled button has no title hint for empty chamadoId"
+      ],
+      "warnings": [
+        "chamadoCatalogue: generated page does not render textual mutation feedback: cmdCreateChamado",
+        "chamadoCatalogue: generated page does not render textual mutation feedback: cmdUpdateChamado",
+        "chamadoCatalogue: generated page does not render textual mutation feedback: cmdDeleteChamado",
+        "chamadoCatalogue: generated page does not render textual mutation feedback: cmdCloseChamado",
+        "a <form is outside <Scene — every command form must live inside a Scene"
+      ],
+      "severity": "repair"
+    },
+    {
+      "planId": "materialize-comentariocatalogue-page21-l2-page",
+      "defPath": "_102039_/l2/controleChamados/web/desktop/page21/comentarioCatalogue.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page21/comentarioCatalogue.ts",
+      "typecheck": "not-applicable",
+      "errors": [
+        "qryGetComentario.comentarioId has no selection control: click a list row (visible selected state + setQryGetComentarioComentarioId(id)) or render a <select> bound to qryGetComentarioComentarioId — never a dead table",
+        "cmdCreateComentario button is clickable with empty required chamadoId: bind ?disabled to cmdCreateComentarioChamadoId and set title to the missing-precondition hint",
+        "cmdCreateComentario button is clickable with empty required atendenteId: bind ?disabled to cmdCreateComentarioAtendenteId and set title to the missing-precondition hint",
+        "cmdUpdateComentario button is clickable with empty required comentarioId: bind ?disabled to cmdUpdateComentarioComentarioId and set title to the missing-precondition hint",
+        "cmdUpdateComentario button is clickable with empty required chamadoId: bind ?disabled to cmdUpdateComentarioChamadoId and set title to the missing-precondition hint",
+        "cmdUpdateComentario button is clickable with empty required atendenteId: bind ?disabled to cmdUpdateComentarioAtendenteId and set title to the missing-precondition hint",
+        "cmdDeleteComentario button is clickable with empty required comentarioId: bind ?disabled to cmdDeleteComentarioComentarioId and set title to the missing-precondition hint"
+      ],
+      "warnings": [
+        "comentarioCatalogue: generated page does not render textual mutation feedback: cmdCreateComentario",
+        "comentarioCatalogue: generated page does not render textual mutation feedback: cmdUpdateComentario",
+        "comentarioCatalogue: generated page does not render textual mutation feedback: cmdDeleteComentario",
+        "cmdCreateComentario.chamadoId is a technical id with source 'selectedentity' and this page has NO query that could populate a picker for it (L4-LOOKUP-GAP): the l4 workspace must expose a lookup query for the referenced entity — rewriting this page cannot fix it",
+        "cmdCreateComentario.atendenteId is a technical id with source 'selectedentity' and this page has NO query that could populate a picker for it (L4-LOOKUP-GAP): the l4 workspace must expose a lookup query for the referenced entity — rewriting this page cannot fix it"
+      ],
+      "severity": "repair"
+    },
+    {
+      "planId": "materialize-registrarcomentariochamado-page21-l2-page",
+      "defPath": "_102039_/l2/controleChamados/web/desktop/page21/registrarComentarioChamado.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page21/registrarComentarioChamado.ts",
+      "typecheck": "not-applicable",
+      "errors": [
+        "contract field missing -> `item.atendenteId` is not declared by qryLocateChamado: its output is chamadoId, descricao, status, titulo. A field that only exists in the output of a COMMAND is read from that command's state, never from the query record",
+        "contract field missing -> `item.platformUserId` is not declared by qryLocateChamado: its output is chamadoId, descricao, status, titulo. A field that only exists in the output of a COMMAND is read from that command's state, never from the query record",
+        "status is a closed domain (open|closed) painted as the stored code in a list cell: show the enumLabels/lifecycleLabels rótulo (fallback: the code); never ${item.status} or a generic displayValue on that column",
+        "cmdRegisterComentario button is clickable with empty required atendenteId: bind ?disabled to cmdRegisterComentarioAtendenteId and set title to the missing-precondition hint",
+        "cmdRegisterComentario button is clickable with empty required chamadoId: bind ?disabled to cmdRegisterComentarioChamadoId and set title to the missing-precondition hint"
+      ],
+      "warnings": [
+        "registrarComentarioChamado: generated page does not render textual mutation feedback: cmdRegisterComentario",
+        "cmdRegisterComentario.atendenteId is a technical id with source 'selectedentity' and this page has NO query that could populate a picker for it (L4-LOOKUP-GAP): the l4 workspace must expose a lookup query for the referenced entity — rewriting this page cannot fix it"
+      ],
+      "severity": "repair"
+    },
+    {
+      "planId": "materialize-atendentecatalogue-page31-l2-page",
+      "defPath": "_102039_/l2/controleChamados/web/desktop/page31/atendenteCatalogue.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page31/atendenteCatalogue.ts",
+      "typecheck": "not-applicable",
+      "errors": [
+        "cmdInactivateAtendente.atendenteId has no selection control: click a list row (visible selected state + setCmdInactivateAtendenteAtendenteId(id)) or render a <select> bound to cmdInactivateAtendenteAtendenteId — never a dead table",
+        "cmdReactivateAtendente.atendenteId has no selection control: click a list row (visible selected state + setCmdReactivateAtendenteAtendenteId(id)) or render a <select> bound to cmdReactivateAtendenteAtendenteId — never a dead table",
+        "cmdUpdateAtendente disabled button has no title hint for empty atendenteId",
+        "cmdInactivateAtendente disabled button has no title hint for empty atendenteId",
+        "cmdReactivateAtendente disabled button has no title hint for empty atendenteId"
+      ],
+      "warnings": [
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdCreateAtendente",
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdUpdateAtendente",
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdInactivateAtendente",
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdReactivateAtendente"
+      ],
+      "severity": "repair"
+    },
+    {
+      "planId": "materialize-chamadocatalogue-page31-l2-page",
+      "defPath": "_102039_/l2/controleChamados/web/desktop/page31/chamadoCatalogue.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page31/chamadoCatalogue.ts",
+      "typecheck": "not-applicable",
+      "errors": [
+        "cmdCreateChamado error feedback discards the envelope: render cmdCreateChamadoError (error.message) or this.msg[error.code], never the HTTP status",
+        "cmdDeleteChamado error feedback discards the envelope: render cmdDeleteChamadoError (error.message) or this.msg[error.code], never the HTTP status",
+        "cmdUpdateChamado button is clickable with empty required chamadoId: bind ?disabled to cmdUpdateChamadoChamadoId and set title to the missing-precondition hint",
+        "cmdDeleteChamado button is clickable with empty required chamadoId: bind ?disabled to cmdDeleteChamadoChamadoId and set title to the missing-precondition hint",
+        "cmdCloseChamado disabled button has no title hint for empty chamadoId"
+      ],
+      "warnings": [
+        "chamadoCatalogue: generated page does not render textual mutation feedback: cmdCreateChamado",
+        "chamadoCatalogue: generated page does not render textual mutation feedback: cmdUpdateChamado",
+        "chamadoCatalogue: generated page does not render textual mutation feedback: cmdDeleteChamado",
+        "chamadoCatalogue: generated page does not render textual mutation feedback: cmdCloseChamado",
+        "a <form is outside <Scene — every command form must live inside a Scene"
+      ],
+      "severity": "repair"
+    },
+    {
+      "planId": "materialize-comentariocatalogue-page31-l2-page",
+      "defPath": "_102039_/l2/controleChamados/web/desktop/page31/comentarioCatalogue.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page31/comentarioCatalogue.ts",
+      "typecheck": "not-applicable",
+      "errors": [
+        "cmdDeleteComentario.comentarioId has no selection control: click a list row (visible selected state + setCmdDeleteComentarioComentarioId(id)) or render a <select> bound to cmdDeleteComentarioComentarioId — never a dead table",
+        "cmdCreateComentario button is clickable with empty required chamadoId: bind ?disabled to cmdCreateComentarioChamadoId and set title to the missing-precondition hint",
+        "cmdCreateComentario button is clickable with empty required atendenteId: bind ?disabled to cmdCreateComentarioAtendenteId and set title to the missing-precondition hint",
+        "cmdUpdateComentario button is clickable with empty required comentarioId: bind ?disabled to cmdUpdateComentarioComentarioId and set title to the missing-precondition hint",
+        "cmdUpdateComentario button is clickable with empty required chamadoId: bind ?disabled to cmdUpdateComentarioChamadoId and set title to the missing-precondition hint",
+        "cmdUpdateComentario button is clickable with empty required atendenteId: bind ?disabled to cmdUpdateComentarioAtendenteId and set title to the missing-precondition hint",
+        "cmdDeleteComentario disabled button has no title hint for empty comentarioId"
+      ],
+      "warnings": [
+        "comentarioCatalogue: generated page does not render textual mutation feedback: cmdCreateComentario",
+        "comentarioCatalogue: generated page does not render textual mutation feedback: cmdUpdateComentario",
+        "comentarioCatalogue: generated page does not render textual mutation feedback: cmdDeleteComentario",
+        "cmdCreateComentario.chamadoId is a technical id with source 'selectedentity' and this page has NO query that could populate a picker for it (L4-LOOKUP-GAP): the l4 workspace must expose a lookup query for the referenced entity — rewriting this page cannot fix it",
+        "cmdCreateComentario.atendenteId is a technical id with source 'selectedentity' and this page has NO query that could populate a picker for it (L4-LOOKUP-GAP): the l4 workspace must expose a lookup query for the referenced entity — rewriting this page cannot fix it"
+      ],
+      "severity": "repair"
+    },
+    {
+      "planId": "materialize-registrarcomentariochamado-page31-l2-page",
+      "defPath": "_102039_/l2/controleChamados/web/desktop/page31/registrarComentarioChamado.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page31/registrarComentarioChamado.ts",
+      "typecheck": "not-applicable",
+      "errors": [
+        "status is a closed domain (open|closed) painted as the stored code in a list cell: show the enumLabels/lifecycleLabels rótulo (fallback: the code); never ${item.status} or a generic displayValue on that column",
+        "cmdRegisterComentario button is clickable with empty required atendenteId: bind ?disabled to cmdRegisterComentarioAtendenteId and set title to the missing-precondition hint",
+        "cmdRegisterComentario button is clickable with empty required chamadoId: bind ?disabled to cmdRegisterComentarioChamadoId and set title to the missing-precondition hint"
+      ],
+      "warnings": [
+        "registrarComentarioChamado: generated page does not render textual mutation feedback: cmdRegisterComentario",
+        "cmdRegisterComentario.atendenteId is a technical id with source 'selectedentity' and this page has NO query that could populate a picker for it (L4-LOOKUP-GAP): the l4 workspace must expose a lookup query for the referenced entity — rewriting this page cannot fix it"
+      ],
+      "severity": "repair"
+    }
+  ],
+  "agent": "agentCfeMaterializePhase"
+}

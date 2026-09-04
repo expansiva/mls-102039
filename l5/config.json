@@ -7,5 +7,320 @@
     "102027",
     "102029",
     "102036"
-  ]
+  ],
+  "modules": [
+    {
+      "moduleId": "controleChamados",
+      "basePath": "/controleChamados",
+      "navigation": [
+        {
+          "id": "atendenteCatalogue",
+          "label": "Atendente",
+          "href": "/controleChamados/atendenteCatalogue",
+          "description": "Cadastro de Atendente.",
+          "actors": [
+            "atendente"
+          ],
+          "workspaceId": "atendenteCatalogue",
+          "scenarioId": "recordList",
+          "sectionId": "recordCatalogue"
+        },
+        {
+          "id": "chamadoCatalogue",
+          "label": "Chamado",
+          "href": "/controleChamados/chamadoCatalogue",
+          "description": "Cadastro de Chamado.",
+          "actors": [
+            "atendente"
+          ],
+          "workspaceId": "chamadoCatalogue",
+          "scenarioId": "recordList",
+          "sectionId": "acompanhamentoChamados"
+        },
+        {
+          "id": "chamadoHub",
+          "label": "Chamado",
+          "href": "/controleChamados/chamadoHub",
+          "description": "Painel de Chamado.",
+          "actors": [
+            "atendente"
+          ],
+          "workspaceId": "chamadoHub",
+          "scenarioId": "collection",
+          "sectionId": "hub",
+          "hub": "Chamado"
+        },
+        {
+          "id": "comentarioCatalogue",
+          "label": "Comentário",
+          "href": "/controleChamados/comentarioCatalogue",
+          "description": "Cadastro de Comentário.",
+          "actors": [
+            "atendente"
+          ],
+          "workspaceId": "comentarioCatalogue",
+          "scenarioId": "recordList",
+          "sectionId": "recordCatalogue"
+        }
+      ],
+      "headerLinks": [
+        {
+          "id": "headerChamadoHub",
+          "label": "Chamado",
+          "href": "/controleChamados/chamadoHub",
+          "actors": [
+            "atendente"
+          ],
+          "manageable": true,
+          "hub": "Chamado"
+        }
+      ]
+    }
+  ],
+  "projects": {
+    "102020": {
+      "root": "../mls-102020",
+      "type": "lib"
+    },
+    "102021": {
+      "root": "../mls-102021",
+      "type": "lib"
+    },
+    "102025": {
+      "root": "../mls-102025",
+      "type": "lib"
+    },
+    "102029": {
+      "root": "../mls-102029",
+      "type": "lib"
+    },
+    "102033": {
+      "root": "../mls-102033",
+      "type": "master frontend"
+    },
+    "102034": {
+      "root": "../mls-102034",
+      "type": "master backend"
+    },
+    "102039": {
+      "root": ".",
+      "type": "client",
+      "runtime": {
+        "projectId": "102039"
+      },
+      "modules": [
+        {
+          "moduleId": "controleChamados",
+          "basePath": "/controleChamados",
+          "shellMode": "spa",
+          "backendControllers": "./_102039_/l1/controleChamados/layer_1_external/adapters/http/controllers",
+          "languages": [
+            "pt-br"
+          ],
+          "navigation": [
+            {
+              "id": "atendenteCatalogue",
+              "label": "Atendente",
+              "href": "/controleChamados/atendenteCatalogue",
+              "description": "Atendente",
+              "actors": [
+                "atendente"
+              ]
+            },
+            {
+              "id": "chamadoCatalogue",
+              "label": "Chamado",
+              "href": "/controleChamados/chamadoCatalogue",
+              "description": "Chamado",
+              "actors": [
+                "atendente"
+              ]
+            },
+            {
+              "id": "chamadoHub",
+              "label": "Chamado",
+              "href": "/controleChamados/chamadoHub",
+              "description": "Chamado",
+              "actors": [
+                "atendente"
+              ]
+            },
+            {
+              "id": "comentarioCatalogue",
+              "label": "Comentário",
+              "href": "/controleChamados/comentarioCatalogue",
+              "description": "Comentário",
+              "actors": [
+                "atendente"
+              ]
+            }
+          ],
+          "frontend": {
+            "layer": "l2",
+            "pages": [
+              {
+                "pageId": "atendenteCatalogue",
+                "route": "/controleChamados/atendenteCatalogue",
+                "source": "l2/controleChamados/web/desktop/page11/atendenteCatalogue.ts",
+                "definition": "l2/controleChamados/web/desktop/page11/atendenteCatalogue.defs.ts",
+                "componentTag": "controle-chamados--web--desktop--page11--atendente-catalogue-102039",
+                "title": "Atendente"
+              },
+              {
+                "pageId": "atendenteCatalogue-page21",
+                "route": "/controleChamados/atendenteCatalogue-page21",
+                "source": "l2/controleChamados/web/desktop/page21/atendenteCatalogue.ts",
+                "definition": "l2/controleChamados/web/desktop/page21/atendenteCatalogue.defs.ts",
+                "componentTag": "controle-chamados--web--desktop--page21--atendente-catalogue-102039",
+                "title": "Atendente - PAGE21"
+              },
+              {
+                "pageId": "atendenteCatalogue-page31",
+                "route": "/controleChamados/atendenteCatalogue-page31",
+                "source": "l2/controleChamados/web/desktop/page31/atendenteCatalogue.ts",
+                "definition": "l2/controleChamados/web/desktop/page31/atendenteCatalogue.defs.ts",
+                "componentTag": "controle-chamados--web--desktop--page31--atendente-catalogue-102039",
+                "title": "Atendente - PAGE31"
+              },
+              {
+                "pageId": "chamadoCatalogue",
+                "route": "/controleChamados/chamadoCatalogue/:chamadoId?",
+                "source": "l2/controleChamados/web/desktop/page11/chamadoCatalogue.ts",
+                "definition": "l2/controleChamados/web/desktop/page11/chamadoCatalogue.defs.ts",
+                "componentTag": "controle-chamados--web--desktop--page11--chamado-catalogue-102039",
+                "title": "Chamado"
+              },
+              {
+                "pageId": "chamadoCatalogue-page21",
+                "route": "/controleChamados/chamadoCatalogue-page21/:chamadoId?",
+                "source": "l2/controleChamados/web/desktop/page21/chamadoCatalogue.ts",
+                "definition": "l2/controleChamados/web/desktop/page21/chamadoCatalogue.defs.ts",
+                "componentTag": "controle-chamados--web--desktop--page21--chamado-catalogue-102039",
+                "title": "Chamado - PAGE21"
+              },
+              {
+                "pageId": "chamadoCatalogue-page31",
+                "route": "/controleChamados/chamadoCatalogue-page31/:chamadoId?",
+                "source": "l2/controleChamados/web/desktop/page31/chamadoCatalogue.ts",
+                "definition": "l2/controleChamados/web/desktop/page31/chamadoCatalogue.defs.ts",
+                "componentTag": "controle-chamados--web--desktop--page31--chamado-catalogue-102039",
+                "title": "Chamado - PAGE31"
+              },
+              {
+                "pageId": "chamadoHub",
+                "route": "/controleChamados/chamadoHub",
+                "source": "l2/controleChamados/web/desktop/page11/chamadoHub.ts",
+                "definition": "l2/controleChamados/web/desktop/page11/chamadoHub.defs.ts",
+                "componentTag": "controle-chamados--web--desktop--page11--chamado-hub-102039",
+                "title": "Chamado"
+              },
+              {
+                "pageId": "chamadoHub-page21",
+                "route": "/controleChamados/chamadoHub-page21",
+                "source": "l2/controleChamados/web/desktop/page21/chamadoHub.ts",
+                "definition": "l2/controleChamados/web/desktop/page21/chamadoHub.defs.ts",
+                "componentTag": "controle-chamados--web--desktop--page21--chamado-hub-102039",
+                "title": "Chamado - PAGE21"
+              },
+              {
+                "pageId": "chamadoHub-page31",
+                "route": "/controleChamados/chamadoHub-page31",
+                "source": "l2/controleChamados/web/desktop/page31/chamadoHub.ts",
+                "definition": "l2/controleChamados/web/desktop/page31/chamadoHub.defs.ts",
+                "componentTag": "controle-chamados--web--desktop--page31--chamado-hub-102039",
+                "title": "Chamado - PAGE31"
+              },
+              {
+                "pageId": "comentarioCatalogue",
+                "route": "/controleChamados/comentarioCatalogue",
+                "source": "l2/controleChamados/web/desktop/page11/comentarioCatalogue.ts",
+                "definition": "l2/controleChamados/web/desktop/page11/comentarioCatalogue.defs.ts",
+                "componentTag": "controle-chamados--web--desktop--page11--comentario-catalogue-102039",
+                "title": "Comentário"
+              },
+              {
+                "pageId": "comentarioCatalogue-page21",
+                "route": "/controleChamados/comentarioCatalogue-page21",
+                "source": "l2/controleChamados/web/desktop/page21/comentarioCatalogue.ts",
+                "definition": "l2/controleChamados/web/desktop/page21/comentarioCatalogue.defs.ts",
+                "componentTag": "controle-chamados--web--desktop--page21--comentario-catalogue-102039",
+                "title": "Comentário - PAGE21"
+              },
+              {
+                "pageId": "comentarioCatalogue-page31",
+                "route": "/controleChamados/comentarioCatalogue-page31",
+                "source": "l2/controleChamados/web/desktop/page31/comentarioCatalogue.ts",
+                "definition": "l2/controleChamados/web/desktop/page31/comentarioCatalogue.defs.ts",
+                "componentTag": "controle-chamados--web--desktop--page31--comentario-catalogue-102039",
+                "title": "Comentário - PAGE31"
+              },
+              {
+                "pageId": "registrarComentarioChamado",
+                "route": "/controleChamados/registrarComentarioChamado/:chamadoId?",
+                "source": "l2/controleChamados/web/desktop/page11/registrarComentarioChamado.ts",
+                "definition": "l2/controleChamados/web/desktop/page11/registrarComentarioChamado.defs.ts",
+                "componentTag": "controle-chamados--web--desktop--page11--registrar-comentario-chamado-102039",
+                "title": "Registrar comentário em chamado aberto"
+              },
+              {
+                "pageId": "registrarComentarioChamado-page21",
+                "route": "/controleChamados/registrarComentarioChamado-page21/:chamadoId?",
+                "source": "l2/controleChamados/web/desktop/page21/registrarComentarioChamado.ts",
+                "definition": "l2/controleChamados/web/desktop/page21/registrarComentarioChamado.defs.ts",
+                "componentTag": "controle-chamados--web--desktop--page21--registrar-comentario-chamado-102039",
+                "title": "Registrar comentário em chamado aberto - PAGE21"
+              },
+              {
+                "pageId": "registrarComentarioChamado-page31",
+                "route": "/controleChamados/registrarComentarioChamado-page31/:chamadoId?",
+                "source": "l2/controleChamados/web/desktop/page31/registrarComentarioChamado.ts",
+                "definition": "l2/controleChamados/web/desktop/page31/registrarComentarioChamado.defs.ts",
+                "componentTag": "controle-chamados--web--desktop--page31--registrar-comentario-chamado-102039",
+                "title": "Registrar comentário em chamado aberto - PAGE31"
+              }
+            ],
+            "pageTests": [
+              "_102039_/l2/controleChamados/web/desktop/page11/atendenteCatalogue.test.js",
+              "_102039_/l2/controleChamados/web/desktop/page11/chamadoCatalogue.test.js",
+              "_102039_/l2/controleChamados/web/desktop/page11/chamadoHub.test.js",
+              "_102039_/l2/controleChamados/web/desktop/page11/comentarioCatalogue.test.js",
+              "_102039_/l2/controleChamados/web/desktop/page11/registrarComentarioChamado.test.js"
+            ]
+          }
+        }
+      ],
+      "persistenceModules": [
+        {
+          "moduleId": "controleChamados",
+          "tableDefsDir": "./_102039_/l1/controleChamados/layer_1_external/adapters/persistence"
+        }
+      ]
+    }
+  },
+  "defaultProjectId": "102039",
+  "shellTemplates": {
+    "spa": "./_102033_/l2/shared/spa/index.html",
+    "pwa": "./_102033_/l2/shared/pwa/index.html"
+  },
+  "publication": {
+    "defaultTarget": "web",
+    "targets": {
+      "web": {
+        "assetBaseUrl": "",
+        "serveStaticFromServer": true,
+        "minify": false,
+        "sourcemap": true
+      }
+    }
+  },
+  "clientShell": {
+    "mode": "spa",
+    "activeProfile": "defaultAura",
+    "regions": {
+      "header": {
+        "entrypoint": "./_102033_/l2/shared/layout/aura-header.js",
+        "tag": "collab-aura-header"
+      }
+    }
+  }
 }

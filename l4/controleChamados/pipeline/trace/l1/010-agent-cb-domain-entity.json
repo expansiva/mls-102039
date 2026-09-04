@@ -1,0 +1,45 @@
+{
+  "savedAt": "2026-09-04T01:42:31.483Z",
+  "agentName": "agentCbDomainEntity",
+  "stepId": 10,
+  "planning": null,
+  "status": "waiting_after_prompt",
+  "interaction": {
+    "cost": 0.0024,
+    "inputTokens": 5980,
+    "outputTokens": 589,
+    "model": "code"
+  },
+  "counters": null,
+  "payload": {
+    "type": "flexible",
+    "result": {
+      "toolName": "submitDomainEntities",
+      "arguments": {
+        "status": "ok",
+        "result": {
+          "items": [
+            {
+              "entityId": "Comentario",
+              "title": "",
+              "fields": [],
+              "valueObjects": [],
+              "invariants": [
+                "comentarioId deve ser único e estável para cada comentário persistido.",
+                "conteudo deve conter pelo menos 1 caractere.",
+                "O comentário só pode ser registrado para um chamado com status aberto."
+              ],
+              "statusEnum": []
+            }
+          ]
+        },
+        "questions": [],
+        "trace": []
+      }
+    },
+    "status": "completed",
+    "stepId": 12,
+    "interaction": null,
+    "nextSteps": null
+  }
+}

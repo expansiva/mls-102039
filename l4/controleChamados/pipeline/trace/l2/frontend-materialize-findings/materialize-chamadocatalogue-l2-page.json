@@ -1,0 +1,16 @@
+{
+  "savedAt": "2026-09-04T02:06:26.102Z",
+  "planId": "materialize-chamadocatalogue-l2-page",
+  "attempt": 2,
+  "findings": [
+    "cmdDeleteChamado error feedback discards the envelope: render cmdDeleteChamadoError (error.message) or this.msg[error.code], never the HTTP status",
+    "cmdUpdateChamado button is clickable with empty required chamadoId: bind ?disabled to cmdUpdateChamadoChamadoId and set title to the missing-precondition hint",
+    "cmdDeleteChamado button is clickable with empty required chamadoId: bind ?disabled to cmdDeleteChamadoChamadoId and set title to the missing-precondition hint",
+    "cmdCloseChamado button is clickable with empty required chamadoId: bind ?disabled to cmdCloseChamadoChamadoId and set title to the missing-precondition hint",
+    "chamadoCatalogue: generated page does not render textual mutation feedback: cmdCreateChamado",
+    "chamadoCatalogue: generated page does not render textual mutation feedback: cmdUpdateChamado",
+    "chamadoCatalogue: generated page does not render textual mutation feedback: cmdDeleteChamado",
+    "chamadoCatalogue: generated page does not render textual mutation feedback: cmdCloseChamado",
+    "a <form is outside <Scene — every command form must live inside a Scene"
+  ]
+}

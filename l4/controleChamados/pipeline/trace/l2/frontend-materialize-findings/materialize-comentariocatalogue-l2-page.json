@@ -1,0 +1,21 @@
+{
+  "savedAt": "2026-09-04T02:06:26.108Z",
+  "planId": "materialize-comentariocatalogue-l2-page",
+  "attempt": 2,
+  "findings": [
+    "qryChamadoPicker.sortBy is collection wiring (pagination/sorting) but is bound to a form control: drive it from the surface's own pager/sorter, never an input",
+    "qryChamadoPicker.sortOrder is collection wiring (pagination/sorting) but is bound to a form control: drive it from the surface's own pager/sorter, never an input",
+    "cmdDeleteComentario error feedback discards the envelope: render cmdDeleteComentarioError (error.message) or this.msg[error.code], never the HTTP status",
+    "cmdUpdateComentario.comentarioId has no selection control: click a list row (visible selected state + setCmdUpdateComentarioComentarioId(id)) or render a <select> bound to cmdUpdateComentarioComentarioId — never a dead table",
+    "cmdDeleteComentario.comentarioId has no selection control: click a list row (visible selected state + setCmdDeleteComentarioComentarioId(id)) or render a <select> bound to cmdDeleteComentarioComentarioId — never a dead table",
+    "cmdCreateComentario disabled button has no title hint for empty chamadoId",
+    "cmdCreateComentario disabled button has no title hint for empty atendenteId",
+    "cmdUpdateComentario disabled button has no title hint for empty comentarioId",
+    "cmdUpdateComentario disabled button has no title hint for empty chamadoId",
+    "cmdUpdateComentario disabled button has no title hint for empty atendenteId",
+    "cmdDeleteComentario button is clickable with empty required comentarioId: bind ?disabled to cmdDeleteComentarioComentarioId and set title to the missing-precondition hint",
+    "comentarioCatalogue: generated page does not render textual mutation feedback: cmdCreateComentario",
+    "comentarioCatalogue: generated page does not render textual mutation feedback: cmdUpdateComentario",
+    "comentarioCatalogue: generated page does not render textual mutation feedback: cmdDeleteComentario"
+  ]
+}

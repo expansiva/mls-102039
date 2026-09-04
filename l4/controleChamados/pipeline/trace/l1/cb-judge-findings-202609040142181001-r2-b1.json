@@ -1,0 +1,28 @@
+{
+  "runId": "20260904014218.1001",
+  "judgeRun": 2,
+  "batchIndex": 1,
+  "owners": [
+    "updateAtendente",
+    "createChamado",
+    "updateChamado",
+    "closeChamado"
+  ],
+  "findings": [
+    {
+      "ownerId": "createChamado",
+      "type": "estrutural",
+      "severity": "error",
+      "message": "rulesApplied está incompleto: faltam os ids comentariosPermitidosSomenteEmChamadosAbertos, fechamentoExigeChamadoAberto e chamadoFechadoNaoPodeSerReaberto, todos declarados em l4Contract.rulesApplied.",
+      "suggestion": "Adicionar os três ids a rulesApplied no nível da função e/ou do use case, com dados/modelagem que permitam sua execução."
+    },
+    {
+      "ownerId": "updateChamado",
+      "type": "estrutural",
+      "severity": "error",
+      "message": "rulesApplied está incompleto: falta o id comentariosPermitidosSomenteEmChamadosAbertos, declarado em l4Contract.rulesApplied.",
+      "suggestion": "Adicionar comentariosPermitidosSomenteEmChamadosAbertos a rulesApplied no nível da função e/ou do use case."
+    }
+  ],
+  "savedAt": "2026-09-04T01:45:17.914Z"
+}

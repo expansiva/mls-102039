@@ -1,0 +1,55 @@
+{
+  "savedAt": "2026-09-04T02:02:52.958Z",
+  "pageId": "comentarioCatalogue",
+  "genome": "page21",
+  "objective": {
+    "actor": "Atendente ou operador responsável pelo controle de chamados.",
+    "jobToBeDone": "Localizar um comentário no cadastro e, conforme necessário, criar um novo comentário, corrigir seu conteúdo ou removê-lo com segurança.",
+    "primaryDecision": "Selecionar o comentário certo e decidir entre editar seu conteúdo, excluí-lo ou criar um comentário associado ao chamado adequado.",
+    "decisiveInfo": [
+      "comentarioId",
+      "conteudo",
+      "chamadoId",
+      "atendenteId",
+      "titulo",
+      "descricao",
+      "status",
+      "platformUserId"
+    ],
+    "usageFrequency": "Ocasional, durante o atendimento e a manutenção do histórico de chamados.",
+    "informationHierarchy": [
+      "comentários existentes e seu conteúdo",
+      "contexto do chamado e do atendente",
+      "ações de editar e excluir para o comentário selecionado",
+      "criação de novo comentário",
+      "feedback de sucesso ou erro das operações"
+    ],
+    "successCriteria": "O operador encontra rapidamente o comentário correto, entende seu contexto, edita apenas o conteúdo quando necessário, associa novos comentários por seleção reconhecível e consegue excluir com confirmação e atualização da lista.",
+    "antiPatterns": [
+      "formulário CRUD separado para cada operação",
+      "identificadores digitados manualmente",
+      "expor comentarioId, chamadoId ou atendenteId como campos livres",
+      "status como campo editável nesta página",
+      "exclusão sem confirmação",
+      "duplicar cada picker ou consulta em uma seção independente"
+    ],
+    "criticalActions": [
+      {
+        "action": "Selecionar e consultar um comentário",
+        "presentation": "master-detail"
+      },
+      {
+        "action": "Corrigir o conteúdo do comentário selecionado",
+        "presentation": "contextual-action"
+      },
+      {
+        "action": "Excluir o comentário selecionado",
+        "presentation": "inline-row-command com confirmação destrutiva"
+      },
+      {
+        "action": "Criar comentário associado a chamado e atendente",
+        "presentation": "primary-button em formulário contextual com pickers"
+      }
+    ]
+  }
+}

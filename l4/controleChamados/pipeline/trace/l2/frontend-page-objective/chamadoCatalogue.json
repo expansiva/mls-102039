@@ -1,0 +1,51 @@
+{
+  "savedAt": "2026-09-04T02:02:34.313Z",
+  "pageId": "chamadoCatalogue",
+  "genome": "page31",
+  "objective": {
+    "actor": "Atendente ou responsável pelo controle de chamados",
+    "jobToBeDone": "Encontrar rapidamente um chamado aberto, conferir seu contexto e concluir, corrigir, criar ou remover o registro necessário.",
+    "primaryDecision": "Fechar o chamado aberto selecionado quando ele estiver pronto para conclusão.",
+    "decisiveInfo": [
+      "chamadoId (contexto selecionado, não entrada manual)",
+      "titulo",
+      "descricao",
+      "status"
+    ],
+    "usageFrequency": "Operacional e recorrente, com consultas frequentes e ações rápidas sobre registros selecionados.",
+    "informationHierarchy": [
+      "chamado aberto localizado e status atual",
+      "título e descrição do chamado selecionado",
+      "ações contextuais válidas: fechar, corrigir ou excluir",
+      "lista completa e ordenação",
+      "criação de um novo chamado"
+    ],
+    "successCriteria": "O atendente identifica o chamado aberto correto sem digitar identificadores, lê seus dados antes da transição e conclui ou corrige o registro com poucos passos; criação, exclusão e atualização permanecem disponíveis no contexto adequado.",
+    "antiPatterns": [
+      "campo manual para chamadoId",
+      "seletor livre de status para representar transição",
+      "formulário separado de fechamento sem o chamado selecionado visível",
+      "expor status inicial como decisão obrigatória no cadastro",
+      "exigir navegação entre lista e detalhe para confirmar o registro",
+      "exclusão sem confirmação"
+    ],
+    "criticalActions": [
+      {
+        "action": "Fechar o chamado aberto selecionado",
+        "presentation": "contextual-transition-actions"
+      },
+      {
+        "action": "Corrigir dados do chamado selecionado",
+        "presentation": "master-detail"
+      },
+      {
+        "action": "Excluir o chamado selecionado",
+        "presentation": "inline-row-command com confirmação"
+      },
+      {
+        "action": "Criar um novo chamado",
+        "presentation": "primary-button em formulário contextual"
+      }
+    ]
+  }
+}

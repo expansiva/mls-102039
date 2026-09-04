@@ -1,0 +1,12 @@
+{
+  "savedAt": "2026-09-04T02:06:26.105Z",
+  "planId": "materialize-chamadohub-l2-page",
+  "attempt": 2,
+  "findings": [
+    "contract field missing -> `item.atendenteId` is not declared by qryListChamado: its output is chamadoId, descricao, status, titulo. A field that only exists in the output of a COMMAND is read from that command's state, never from the query record",
+    "contract field missing -> `item.conteudo` is not declared by qryListChamado: its output is chamadoId, descricao, status, titulo. A field that only exists in the output of a COMMAND is read from that command's state, never from the query record",
+    "status is a closed domain (open|closed) painted as the stored code in a list cell: show the enumLabels/lifecycleLabels rótulo (fallback: the code); never ${item.status} or a generic displayValue on that column",
+    "qryListChamado.sortBy is collection wiring (pagination/sorting) but is bound to a form control: drive it from the surface's own pager/sorter, never an input",
+    "qryListChamado.sortOrder is collection wiring (pagination/sorting) but is bound to a form control: drive it from the surface's own pager/sorter, never an input"
+  ]
+}

@@ -1,0 +1,28 @@
+/// <mls fileReference="_102039_/l2/controleChamados/web/desktop/page11/atendenteCatalogue.defs.ts" enhancement="_blank"/>
+
+export const definition = `page: Atendente
+actor: atendente
+purpose: Cadastro de Atendente.
+uxExperience: entityRecordManagement
+The page extends the shared base class of this workspace: the shared travels in this pipeline and already carries the states, actions and handlers the page inherits. Render the experience around that intent — do not list fields and do not list routines.`;
+
+export const pipeline = [
+  {
+    "id": "atendenteCatalogue__l2_page",
+    "type": "l2_page",
+    "outputPath": "_102039_/l2/controleChamados/web/desktop/page11/atendenteCatalogue.ts",
+    "defPath": "_102039_/l2/controleChamados/web/desktop/page11/atendenteCatalogue.defs.ts",
+    "dependsFiles": [
+      "_102039_/l2/controleChamados/web/shared/atendenteCatalogueDts.txt",
+      "_102039_/l2/designSystem.ts"
+    ],
+    "dependsOn": [
+      "atendenteCatalogue__l2_shared"
+    ],
+    "skills": [
+      "_102020_/l2/agentChangeFrontend/skills/genCfePage11RenderTs.ts"
+    ],
+    "visualStyle": {},
+    "agent": "agentCfeMaterializeGen"
+  }
+] as const;

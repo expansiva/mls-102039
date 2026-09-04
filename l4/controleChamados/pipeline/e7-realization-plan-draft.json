@@ -1,0 +1,87 @@
+{
+  "planId": "e7-realization-plan",
+  "moduleName": "controleChamados",
+  "userLanguage": "pt-BR",
+  "useCases": [
+    {
+      "useCaseId": "closeChamado",
+      "title": "Confirmar o fechamento do chamado",
+      "kind": "command",
+      "compiledFrom": [
+        "fecharChamado.closeChamado"
+      ],
+      "contexts": {
+        "requires": [
+          "selectedChamado"
+        ],
+        "provides": [
+          "selectedChamado"
+        ]
+      }
+    },
+    {
+      "useCaseId": "locateChamado",
+      "title": "Localizar o chamado aberto",
+      "kind": "query",
+      "compiledFrom": [
+        "fecharChamado.locateChamado",
+        "registrarComentarioChamado.locateChamado"
+      ],
+      "contexts": {
+        "requires": [],
+        "provides": [
+          "selectedChamado"
+        ]
+      }
+    },
+    {
+      "useCaseId": "registerChamado",
+      "title": "Registrar novo chamado",
+      "kind": "command",
+      "compiledFrom": [
+        "registrarChamado.registerChamado"
+      ],
+      "contexts": {
+        "requires": [],
+        "provides": [
+          "selectedChamado"
+        ]
+      }
+    },
+    {
+      "useCaseId": "registerComentario",
+      "title": "Registrar comentário",
+      "kind": "command",
+      "compiledFrom": [
+        "registrarComentarioChamado.registerComentario"
+      ],
+      "contexts": {
+        "requires": [
+          "selectedAtendente",
+          "selectedChamado"
+        ],
+        "provides": [
+          "selectedComentario"
+        ]
+      }
+    }
+  ],
+  "sourceHashes": {
+    "journeys": [
+      {
+        "journeyId": "registrarComentarioChamado",
+        "businessHash": "sha256:5d02ae674902d80323c1ed7b60fc17d313a6a4a972e6bae90150ed0d5f901395"
+      },
+      {
+        "journeyId": "fecharChamado",
+        "businessHash": "sha256:65b1b28dd1c7c349261f5cadf1ea2eccca8394522ee802ca6910241b7bfee449"
+      },
+      {
+        "journeyId": "registrarChamado",
+        "businessHash": "sha256:7843bec8f6e0eda2307bd451a4ba6c4ae2a6408532e3db6317bd45c3620b3e55"
+      }
+    ],
+    "ontologyHash": "sha256:db66c55cfead4b983d579fbe9bf6b5467c976164c1965b365179468c886515bb",
+    "rulesHash": "sha256:4137fabbb0184526410eb8e712b7cb5f09420d1227ff372f286d86b52b5eebf9"
+  }
+}

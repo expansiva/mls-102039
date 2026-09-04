@@ -1,0 +1,121 @@
+{
+  "savedAt": "2026-09-04T01:49:08.534Z",
+  "agentName": "agentCbSeeds",
+  "stepId": 100,
+  "planning": {
+    "planId": "cb-gen-seeds-w2-r1-1788486531545",
+    "dependsOn": [],
+    "executionMode": "sequential",
+    "executionHost": "client"
+  },
+  "status": "waiting_after_prompt",
+  "interaction": {
+    "cost": 0.0052,
+    "inputTokens": 14243,
+    "outputTokens": 2037,
+    "model": "code"
+  },
+  "counters": null,
+  "payload": {
+    "type": "flexible",
+    "result": {
+      "toolName": "submitSeedScenario",
+      "arguments": {
+        "status": "ok",
+        "result": {
+          "summary": "Three open support tickets with complete titles and descriptions for the controleChamados initial operational dataset.",
+          "localTables": [
+            {
+              "tableId": "Chamado",
+              "rows": [
+                {
+                  "key": "chamado-1",
+                  "columns": [
+                    {
+                      "name": "chamado_id",
+                      "value": "chamado-1"
+                    },
+                    {
+                      "name": "status",
+                      "value": "open"
+                    }
+                  ],
+                  "details": [
+                    {
+                      "name": "titulo",
+                      "value": "Unable to access customer portal"
+                    },
+                    {
+                      "name": "descricao",
+                      "value": "The customer receives an authentication error after entering valid credentials and cannot reach the portal dashboard."
+                    }
+                  ],
+                  "children": []
+                },
+                {
+                  "key": "chamado-2",
+                  "columns": [
+                    {
+                      "name": "chamado_id",
+                      "value": "chamado-2"
+                    },
+                    {
+                      "name": "status",
+                      "value": "open"
+                    }
+                  ],
+                  "details": [
+                    {
+                      "name": "titulo",
+                      "value": "Invoice download fails"
+                    },
+                    {
+                      "name": "descricao",
+                      "value": "The invoice page loads, but selecting the PDF download action returns an empty response."
+                    }
+                  ],
+                  "children": []
+                },
+                {
+                  "key": "chamado-3",
+                  "columns": [
+                    {
+                      "name": "chamado_id",
+                      "value": "chamado-3"
+                    },
+                    {
+                      "name": "status",
+                      "value": "open"
+                    }
+                  ],
+                  "details": [
+                    {
+                      "name": "titulo",
+                      "value": "Request to update contact email"
+                    },
+                    {
+                      "name": "descricao",
+                      "value": "The customer asked support to replace the primary contact email address on the account."
+                    }
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ],
+          "mdmEntities": []
+        },
+        "questions": [],
+        "trace": [
+          "Planning wave 2 contains only the core Chamado table.",
+          "Seeded three complete rows in the required operated state open.",
+          "No MDM entities are in this wave; no out-of-wave Comentario rows were created."
+        ]
+      }
+    },
+    "status": "completed",
+    "stepId": 9,
+    "interaction": null,
+    "nextSteps": null
+  }
+}

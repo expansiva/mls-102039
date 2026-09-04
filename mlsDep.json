@@ -1,15 +1,13 @@
 {
-  "workspaceDependencies": {
-    "102020": {
-      "repo": "https://github.com/expansiva/mls-102020.git",
-      "commit": ""
-    },
-    "102025": {
-      "repo": "https://github.com/expansiva/mls-102025.git",
-      "commit": ""
-    },
-    "102027": {
-      "repo": "https://github.com/expansiva/mls-102027.git"
-    }
-  }
+  "workspaceDependencies": [
+    "102020",
+    "102021",
+    "102025",
+    "102027",
+    "102029",
+    "102033",
+    "102034",
+    "102036",
+    "102039"
+  ]
 }

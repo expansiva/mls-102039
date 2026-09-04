@@ -1,0 +1,23 @@
+{
+  "draftVersion": "2026-08-10-ns4-usecase-draft-minimal-v3",
+  "planId": "e7-usecase",
+  "moduleName": "controleChamados",
+  "useCaseId": "registerChamado",
+  "title": "Registrar novo chamado",
+  "kind": "command",
+  "compiledFrom": [
+    "registrarChamado.registerChamado"
+  ],
+  "description": "Registra um novo chamado com seu estado inicial aberto ou fechado, disponibilizando-o para acompanhamento.",
+  "contexts": {
+    "requires": [],
+    "provides": [
+      "selectedChamado"
+    ]
+  },
+  "entityRefs": [
+    "Chamado"
+  ],
+  "useRules": [],
+  "transitions": []
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "2026-08-13-ns4-e2-impact-report-v2",
+  "moduleName": "controleChamados",
+  "generatedAt": "2026-09-04T01:37:46.174Z",
+  "stepKindHistogram": {
+    "locate": 2,
+    "inspect": 0,
+    "act": 2,
+    "decide": 1,
+    "handoff": 0
+  },
+  "changes": [
+    {
+      "journeyId": "fecharChamado",
+      "reason": "journeyNew"
+    },
+    {
+      "journeyId": "registrarChamado",
+      "reason": "journeyNew"
+    },
+    {
+      "journeyId": "registrarComentarioChamado",
+      "reason": "journeyNew"
+    }
+  ],
+  "affectedSteps": [
+    "e3-access-matrix",
+    "e4-ontology",
+    "e5-rules",
+    "e7-realization"
+  ]
+}

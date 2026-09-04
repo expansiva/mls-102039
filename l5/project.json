@@ -18,5 +18,68 @@
   "reasons": {},
   "services": [],
   "links": [],
-  "servicesConfigEnabled": false
+  "servicesConfigEnabled": false,
+  "appEnv": "presentation",
+  "projectType": "client",
+  "modules": [
+    {
+      "moduleName": "controleChamados",
+      "backend": {
+        "backendControllers": "./_102039_/l1/controleChamados/layer_1_external/adapters/http/controllers",
+        "persistence": {
+          "tableDefsDir": "./_102039_/l1/controleChamados/layer_1_external/adapters/persistence"
+        },
+        "routeKeys": [
+          "controleChamados.atendenteCatalogue.cmdCreateAtendente",
+          "controleChamados.atendenteCatalogue.cmdInactivateAtendente",
+          "controleChamados.atendenteCatalogue.cmdReactivateAtendente",
+          "controleChamados.atendenteCatalogue.cmdUpdateAtendente",
+          "controleChamados.atendenteCatalogue.qryGetAtendente",
+          "controleChamados.atendenteCatalogue.qryListAtendente",
+          "controleChamados.chamadoCatalogue.cmdCloseChamado",
+          "controleChamados.chamadoCatalogue.cmdCreateChamado",
+          "controleChamados.chamadoCatalogue.cmdDeleteChamado",
+          "controleChamados.chamadoCatalogue.cmdUpdateChamado",
+          "controleChamados.chamadoCatalogue.qryGetChamado",
+          "controleChamados.chamadoCatalogue.qryListChamado",
+          "controleChamados.chamadoCatalogue.qryLocateChamado",
+          "controleChamados.chamadoHub.qryListChamado",
+          "controleChamados.chamadoHub.qryListComentario",
+          "controleChamados.comentarioCatalogue.cmdCreateComentario",
+          "controleChamados.comentarioCatalogue.cmdDeleteComentario",
+          "controleChamados.comentarioCatalogue.cmdUpdateComentario",
+          "controleChamados.comentarioCatalogue.qryAtendentePicker",
+          "controleChamados.comentarioCatalogue.qryChamadoPicker",
+          "controleChamados.comentarioCatalogue.qryGetComentario",
+          "controleChamados.comentarioCatalogue.qryListComentario",
+          "controleChamados.registrarComentarioChamado.cmdRegisterComentario",
+          "controleChamados.registrarComentarioChamado.qryAtendentePicker",
+          "controleChamados.registrarComentarioChamado.qryLocateChamado"
+        ]
+      }
+    }
+  ],
+  "masters": {
+    "backend": {
+      "masterProject": 102021,
+      "agentFolder": "agentChangeBackend",
+      "runtimeProject": 102034
+    },
+    "frontend": {
+      "masterProject": 102020,
+      "agentFolder": "agentChangeFrontend",
+      "runtimeProject": 102033
+    }
+  },
+  "layouts": {
+    "1": {
+      "name": "Default"
+    },
+    "2": {
+      "name": "Ux 2"
+    },
+    "3": {
+      "name": "Ux 3"
+    }
+  }
 }

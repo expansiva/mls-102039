@@ -1,0 +1,30 @@
+{
+  "draftVersion": "2026-08-10-ns4-usecase-draft-minimal-v3",
+  "planId": "e7-usecase",
+  "moduleName": "controleChamados",
+  "useCaseId": "registerComentario",
+  "title": "Registrar comentário",
+  "kind": "command",
+  "compiledFrom": [
+    "registrarComentarioChamado.registerComentario"
+  ],
+  "description": "Registra um comentário vinculado ao chamado selecionado e identifica o atendente responsável pelo registro.",
+  "contexts": {
+    "requires": [
+      "selectedAtendente",
+      "selectedChamado"
+    ],
+    "provides": [
+      "selectedComentario"
+    ]
+  },
+  "entityRefs": [
+    "Atendente",
+    "Chamado",
+    "Comentario"
+  ],
+  "useRules": [
+    "comentariosPermitidosSomenteEmChamadosAbertos"
+  ],
+  "transitions": []
+}

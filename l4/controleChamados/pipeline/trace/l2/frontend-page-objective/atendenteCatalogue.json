@@ -1,0 +1,56 @@
+{
+  "savedAt": "2026-09-04T02:02:40.337Z",
+  "pageId": "atendenteCatalogue",
+  "genome": "page31",
+  "objective": {
+    "actor": "Atendente ou administrador responsável pelo cadastro e manutenção de atendentes no controle de chamados.",
+    "jobToBeDone": "Localizar um atendente e mantê-lo ativo e com o identificador de usuário da plataforma correto, ou cadastrar um novo atendente.",
+    "primaryDecision": "Selecionar o atendente correto e executar a ação necessária: corrigir o usuário da plataforma, desativar ou reativar; quando não existir, criar um novo registro.",
+    "decisiveInfo": [
+      "atendenteId",
+      "platformUserId",
+      "registro selecionado e seus dados carregados",
+      "resultado da listagem para localizar o atendente"
+    ],
+    "usageFrequency": "Ocasional e operacional, usado quando há inclusão, correção ou manutenção de cadastros de atendentes.",
+    "informationHierarchy": [
+      "lista de atendentes e identificador de usuário da plataforma",
+      "registro selecionado e dados atuais",
+      "ações de ciclo de vida válidas para o estado do registro",
+      "edição contextual do usuário da plataforma",
+      "criação de novo atendente",
+      "feedback de sucesso ou erro das operações"
+    ],
+    "successCriteria": "O usuário encontra o registro sem esforço, entende seus dados atuais antes de alterar ou mudar seu ciclo de vida, executa a ação contextual correta e vê confirmação ou erro, com a listagem atualizada após mudanças.",
+    "antiPatterns": [
+      "formulário CRUD expondo atendenteId como campo digitável",
+      "campo livre para editar status",
+      "seção separada para cada transição de ciclo de vida",
+      "duplicar a consulta de detalhe como tela independente da seleção",
+      "exigir digitação de identificadores já disponíveis na seleção",
+      "ocultar o registro selecionado durante a correção"
+    ],
+    "criticalActions": [
+      {
+        "action": "Localizar e selecionar um atendente",
+        "presentation": "master-detail"
+      },
+      {
+        "action": "Consultar os dados do atendente selecionado",
+        "presentation": "contextual-detail-load"
+      },
+      {
+        "action": "Corrigir o usuário da plataforma",
+        "presentation": "contextual-transition-actions"
+      },
+      {
+        "action": "Desativar ou reativar o atendente selecionado",
+        "presentation": "contextual-transition-actions"
+      },
+      {
+        "action": "Criar um novo atendente",
+        "presentation": "primary-button"
+      }
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+/// <mls fileReference="_102039_/l2/controleChamados/web/shared/comentarioCatalogue.test.ts" enhancement="_102020_/l2/enhancementAura"/>
+
+import type { ControleChamadosComentarioCatalogueBase } from '/_102039_/l2/controleChamados/web/shared/comentarioCatalogue.js';
+import type { CmdCreateComentarioInput, CmdCreateComentarioOutput, CmdDeleteComentarioInput, CmdDeleteComentarioOutput, CmdUpdateComentarioInput, CmdUpdateComentarioOutput, QryAtendentePickerOutput, QryChamadoPickerInput, QryChamadoPickerOutput, QryGetComentarioInput, QryGetComentarioOutput, QryListComentarioOutput } from '/_102039_/l2/controleChamados/web/contracts/comentarioCatalogue.js';
+
+type IsAny<T> = 0 extends (1 & T) ? true : false;
+type Assignable<Actual, Expected> = IsAny<Actual> extends true ? false : [Actual] extends [Expected] ? true : false;
+type Assert<T extends true> = T;
+
+declare const page: ControleChamadosComentarioCatalogueBase;
+
+// This file is generated from .defs.ts. Add narrower state/action assertions here as materialization rules evolve.
+type _State_status = Assert<Assignable<typeof page.status, string>>;
+type _State_uiScenary = Assert<Assignable<typeof page.uiScenary, "base" | "detail" | "createComentario" | "updateComentario">>;
+type _State_qryListComentarioState = Assert<Assignable<typeof page.qryListComentarioState, "idle" | "loading" | "success" | "error">>;
+type _State_qryListComentarioData = Assert<Assignable<typeof page.qryListComentarioData, unknown[] | QryListComentarioOutput>>;
+type _State_cmdCreateComentarioState = Assert<Assignable<typeof page.cmdCreateComentarioState, "idle" | "loading" | "success" | "error">>;
+type _State_cmdCreateComentarioChamadoId = Assert<Assignable<typeof page.cmdCreateComentarioChamadoId, string | CmdCreateComentarioInput["chamadoId"]>>;
+type _State_cmdCreateComentarioAtendenteId = Assert<Assignable<typeof page.cmdCreateComentarioAtendenteId, string | CmdCreateComentarioInput["atendenteId"]>>;
+type _State_cmdCreateComentarioConteudo = Assert<Assignable<typeof page.cmdCreateComentarioConteudo, string | CmdCreateComentarioInput["conteudo"]>>;
+type _State_cmdCreateComentarioOutput = Assert<Assignable<typeof page.cmdCreateComentarioOutput, CmdCreateComentarioOutput | null>>;
+type _State_cmdCreateComentarioError = Assert<Assignable<typeof page.cmdCreateComentarioError, string>>;
+type _State_cmdUpdateComentarioState = Assert<Assignable<typeof page.cmdUpdateComentarioState, "idle" | "loading" | "success" | "error">>;
+type _State_cmdUpdateComentarioComentarioId = Assert<Assignable<typeof page.cmdUpdateComentarioComentarioId, string | CmdUpdateComentarioInput["comentarioId"]>>;
+type _State_cmdUpdateComentarioChamadoId = Assert<Assignable<typeof page.cmdUpdateComentarioChamadoId, string | CmdUpdateComentarioInput["chamadoId"]>>;
+type _State_cmdUpdateComentarioAtendenteId = Assert<Assignable<typeof page.cmdUpdateComentarioAtendenteId, string | CmdUpdateComentarioInput["atendenteId"]>>;
+type _State_cmdUpdateComentarioConteudo = Assert<Assignable<typeof page.cmdUpdateComentarioConteudo, string | CmdUpdateComentarioInput["conteudo"]>>;
+type _State_cmdUpdateComentarioOutput = Assert<Assignable<typeof page.cmdUpdateComentarioOutput, CmdUpdateComentarioOutput | null>>;
+type _State_cmdUpdateComentarioError = Assert<Assignable<typeof page.cmdUpdateComentarioError, string>>;
+type _State_cmdDeleteComentarioState = Assert<Assignable<typeof page.cmdDeleteComentarioState, "idle" | "loading" | "success" | "error">>;
+type _State_cmdDeleteComentarioComentarioId = Assert<Assignable<typeof page.cmdDeleteComentarioComentarioId, string | CmdDeleteComentarioInput["comentarioId"]>>;
+type _State_cmdDeleteComentarioOutput = Assert<Assignable<typeof page.cmdDeleteComentarioOutput, CmdDeleteComentarioOutput | null>>;
+type _State_cmdDeleteComentarioError = Assert<Assignable<typeof page.cmdDeleteComentarioError, string>>;
+type _State_qryGetComentarioState = Assert<Assignable<typeof page.qryGetComentarioState, "idle" | "loading" | "success" | "error">>;
+type _State_qryGetComentarioComentarioId = Assert<Assignable<typeof page.qryGetComentarioComentarioId, string | QryGetComentarioInput["comentarioId"]>>;
+type _State_qryGetComentarioData = Assert<Assignable<typeof page.qryGetComentarioData, QryGetComentarioOutput | null>>;
+type _State_qryChamadoPickerState = Assert<Assignable<typeof page.qryChamadoPickerState, "idle" | "loading" | "success" | "error">>;
+type _State_qryChamadoPickerSortBy = Assert<Assignable<typeof page.qryChamadoPickerSortBy, "open" | "closed" | QryChamadoPickerInput["sortBy"] | ''>>;
+type _State_qryChamadoPickerSortOrder = Assert<Assignable<typeof page.qryChamadoPickerSortOrder, "asc" | "desc" | QryChamadoPickerInput["sortOrder"] | ''>>;
+type _State_qryChamadoPickerData = Assert<Assignable<typeof page.qryChamadoPickerData, unknown[] | QryChamadoPickerOutput>>;
+type _State_qryAtendentePickerState = Assert<Assignable<typeof page.qryAtendentePickerState, "idle" | "loading" | "success" | "error">>;
+type _State_qryAtendentePickerData = Assert<Assignable<typeof page.qryAtendentePickerData, unknown[] | QryAtendentePickerOutput>>;
+type _Action_loadQryListComentario = Assert<Assignable<typeof page.loadQryListComentario, (...args: any[]) => unknown>>;
+type _Handler_handleQryListComentarioClick = Assert<Assignable<typeof page.handleQryListComentarioClick, (...args: any[]) => unknown>>;
+type _Action_cmdCreateComentario = Assert<Assignable<typeof page.cmdCreateComentario, (...args: any[]) => unknown>>;
+type _Handler_handleCmdCreateComentarioClick = Assert<Assignable<typeof page.handleCmdCreateComentarioClick, (...args: any[]) => unknown>>;
+type _Action_cmdUpdateComentario = Assert<Assignable<typeof page.cmdUpdateComentario, (...args: any[]) => unknown>>;
+type _Handler_handleCmdUpdateComentarioClick = Assert<Assignable<typeof page.handleCmdUpdateComentarioClick, (...args: any[]) => unknown>>;
+type _Action_cmdDeleteComentario = Assert<Assignable<typeof page.cmdDeleteComentario, (...args: any[]) => unknown>>;
+type _Handler_handleCmdDeleteComentarioClick = Assert<Assignable<typeof page.handleCmdDeleteComentarioClick, (...args: any[]) => unknown>>;
+type _Action_loadQryGetComentario = Assert<Assignable<typeof page.loadQryGetComentario, (...args: any[]) => unknown>>;
+type _Handler_handleQryGetComentarioClick = Assert<Assignable<typeof page.handleQryGetComentarioClick, (...args: any[]) => unknown>>;
+type _Action_loadQryChamadoPicker = Assert<Assignable<typeof page.loadQryChamadoPicker, (...args: any[]) => unknown>>;
+type _Handler_handleQryChamadoPickerClick = Assert<Assignable<typeof page.handleQryChamadoPickerClick, (...args: any[]) => unknown>>;
+type _Action_loadQryAtendentePicker = Assert<Assignable<typeof page.loadQryAtendentePicker, (...args: any[]) => unknown>>;
+type _Handler_handleQryAtendentePickerClick = Assert<Assignable<typeof page.handleQryAtendentePickerClick, (...args: any[]) => unknown>>;
+type _Action_setCmdCreateComentarioChamadoId = Assert<Assignable<typeof page.setCmdCreateComentarioChamadoId, (...args: any[]) => unknown>>;
+type _Handler_handleCmdCreateComentarioChamadoIdChange = Assert<Assignable<typeof page.handleCmdCreateComentarioChamadoIdChange, (...args: any[]) => unknown>>;
+type _Action_setCmdCreateComentarioAtendenteId = Assert<Assignable<typeof page.setCmdCreateComentarioAtendenteId, (...args: any[]) => unknown>>;
+type _Handler_handleCmdCreateComentarioAtendenteIdChange = Assert<Assignable<typeof page.handleCmdCreateComentarioAtendenteIdChange, (...args: any[]) => unknown>>;
+type _Action_setCmdCreateComentarioConteudo = Assert<Assignable<typeof page.setCmdCreateComentarioConteudo, (...args: any[]) => unknown>>;
+type _Handler_handleCmdCreateComentarioConteudoChange = Assert<Assignable<typeof page.handleCmdCreateComentarioConteudoChange, (...args: any[]) => unknown>>;
+type _Action_setCmdUpdateComentarioComentarioId = Assert<Assignable<typeof page.setCmdUpdateComentarioComentarioId, (...args: any[]) => unknown>>;
+type _Handler_handleCmdUpdateComentarioComentarioIdChange = Assert<Assignable<typeof page.handleCmdUpdateComentarioComentarioIdChange, (...args: any[]) => unknown>>;
+type _Action_setCmdUpdateComentarioChamadoId = Assert<Assignable<typeof page.setCmdUpdateComentarioChamadoId, (...args: any[]) => unknown>>;
+type _Handler_handleCmdUpdateComentarioChamadoIdChange = Assert<Assignable<typeof page.handleCmdUpdateComentarioChamadoIdChange, (...args: any[]) => unknown>>;
+type _Action_setCmdUpdateComentarioAtendenteId = Assert<Assignable<typeof page.setCmdUpdateComentarioAtendenteId, (...args: any[]) => unknown>>;
+type _Handler_handleCmdUpdateComentarioAtendenteIdChange = Assert<Assignable<typeof page.handleCmdUpdateComentarioAtendenteIdChange, (...args: any[]) => unknown>>;
+type _Action_setCmdUpdateComentarioConteudo = Assert<Assignable<typeof page.setCmdUpdateComentarioConteudo, (...args: any[]) => unknown>>;
+type _Handler_handleCmdUpdateComentarioConteudoChange = Assert<Assignable<typeof page.handleCmdUpdateComentarioConteudoChange, (...args: any[]) => unknown>>;
+type _Action_setCmdDeleteComentarioComentarioId = Assert<Assignable<typeof page.setCmdDeleteComentarioComentarioId, (...args: any[]) => unknown>>;
+type _Handler_handleCmdDeleteComentarioComentarioIdChange = Assert<Assignable<typeof page.handleCmdDeleteComentarioComentarioIdChange, (...args: any[]) => unknown>>;
+type _Action_setQryGetComentarioComentarioId = Assert<Assignable<typeof page.setQryGetComentarioComentarioId, (...args: any[]) => unknown>>;
+type _Handler_handleQryGetComentarioComentarioIdChange = Assert<Assignable<typeof page.handleQryGetComentarioComentarioIdChange, (...args: any[]) => unknown>>;
+type _Action_setQryChamadoPickerSortBy = Assert<Assignable<typeof page.setQryChamadoPickerSortBy, (...args: any[]) => unknown>>;
+type _Handler_handleQryChamadoPickerSortByChange = Assert<Assignable<typeof page.handleQryChamadoPickerSortByChange, (...args: any[]) => unknown>>;
+type _Action_setQryChamadoPickerSortOrder = Assert<Assignable<typeof page.setQryChamadoPickerSortOrder, (...args: any[]) => unknown>>;
+type _Handler_handleQryChamadoPickerSortOrderChange = Assert<Assignable<typeof page.handleQryChamadoPickerSortOrderChange, (...args: any[]) => unknown>>;
+
+export {};

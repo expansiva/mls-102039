@@ -1,0 +1,69 @@
+{
+  "planId": "e3-access-review",
+  "moduleName": "controleChamados",
+  "userLanguage": "pt-BR",
+  "title": "Matriz de acesso",
+  "reviewRound": 1,
+  "profiles": [
+    {
+      "profileId": "atendente",
+      "title": "Atendente",
+      "kind": "internal",
+      "description": "Profissional interno responsável por registrar, acompanhar, comentar e concluir chamados.",
+      "actorRefs": [
+        "atendente"
+      ],
+      "landingIntent": "Acessar o catálogo de chamados para registrar novos atendimentos e acompanhar os chamados existentes."
+    }
+  ],
+  "authorities": [
+    {
+      "authorityRef": "controlechamados:gerenciar",
+      "title": "Gerenciar chamados e comentários",
+      "description": "Permite registrar chamados, consultar chamados disponíveis, adicionar comentários em chamados abertos e confirmar o fechamento de chamados abertos.",
+      "journeyStepRefs": [
+        "registrarChamado.registerChamado",
+        "registrarComentarioChamado.locateChamado",
+        "registrarComentarioChamado.registerComentario",
+        "fecharChamado.locateChamado",
+        "fecharChamado.closeChamado"
+      ],
+      "informationNeeds": [
+        "Dados completos dos chamados para acompanhamento",
+        "Comentários vinculados aos chamados",
+        "Status atual de cada chamado"
+      ]
+    }
+  ],
+  "grants": [
+    {
+      "profileRef": "atendente",
+      "authorityRef": "controlechamados:gerenciar",
+      "reason": "O atendente é o único perfil previsto e precisa executar todo o ciclo de atendimento, desde o registro até o fechamento do chamado.",
+      "dataScope": {
+        "mode": "organization",
+        "description": "Todos os chamados e comentários pertencentes à organização ativa do atendente."
+      },
+      "disclosure": {
+        "mode": "fullRecord",
+        "description": "O atendente pode acessar os dados completos necessários para registrar, acompanhar, comentar e fechar chamados.",
+        "allowedInformation": [
+          "Título do chamado",
+          "Descrição do chamado",
+          "Status aberto ou fechado",
+          "Comentários vinculados ao chamado",
+          "Identificação do atendente que registrou o comentário"
+        ],
+        "deniedInformation": []
+      },
+      "useRules": [
+        "comentariosPermitidosSomenteEmChamadosAbertos",
+        "fechamentoExigeChamadoAberto",
+        "chamadoFechadoNaoPodeSerReaberto"
+      ]
+    }
+  ],
+  "changeSummary": [
+    "Proposta inicial da matriz de acesso com um único perfil interno de atendente e uma autoridade para o ciclo completo de chamados."
+  ]
+}

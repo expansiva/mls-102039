@@ -1,0 +1,175 @@
+{
+  "planId": "e2-review",
+  "moduleName": "controleChamados",
+  "userLanguage": "pt-BR",
+  "title": "Revisar jornadas de negócio",
+  "reviewRound": 1,
+  "journeys": [
+    {
+      "journeyId": "registrarComentarioChamado",
+      "policyDecisions": [
+        {
+          "decisionId": "commentingAfterClosurePolicy",
+          "question": "Comentários podem ser registrados após o fechamento do chamado?",
+          "chosen": "Somente chamados abertos podem receber comentários.",
+          "alternatives": [
+            "Somente chamados abertos podem receber comentários.",
+            "Chamados fechados também podem receber comentários."
+          ]
+        }
+      ],
+      "business": {
+        "actorRef": "atendente",
+        "title": "Registrar comentário em chamado aberto",
+        "goal": "Manter o acompanhamento de um chamado aberto por meio de um comentário vinculado.",
+        "entry": {
+          "mode": "contextOrLookup"
+        },
+        "steps": [
+          {
+            "stepId": "locateChamado",
+            "kind": "locate",
+            "entity": "Chamado",
+            "title": "Localizar o chamado aberto",
+            "description": "Um chamado aberto, disponível no catálogo de chamados, está selecionado.",
+            "featureRefs": [
+              "acompanhamentoChamados"
+            ]
+          },
+          {
+            "stepId": "registerComentario",
+            "kind": "act",
+            "entity": "Comentario",
+            "title": "Registrar comentário",
+            "description": "Um comentário fica registrado e vinculado ao chamado selecionado.",
+            "featureRefs": [
+              "acompanhamentoChamados"
+            ]
+          }
+        ],
+        "outcome": {
+          "statement": "O acompanhamento do chamado passa a contar com um comentário registrado pelo atendente.",
+          "evidence": [
+            "O comentário permanece vinculado ao chamado selecionado.",
+            "O comentário identifica seu conteúdo e o atendente que o registrou."
+          ]
+        },
+        "useRules": [
+          "comentariosPermitidosSomenteEmChamadosAbertos"
+        ]
+      }
+    },
+    {
+      "journeyId": "fecharChamado",
+      "policyDecisions": [
+        {
+          "decisionId": "closedChamadoFinalityPolicy",
+          "question": "Um chamado fechado pode voltar a ser aberto?",
+          "chosen": "O fechamento é definitivo e o chamado não pode ser reaberto.",
+          "alternatives": [
+            "O fechamento é definitivo e o chamado não pode ser reaberto.",
+            "O atendente pode reabrir um chamado fechado."
+          ]
+        }
+      ],
+      "business": {
+        "actorRef": "atendente",
+        "title": "Fechar chamado aberto",
+        "goal": "Concluir o atendimento de um chamado aberto, alterando seu status para fechado.",
+        "entry": {
+          "mode": "contextOrLookup"
+        },
+        "steps": [
+          {
+            "stepId": "locateChamado",
+            "kind": "locate",
+            "entity": "Chamado",
+            "title": "Localizar o chamado aberto",
+            "description": "Um chamado aberto, disponível no catálogo de chamados, está selecionado para conclusão.",
+            "featureRefs": [
+              "acompanhamentoChamados"
+            ]
+          },
+          {
+            "stepId": "closeChamado",
+            "kind": "decide",
+            "entity": "Chamado",
+            "title": "Confirmar o fechamento do chamado",
+            "description": "O chamado selecionado passa a ter o status fechado.",
+            "featureRefs": [
+              "acompanhamentoChamados"
+            ]
+          }
+        ],
+        "outcome": {
+          "statement": "O chamado é concluído e seu status fechado torna-se observável no acompanhamento.",
+          "evidence": [
+            "O status do chamado é exibido como fechado.",
+            "O fechamento permanece associado ao chamado selecionado."
+          ]
+        },
+        "useRules": [
+          "fechamentoExigeChamadoAberto",
+          "chamadoFechadoNaoPodeSerReaberto"
+        ]
+      }
+    },
+    {
+      "journeyId": "registrarChamado",
+      "policyDecisions": [
+        {
+          "decisionId": "demoteRegistrarChamadoToRecordCatalogue",
+          "question": "Registrar chamado não tem decisão nem repasse: vira a tela de cadastro padrão de Chamado?",
+          "chosen": "Tela de cadastro padrão de Chamado",
+          "alternatives": [
+            "Tela de cadastro padrão de Chamado",
+            "Manter Registrar chamado como jornada própria"
+          ]
+        }
+      ],
+      "business": {
+        "actorRef": "atendente",
+        "title": "Registrar chamado",
+        "goal": "Cadastrar um novo chamado com título, descrição e status inicial.",
+        "entry": {
+          "mode": "coldStart"
+        },
+        "steps": [
+          {
+            "stepId": "registerChamado",
+            "kind": "act",
+            "entity": "Chamado",
+            "title": "Registrar novo chamado",
+            "description": "O atendente informa o título, a descrição e o status inicial aberto ou fechado; um novo chamado é criado e disponibilizado no catálogo para acompanhamento.",
+            "featureRefs": [
+              "acompanhamentoChamados"
+            ]
+          }
+        ],
+        "outcome": {
+          "statement": "Um novo chamado é registrado com título, descrição e status inicial aberto ou fechado, ficando disponível para acompanhamento.",
+          "evidence": [
+            "O chamado registrado exibe título, descrição e seu status inicial.",
+            "O novo chamado está disponível no catálogo de chamados para comentários e fechamento quando estiver aberto."
+          ]
+        },
+        "useRules": []
+      }
+    }
+  ],
+  "features": [
+    {
+      "featureId": "acompanhamentoChamados",
+      "title": "Acompanhamento e fechamento de chamados",
+      "priority": "now",
+      "journeyStepRefs": [
+        "registrarChamado.registerChamado",
+        "registrarComentarioChamado.locateChamado",
+        "registrarComentarioChamado.registerComentario",
+        "fecharChamado.locateChamado",
+        "fecharChamado.closeChamado"
+      ]
+    }
+  ],
+  "systemDecisions": []
+}

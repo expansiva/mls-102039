@@ -1,0 +1,43 @@
+{
+  "savedAt": "2026-09-04T02:09:56.429Z",
+  "planId": "materialize-phase-pages-verify-v2-v3-v4",
+  "attempt": 4,
+  "brokenCount": 2,
+  "broken": [
+    {
+      "planId": "materialize-atendentecatalogue-page21-l2-page",
+      "defPath": "_102039_/l2/controleChamados/web/desktop/page21/atendenteCatalogue.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page21/atendenteCatalogue.ts",
+      "typecheck": "not-applicable",
+      "errors": [
+        "cmdInactivateAtendente button is clickable with empty required atendenteId: bind ?disabled to cmdInactivateAtendenteAtendenteId and set title to the missing-precondition hint",
+        "cmdReactivateAtendente button is clickable with empty required atendenteId: bind ?disabled to cmdReactivateAtendenteAtendenteId and set title to the missing-precondition hint"
+      ],
+      "warnings": [
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdCreateAtendente",
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdUpdateAtendente",
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdInactivateAtendente",
+        "atendenteCatalogue: generated page does not render textual mutation feedback: cmdReactivateAtendente"
+      ],
+      "severity": "repair"
+    },
+    {
+      "planId": "materialize-registrarcomentariochamado-page21-l2-page",
+      "defPath": "_102039_/l2/controleChamados/web/desktop/page21/registrarComentarioChamado.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page21/registrarComentarioChamado.ts",
+      "typecheck": "not-applicable",
+      "errors": [
+        "contract field missing -> `item.atendenteId` is not declared by qryLocateChamado: its output is chamadoId, descricao, status, titulo. A field that only exists in the output of a COMMAND is read from that command's state, never from the query record",
+        "contract field missing -> `item.platformUserId` is not declared by qryLocateChamado: its output is chamadoId, descricao, status, titulo. A field that only exists in the output of a COMMAND is read from that command's state, never from the query record",
+        "cmdRegisterComentario button is clickable with empty required atendenteId: bind ?disabled to cmdRegisterComentarioAtendenteId and set title to the missing-precondition hint",
+        "cmdRegisterComentario button is clickable with empty required chamadoId: bind ?disabled to cmdRegisterComentarioChamadoId and set title to the missing-precondition hint"
+      ],
+      "warnings": [
+        "registrarComentarioChamado: generated page does not render textual mutation feedback: cmdRegisterComentario",
+        "cmdRegisterComentario.atendenteId is a technical id with source 'selectedentity' and this page has NO query that could populate a picker for it (L4-LOOKUP-GAP): the l4 workspace must expose a lookup query for the referenced entity — rewriting this page cannot fix it"
+      ],
+      "severity": "repair"
+    }
+  ],
+  "agent": "agentCfeMaterializePhase"
+}

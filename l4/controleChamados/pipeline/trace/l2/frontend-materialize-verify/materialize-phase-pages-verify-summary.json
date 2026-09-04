@@ -1,0 +1,209 @@
+{
+  "savedAt": "2026-09-04T02:09:56.427Z",
+  "phase": "materialize-phase-pages-verify",
+  "lastRoundPlanId": "materialize-phase-pages-verify-v2-v3-v4",
+  "attempt": 4,
+  "final": true,
+  "allClear": true,
+  "blockedCount": 0,
+  "repairedCount": 10,
+  "declaredCount": 12,
+  "passedCount": 13,
+  "passed": [
+    {
+      "planId": "materialize-registrarcomentariochamado-l2-page",
+      "typecheck": "passed"
+    },
+    {
+      "planId": "materialize-chamadohub-page21-l2-page",
+      "typecheck": "not-applicable"
+    },
+    {
+      "planId": "materialize-chamadohub-page31-l2-page",
+      "typecheck": "not-applicable"
+    },
+    {
+      "planId": "materialize-atendentecatalogue-l2-page",
+      "typecheck": "passed"
+    },
+    {
+      "planId": "materialize-chamadocatalogue-l2-page",
+      "typecheck": "passed"
+    },
+    {
+      "planId": "materialize-chamadohub-l2-page",
+      "typecheck": "passed"
+    },
+    {
+      "planId": "materialize-comentariocatalogue-l2-page",
+      "typecheck": "passed"
+    },
+    {
+      "planId": "materialize-chamadocatalogue-page21-l2-page",
+      "typecheck": "not-applicable"
+    },
+    {
+      "planId": "materialize-atendentecatalogue-page31-l2-page",
+      "typecheck": "not-applicable"
+    },
+    {
+      "planId": "materialize-registrarcomentariochamado-page31-l2-page",
+      "typecheck": "not-applicable"
+    },
+    {
+      "planId": "materialize-comentariocatalogue-page21-l2-page",
+      "typecheck": "not-applicable"
+    },
+    {
+      "planId": "materialize-chamadocatalogue-page31-l2-page",
+      "typecheck": "not-applicable"
+    },
+    {
+      "planId": "materialize-comentariocatalogue-page31-l2-page",
+      "typecheck": "not-applicable"
+    }
+  ],
+  "repaired": [
+    {
+      "planId": "materialize-atendentecatalogue-l2-page",
+      "typecheck": "passed"
+    },
+    {
+      "planId": "materialize-chamadocatalogue-l2-page",
+      "typecheck": "passed"
+    },
+    {
+      "planId": "materialize-chamadohub-l2-page",
+      "typecheck": "passed"
+    },
+    {
+      "planId": "materialize-comentariocatalogue-l2-page",
+      "typecheck": "passed"
+    },
+    {
+      "planId": "materialize-chamadocatalogue-page21-l2-page",
+      "typecheck": "not-applicable"
+    },
+    {
+      "planId": "materialize-atendentecatalogue-page31-l2-page",
+      "typecheck": "not-applicable"
+    },
+    {
+      "planId": "materialize-registrarcomentariochamado-page31-l2-page",
+      "typecheck": "not-applicable"
+    },
+    {
+      "planId": "materialize-comentariocatalogue-page21-l2-page",
+      "typecheck": "not-applicable"
+    },
+    {
+      "planId": "materialize-chamadocatalogue-page31-l2-page",
+      "typecheck": "not-applicable"
+    },
+    {
+      "planId": "materialize-comentariocatalogue-page31-l2-page",
+      "typecheck": "not-applicable"
+    }
+  ],
+  "declared": [
+    {
+      "planId": "materialize-registrarcomentariochamado-l2-page",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page11/registrarComentarioChamado.ts",
+      "errorCount": 1,
+      "warningCount": 0,
+      "firstError": "registrarComentarioChamado: generated page does not render textual mutation feedback: cmdRegisterComentario",
+      "severity": "declared"
+    },
+    {
+      "planId": "materialize-atendentecatalogue-l2-page",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page11/atendenteCatalogue.ts",
+      "errorCount": 1,
+      "warningCount": 0,
+      "firstError": "atendenteCatalogue: generated page does not render textual mutation feedback: cmdCreateAtendente",
+      "severity": "declared"
+    },
+    {
+      "planId": "materialize-chamadocatalogue-l2-page",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page11/chamadoCatalogue.ts",
+      "errorCount": 1,
+      "warningCount": 0,
+      "firstError": "chamadoCatalogue: generated page does not render textual mutation feedback: cmdCreateChamado",
+      "severity": "declared"
+    },
+    {
+      "planId": "materialize-comentariocatalogue-l2-page",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page11/comentarioCatalogue.ts",
+      "errorCount": 1,
+      "warningCount": 0,
+      "firstError": "comentarioCatalogue: generated page does not render textual mutation feedback: cmdCreateComentario",
+      "severity": "declared"
+    },
+    {
+      "planId": "materialize-chamadocatalogue-page21-l2-page",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page21/chamadoCatalogue.ts",
+      "errorCount": 1,
+      "warningCount": 0,
+      "firstError": "chamadoCatalogue: generated page does not render textual mutation feedback: cmdCreateChamado",
+      "severity": "declared"
+    },
+    {
+      "planId": "materialize-atendentecatalogue-page31-l2-page",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page31/atendenteCatalogue.ts",
+      "errorCount": 1,
+      "warningCount": 0,
+      "firstError": "atendenteCatalogue: generated page does not render textual mutation feedback: cmdCreateAtendente",
+      "severity": "declared"
+    },
+    {
+      "planId": "materialize-registrarcomentariochamado-page31-l2-page",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page31/registrarComentarioChamado.ts",
+      "errorCount": 1,
+      "warningCount": 0,
+      "firstError": "registrarComentarioChamado: generated page does not render textual mutation feedback: cmdRegisterComentario",
+      "severity": "declared"
+    },
+    {
+      "planId": "materialize-comentariocatalogue-page21-l2-page",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page21/comentarioCatalogue.ts",
+      "errorCount": 1,
+      "warningCount": 0,
+      "firstError": "comentarioCatalogue: generated page does not render textual mutation feedback: cmdCreateComentario",
+      "severity": "declared"
+    },
+    {
+      "planId": "materialize-chamadocatalogue-page31-l2-page",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page31/chamadoCatalogue.ts",
+      "errorCount": 1,
+      "warningCount": 0,
+      "firstError": "chamadoCatalogue: generated page does not render textual mutation feedback: cmdCreateChamado",
+      "severity": "declared"
+    },
+    {
+      "planId": "materialize-comentariocatalogue-page31-l2-page",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page31/comentarioCatalogue.ts",
+      "errorCount": 1,
+      "warningCount": 0,
+      "firstError": "comentarioCatalogue: generated page does not render textual mutation feedback: cmdCreateComentario",
+      "severity": "declared"
+    },
+    {
+      "planId": "materialize-atendentecatalogue-page21-l2-page",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page21/atendenteCatalogue.ts",
+      "errorCount": 2,
+      "warningCount": 4,
+      "firstError": "cmdInactivateAtendente button is clickable with empty required atendenteId: bind ?disabled to cmdInactivateAtendenteAtendenteId and set title to the missing-precondition hint",
+      "severity": "declared"
+    },
+    {
+      "planId": "materialize-registrarcomentariochamado-page21-l2-page",
+      "outputPath": "_102039_/l2/controleChamados/web/desktop/page21/registrarComentarioChamado.ts",
+      "errorCount": 4,
+      "warningCount": 2,
+      "firstError": "contract field missing -> `item.atendenteId` is not declared by qryLocateChamado: its output is chamadoId, descricao, status, titulo. A field that only exists in the output of a COMMAND is read from that command's state, never from the query record",
+      "severity": "declared"
+    }
+  ],
+  "brokenCount": 0,
+  "broken": [],
+  "agent": "agentCfeMaterializePhase"
+}

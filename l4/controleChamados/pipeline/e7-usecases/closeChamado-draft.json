@@ -1,0 +1,39 @@
+{
+  "draftVersion": "2026-08-10-ns4-usecase-draft-minimal-v3",
+  "planId": "e7-usecase",
+  "moduleName": "controleChamados",
+  "useCaseId": "closeChamado",
+  "title": "Confirmar o fechamento do chamado",
+  "kind": "command",
+  "compiledFrom": [
+    "fecharChamado.closeChamado"
+  ],
+  "description": "Confirma o fechamento do chamado selecionado, alterando seu status de aberto para fechado.",
+  "contexts": {
+    "requires": [
+      "selectedChamado"
+    ],
+    "provides": [
+      "selectedChamado"
+    ]
+  },
+  "entityRefs": [
+    "Chamado"
+  ],
+  "useRules": [
+    "fechamentoExigeChamadoAberto"
+  ],
+  "transitions": [
+    {
+      "transitionId": "closeChamado",
+      "entityRef": "Chamado",
+      "fromStates": [
+        "open"
+      ],
+      "toState": "closed",
+      "useRules": [
+        "fechamentoExigeChamadoAberto"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "planId": "e4-ontology-review",
+  "moduleName": "controleChamados",
+  "userLanguage": "pt-BR",
+  "title": "Ontologia de negócios do Controle de Chamados",
+  "reviewRound": 1,
+  "solutionMode": "new",
+  "businessDomain": "Registro, acompanhamento, comentários e fechamento de chamados",
+  "entities": [
+    {
+      "entityId": "Chamado",
+      "title": "Chamado",
+      "description": "Registro operacional de uma solicitação de atendimento, com título, descrição e status de acompanhamento aberto ou fechado.",
+      "kind": "core",
+      "ownership": "moduleOwned",
+      "party": "none",
+      "sourceRefs": {
+        "journeyIds": [
+          "registrarChamado",
+          "registrarComentarioChamado",
+          "fecharChamado"
+        ],
+        "featureIds": [
+          "acompanhamentoChamados"
+        ],
+        "authorityRefs": [
+          "controlechamados:gerenciar"
+        ]
+      },
+      "fields": [
+        {
+          "fieldId": "chamadoId",
+          "title": "Identificador do chamado",
+          "type": "uuid",
+          "required": true,
+          "description": "Identificador estável do chamado, transportado entre as etapas de acompanhamento.",
+          "constraints": [
+            {
+              "constraintId": "uniqueChamadoId",
+              "kind": "unique",
+              "value": "true",
+              "description": "Cada chamado possui um identificador estável exclusivo.",
+              "source": "inferred"
+            }
+          ]
+        },
+        {
+          "fieldId": "titulo",
+          "title": "Título",
+          "type": "string",
+          "required": true,
+          "description": "Resumo do assunto ou solicitação de atendimento registrada no chamado.",
+          "constraints": []
+        },
+        {
+          "fieldId": "descricao",
+          "title": "Descrição",
+          "type": "text",
+          "required": true,
+          "description": "Detalhamento da solicitação de atendimento registrada no chamado.",
+          "constraints": []
+        },
+        {
+          "fieldId": "status",
+          "title": "Status",
+          "type": "string",
+          "required": true,
+          "description": "Situação atual do acompanhamento do chamado.",
+          "constraints": [
+            {
+              "constraintId": "statusEnum",
+              "kind": "enum",
+              "value": "[\"open\",\"closed\"]",
+              "description": "Status permitidos para o ciclo de atendimento do chamado.",
+              "source": "journey"
+            }
+          ],
+          "enum": [
+            "open",
+            "closed"
+          ]
+        }
+      ],
+      "lifecycleStates": [
+        "open",
+        "closed"
+      ],
+      "statusEnum": [
+        "open",
+        "closed"
+      ],
+      "lifecycleLabels": [
+        {
+          "code": "open",
+          "label": "Aberto"
+        },
+        {
+          "code": "closed",
+          "label": "Fechado"
+        }
+      ],
+      "initialState": "open",
+      "terminalStates": [
+        "closed"
+      ],
+      "lifecyclePredicates": [
+        {
+          "predicateId": "openChamado",
+          "description": "Um chamado está aberto quando pode receber comentários e pode ser fechado pelo atendente.",
+          "stateIds": [
+            "open"
+          ],
+          "source": "journey"
+        },
+        {
+          "predicateId": "closedChamado",
+          "description": "Um chamado está fechado quando seu atendimento foi concluído definitivamente e não pode ser reaberto.",
+          "stateIds": [
+            "closed"
+          ],
+          "source": "journey"
+        }
+      ],
+      "useRules": [
+        "comentariosPermitidosSomenteEmChamadosAbertos",
+        "fechamentoExigeChamadoAberto",
+        "chamadoFechadoNaoPodeSerReaberto"
+      ],
+      "storage": {
+        "target": "moduleDatabase",
+        "scope": "module",
+        "idField": "chamadoId",
+        "notes": "Chamado é um registro operacional da solução e deve ser persistido no banco transacional do módulo. O cadastro pode resultar em chamado fechado quando o fechamento for confirmado no próprio registro, sem permitir reabertura posterior."
+      }
+    },
+    {
+      "entityId": "Comentario",
+      "title": "Comentário",
+      "description": "Registro de acompanhamento escrito por um atendente e vinculado a um chamado aberto.",
+      "kind": "core",
+      "ownership": "moduleOwned",
+      "party": "none",
+      "sourceRefs": {
+        "journeyIds": [
+          "registrarComentarioChamado"
+        ],
+        "featureIds": [
+          "acompanhamentoChamados"
+        ],
+        "authorityRefs": [
+          "controlechamados:gerenciar"
+        ]
+      },
+      "fields": [
+        {
+          "fieldId": "comentarioId",
+          "title": "Identificador do comentário",
+          "type": "uuid",
+          "required": true,
+          "description": "Identificador estável do comentário persistido no histórico de acompanhamento.",
+          "constraints": [
+            {
+              "constraintId": "uniqueComentarioId",
+              "kind": "unique",
+              "value": "true",
+              "description": "Cada comentário possui um identificador estável e exclusivo.",
+              "source": "inferred"
+            }
+          ]
+        },
+        {
+          "fieldId": "chamadoId",
+          "title": "Chamado",
+          "type": "uuid",
+          "required": true,
+          "description": "Chamado aberto selecionado ao qual o comentário pertence.",
+          "constraints": []
+        },
+        {
+          "fieldId": "atendenteId",
+          "title": "Atendente que registrou",
+          "type": "uuid",
+          "required": true,
+          "description": "Atendente autenticado identificado como responsável pelo registro do comentário.",
+          "constraints": []
+        },
+        {
+          "fieldId": "conteudo",
+          "title": "Comentário",
+          "type": "text",
+          "required": true,
+          "description": "Texto de acompanhamento escrito pelo atendente para o chamado.",
+          "constraints": [
+            {
+              "constraintId": "conteudoMinLength",
+              "kind": "minLength",
+              "value": "1",
+              "description": "O comentário deve conter texto.",
+              "source": "journey"
+            }
+          ]
+        }
+      ],
+      "lifecycleStates": [],
+      "lifecyclePredicates": [],
+      "useRules": [
+        "comentariosPermitidosSomenteEmChamadosAbertos"
+      ],
+      "storage": {
+        "target": "moduleDatabase",
+        "scope": "module",
+        "idField": "comentarioId",
+        "notes": "Comentário é um evento operacional persistido para manter o histórico de acompanhamento do chamado e a identificação do atendente que o registrou."
+      }
+    },
+    {
+      "entityId": "Atendente",
+      "title": "Atendente",
+      "description": "Profissional interno identificado como responsável pelo registro de comentários nos chamados da organização.",
+      "kind": "mdm",
+      "ownership": "moduleOwned",
+      "party": "person",
+      "sourceRefs": {
+        "journeyIds": [
+          "registrarComentarioChamado"
+        ],
+        "featureIds": [
+          "acompanhamentoChamados"
+        ],
+        "authorityRefs": [
+          "controlechamados:gerenciar"
+        ]
+      },
+      "fields": [
+        {
+          "fieldId": "atendenteId",
+          "title": "Identificador do atendente",
+          "type": "uuid",
+          "required": true,
+          "description": "Identificador estável do atendente reutilizado entre os módulos da organização.",
+          "constraints": [
+            {
+              "constraintId": "uniqueAtendenteId",
+              "kind": "unique",
+              "value": "true",
+              "description": "Cada atendente possui um identificador estável e exclusivo.",
+              "source": "inferred"
+            }
+          ]
+        },
+        {
+          "fieldId": "platformUserId",
+          "title": "Usuário da plataforma",
+          "type": "uuid",
+          "required": true,
+          "description": "Referência ao usuário correspondente no diretório da plataforma, sem duplicar dados de login.",
+          "constraints": [
+            {
+              "constraintId": "uniquePlatformUserId",
+              "kind": "unique",
+              "value": "true",
+              "description": "Um usuário da plataforma corresponde a apenas um atendente neste cadastro MDM.",
+              "source": "inferred"
+            }
+          ]
+        }
+      ],
+      "lifecycleStates": [],
+      "lifecyclePredicates": [],
+      "useRules": [],
+      "storage": {
+        "target": "mdm",
+        "scope": "organization",
+        "idField": "atendenteId",
+        "mdmType": "controleChamados.Atendente",
+        "notes": "Atendente é uma pessoa da organização reutilizável entre módulos e deve ser persistido no MDM. Seu detalhamento deverá conter a referência externa obrigatória platformUserId para o usuário correspondente no diretório da plataforma, sem duplicar o login."
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipId": "comentarioSobreChamado",
+      "fromEntity": "Comentario",
+      "toEntity": "Chamado",
+      "type": "manyToOne",
+      "required": true,
+      "description": "Cada comentário pertence a um único chamado previamente selecionado no acompanhamento.",
+      "persistence": {
+        "mode": "moduleReference"
+      },
+      "realization": {
+        "kind": "fieldReference",
+        "ownerEntity": "Comentario",
+        "from": {
+          "entityId": "Comentario",
+          "fieldIds": [
+            "chamadoId"
+          ]
+        },
+        "to": {
+          "entityId": "Chamado",
+          "fieldIds": [
+            "chamadoId"
+          ]
+        },
+        "description": "Comentario.chamadoId referencia o identificador do Chamado ao qual o comentário pertence."
+      }
+    },
+    {
+      "relationshipId": "comentarioRegistradoPorAtendente",
+      "fromEntity": "Comentario",
+      "toEntity": "Atendente",
+      "type": "manyToOne",
+      "required": true,
+      "description": "Cada comentário identifica o atendente autenticado que o registrou.",
+      "persistence": {
+        "mode": "crossStoreReference"
+      },
+      "realization": {
+        "kind": "fieldReference",
+        "ownerEntity": "Comentario",
+        "from": {
+          "entityId": "Comentario",
+          "fieldIds": [
+            "atendenteId"
+          ]
+        },
+        "to": {
+          "entityId": "Atendente",
+          "fieldIds": [
+            "atendenteId"
+          ]
+        },
+        "description": "Comentario.atendenteId referencia o identificador MDM do Atendente que registrou o comentário."
+      }
+    }
+  ],
+  "changeSummary": [
+    "Ontologia inicial criada para uma nova solução, com registros operacionais de chamados e comentários.",
+    "O ciclo de vida de Chamado foi congelado como aberto e fechado, sendo fechado um estado terminal sem reabertura.",
+    "Foi incluído o Atendente como pessoa MDM vinculada ao usuário da plataforma para sustentar a identificação obrigatória de quem registra comentários."
+  ],
+  "systemDecisions": []
+}

@@ -1,0 +1,14 @@
+{
+  "savedAt": "2026-09-04T02:06:26.099Z",
+  "planId": "materialize-atendentecatalogue-l2-page",
+  "attempt": 2,
+  "findings": [
+    "cmdUpdateAtendente disabled button has no title hint for empty atendenteId",
+    "cmdInactivateAtendente disabled button has no title hint for empty atendenteId",
+    "cmdReactivateAtendente disabled button has no title hint for empty atendenteId",
+    "atendenteCatalogue: generated page does not render textual mutation feedback: cmdCreateAtendente",
+    "atendenteCatalogue: generated page does not render textual mutation feedback: cmdUpdateAtendente",
+    "atendenteCatalogue: generated page does not render textual mutation feedback: cmdInactivateAtendente",
+    "atendenteCatalogue: generated page does not render textual mutation feedback: cmdReactivateAtendente"
+  ]
+}

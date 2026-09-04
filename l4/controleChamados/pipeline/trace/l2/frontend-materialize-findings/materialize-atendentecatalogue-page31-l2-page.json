@@ -1,0 +1,16 @@
+{
+  "savedAt": "2026-09-04T02:06:26.123Z",
+  "planId": "materialize-atendentecatalogue-page31-l2-page",
+  "attempt": 2,
+  "findings": [
+    "cmdInactivateAtendente.atendenteId has no selection control: click a list row (visible selected state + setCmdInactivateAtendenteAtendenteId(id)) or render a <select> bound to cmdInactivateAtendenteAtendenteId — never a dead table",
+    "cmdReactivateAtendente.atendenteId has no selection control: click a list row (visible selected state + setCmdReactivateAtendenteAtendenteId(id)) or render a <select> bound to cmdReactivateAtendenteAtendenteId — never a dead table",
+    "cmdUpdateAtendente disabled button has no title hint for empty atendenteId",
+    "cmdInactivateAtendente disabled button has no title hint for empty atendenteId",
+    "cmdReactivateAtendente disabled button has no title hint for empty atendenteId",
+    "atendenteCatalogue: generated page does not render textual mutation feedback: cmdCreateAtendente",
+    "atendenteCatalogue: generated page does not render textual mutation feedback: cmdUpdateAtendente",
+    "atendenteCatalogue: generated page does not render textual mutation feedback: cmdInactivateAtendente",
+    "atendenteCatalogue: generated page does not render textual mutation feedback: cmdReactivateAtendente"
+  ]
+}

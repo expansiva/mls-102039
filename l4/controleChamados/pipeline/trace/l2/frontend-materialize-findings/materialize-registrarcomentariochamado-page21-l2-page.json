@@ -1,0 +1,13 @@
+{
+  "savedAt": "2026-09-04T02:09:08.507Z",
+  "planId": "materialize-registrarcomentariochamado-page21-l2-page",
+  "attempt": 4,
+  "findings": [
+    "contract field missing -> `item.atendenteId` is not declared by qryLocateChamado: its output is chamadoId, descricao, status, titulo. A field that only exists in the output of a COMMAND is read from that command's state, never from the query record",
+    "contract field missing -> `item.platformUserId` is not declared by qryLocateChamado: its output is chamadoId, descricao, status, titulo. A field that only exists in the output of a COMMAND is read from that command's state, never from the query record",
+    "cmdRegisterComentario button is clickable with empty required atendenteId: bind ?disabled to cmdRegisterComentarioAtendenteId and set title to the missing-precondition hint",
+    "cmdRegisterComentario button is clickable with empty required chamadoId: bind ?disabled to cmdRegisterComentarioChamadoId and set title to the missing-precondition hint",
+    "registrarComentarioChamado: generated page does not render textual mutation feedback: cmdRegisterComentario",
+    "cmdRegisterComentario.atendenteId is a technical id with source 'selectedentity' and this page has NO query that could populate a picker for it (L4-LOOKUP-GAP): the l4 workspace must expose a lookup query for the referenced entity — rewriting this page cannot fix it"
+  ]
+}

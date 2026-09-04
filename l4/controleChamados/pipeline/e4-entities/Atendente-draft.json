@@ -1,0 +1,41 @@
+{
+  "planId": "e4-ontology-entity",
+  "moduleName": "controleChamados",
+  "reviewRound": 1,
+  "entityId": "Atendente",
+  "fields": [
+    {
+      "fieldId": "atendenteId",
+      "title": "Identificador do atendente",
+      "type": "uuid",
+      "required": true,
+      "description": "Identificador estável do atendente reutilizado entre os módulos da organização.",
+      "constraints": [
+        {
+          "constraintId": "uniqueAtendenteId",
+          "kind": "unique",
+          "value": "true",
+          "description": "Cada atendente possui um identificador estável e exclusivo.",
+          "source": "inferred"
+        }
+      ]
+    },
+    {
+      "fieldId": "platformUserId",
+      "title": "Usuário da plataforma",
+      "type": "uuid",
+      "required": true,
+      "description": "Referência ao usuário correspondente no diretório da plataforma, sem duplicar dados de login.",
+      "constraints": [
+        {
+          "constraintId": "uniquePlatformUserId",
+          "kind": "unique",
+          "value": "true",
+          "description": "Um usuário da plataforma corresponde a apenas um atendente neste cadastro MDM.",
+          "source": "inferred"
+        }
+      ]
+    }
+  ],
+  "useRules": []
+}

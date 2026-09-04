@@ -1,0 +1,28 @@
+/// <mls fileReference="_102039_/l2/controleChamados/web/desktop/page11/chamadoHub.defs.ts" enhancement="_blank"/>
+
+export const definition = `page: Chamado
+actor: atendente
+purpose: Painel de Chamado.
+uxExperience: dashboardCommandCenter
+The page extends the shared base class of this workspace: the shared travels in this pipeline and already carries the states, actions and handlers the page inherits. Render the experience around that intent — do not list fields and do not list routines.`;
+
+export const pipeline = [
+  {
+    "id": "chamadoHub__l2_page",
+    "type": "l2_page",
+    "outputPath": "_102039_/l2/controleChamados/web/desktop/page11/chamadoHub.ts",
+    "defPath": "_102039_/l2/controleChamados/web/desktop/page11/chamadoHub.defs.ts",
+    "dependsFiles": [
+      "_102039_/l2/controleChamados/web/shared/chamadoHubDts.txt",
+      "_102039_/l2/designSystem.ts"
+    ],
+    "dependsOn": [
+      "chamadoHub__l2_shared"
+    ],
+    "skills": [
+      "_102020_/l2/agentChangeFrontend/skills/genCfePage11RenderTs.ts"
+    ],
+    "visualStyle": {},
+    "agent": "agentCfeMaterializeGen"
+  }
+] as const;

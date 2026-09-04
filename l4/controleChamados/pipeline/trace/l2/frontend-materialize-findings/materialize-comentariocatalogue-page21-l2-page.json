@@ -1,0 +1,17 @@
+{
+  "savedAt": "2026-09-04T02:08:00.975Z",
+  "planId": "materialize-comentariocatalogue-page21-l2-page",
+  "attempt": 3,
+  "findings": [
+    "cmdCreateComentario button is clickable with empty required chamadoId: bind ?disabled to cmdCreateComentarioChamadoId and set title to the missing-precondition hint",
+    "cmdCreateComentario button is clickable with empty required atendenteId: bind ?disabled to cmdCreateComentarioAtendenteId and set title to the missing-precondition hint",
+    "cmdUpdateComentario button is clickable with empty required comentarioId: bind ?disabled to cmdUpdateComentarioComentarioId and set title to the missing-precondition hint",
+    "cmdUpdateComentario button is clickable with empty required chamadoId: bind ?disabled to cmdUpdateComentarioChamadoId and set title to the missing-precondition hint",
+    "cmdUpdateComentario button is clickable with empty required atendenteId: bind ?disabled to cmdUpdateComentarioAtendenteId and set title to the missing-precondition hint",
+    "comentarioCatalogue: generated page does not render textual mutation feedback: cmdCreateComentario",
+    "comentarioCatalogue: generated page does not render textual mutation feedback: cmdUpdateComentario",
+    "comentarioCatalogue: generated page does not render textual mutation feedback: cmdDeleteComentario",
+    "cmdCreateComentario.chamadoId is a technical id with source 'selectedentity' and this page has NO query that could populate a picker for it (L4-LOOKUP-GAP): the l4 workspace must expose a lookup query for the referenced entity — rewriting this page cannot fix it",
+    "cmdCreateComentario.atendenteId is a technical id with source 'selectedentity' and this page has NO query that could populate a picker for it (L4-LOOKUP-GAP): the l4 workspace must expose a lookup query for the referenced entity — rewriting this page cannot fix it"
+  ]
+}

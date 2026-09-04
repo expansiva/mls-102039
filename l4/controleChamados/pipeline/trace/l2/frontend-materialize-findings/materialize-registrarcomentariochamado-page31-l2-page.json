@@ -1,0 +1,12 @@
+{
+  "savedAt": "2026-09-04T02:06:26.132Z",
+  "planId": "materialize-registrarcomentariochamado-page31-l2-page",
+  "attempt": 2,
+  "findings": [
+    "status is a closed domain (open|closed) painted as the stored code in a list cell: show the enumLabels/lifecycleLabels rótulo (fallback: the code); never ${item.status} or a generic displayValue on that column",
+    "cmdRegisterComentario button is clickable with empty required atendenteId: bind ?disabled to cmdRegisterComentarioAtendenteId and set title to the missing-precondition hint",
+    "cmdRegisterComentario button is clickable with empty required chamadoId: bind ?disabled to cmdRegisterComentarioChamadoId and set title to the missing-precondition hint",
+    "registrarComentarioChamado: generated page does not render textual mutation feedback: cmdRegisterComentario",
+    "cmdRegisterComentario.atendenteId is a technical id with source 'selectedentity' and this page has NO query that could populate a picker for it (L4-LOOKUP-GAP): the l4 workspace must expose a lookup query for the referenced entity — rewriting this page cannot fix it"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "savedAt": "2026-09-04T01:40:44.415Z",
+  "moduleName": "controleChamados",
+  "agent": "agentNewSolution",
+  "command": "/fast criar um site chamado controleChamados , em portugues. cada chamado tem titulo, descricao e status (aberto ou fechado). o atendente registra o chamado, escreve comentarios no chamado, e depois fecha o chamado. um unico perfil de acesso: atendente.",
+  "startedAt": "2026-09-04T01:36:02.833Z",
+  "finishedAt": "2026-09-04T01:40:44.413Z",
+  "verdict": "degraded",
+  "reason": "E10 validation passed; 5 L5 delivery artifacts were written and the solution was completed automatically. PUBLISH CHECKLIST (3): config.shellTemplates was missing and the platform default was written — review it before publishing; config.publication was missing and the platform default was written — review it before publishing; config.clientShell was missing and the platform default was written — review it before publishing; changeBackend: DISPATCH FAILED (Invalid user id) — re-send manually: @@agentChangeBackend /fast /rebuild all controleChamados",
+  "counts": {
+    "steps": {
+      "e1": "approved",
+      "e2": "approved",
+      "e3": "approved",
+      "e4": "approved",
+      "e5": "approved",
+      "e6": "approved",
+      "e7": "approved",
+      "e8": "approved",
+      "e9": "approved",
+      "e10": "approved"
+    },
+    "skippedClarification": true
+  },
+  "degradations": [
+    {
+      "at": "2026-09-04T01:36:02.833Z",
+      "kind": "clarification-skip-default",
+      "reason": "productLanguages=pt-BR default=pt-BR module=controleChamados"
+    },
+    {
+      "at": "2026-09-04T01:40:44.413Z",
+      "kind": "fast-handoff-dispatch",
+      "reason": "Invalid user id — re-send manually: @@agentChangeBackend /fast /rebuild all controleChamados"
+    }
+  ]
+}

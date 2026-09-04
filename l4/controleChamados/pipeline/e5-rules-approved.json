@@ -1,0 +1,24 @@
+{
+  "planId": "e5-rules-review",
+  "moduleName": "controleChamados",
+  "userLanguage": "pt-BR",
+  "title": "Regras de negócio",
+  "reviewRound": 1,
+  "rules": [
+    {
+      "id": "chamadoFechadoNaoPodeSerReaberto",
+      "description": "Um chamado fechado não pode voltar ao status aberto."
+    },
+    {
+      "id": "comentariosPermitidosSomenteEmChamadosAbertos",
+      "description": "Comentários só podem ser registrados em chamados com status aberto."
+    },
+    {
+      "id": "fechamentoExigeChamadoAberto",
+      "description": "Um chamado só pode ser fechado quando estiver com status aberto."
+    }
+  ],
+  "changeSummary": [
+    "Catálogo inicial de regras."
+  ]
+}

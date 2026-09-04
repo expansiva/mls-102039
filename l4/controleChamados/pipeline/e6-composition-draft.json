@@ -1,0 +1,12 @@
+{
+  "planId": "e6-composition-review",
+  "moduleName": "controleChamados",
+  "userLanguage": "pt-BR",
+  "title": "Módulos adicionais e plugins",
+  "reviewRound": 1,
+  "analysisSummary": "O módulo pode seguir sem componentes adicionais neste momento. O contrato aprovado não exige integrações externas nem capacidades reutilizáveis além das capacidades de plataforma.",
+  "recommendations": [],
+  "changeSummary": [
+    "Análise inicial de composição."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "savedAt": "2026-09-04T01:42:36.970Z",
+  "agentName": "agentCbDomainEntity",
+  "stepId": 9,
+  "planning": null,
+  "status": "waiting_after_prompt",
+  "interaction": {
+    "cost": 0.0029,
+    "inputTokens": 7166,
+    "outputTokens": 996,
+    "model": "code"
+  },
+  "counters": null,
+  "payload": {
+    "type": "flexible",
+    "result": {
+      "toolName": "submitDomainEntities",
+      "arguments": {
+        "status": "ok",
+        "result": {
+          "items": [
+            {
+              "entityId": "Chamado",
+              "title": "",
+              "fields": [],
+              "valueObjects": [],
+              "invariants": [
+                "O chamadoId deve ser único entre todos os chamados."
+              ],
+              "statusEnum": []
+            }
+          ]
+        },
+        "questions": [],
+        "trace": []
+      }
+    },
+    "status": "completed",
+    "stepId": 12,
+    "interaction": null,
+    "nextSteps": null
+  }
+}

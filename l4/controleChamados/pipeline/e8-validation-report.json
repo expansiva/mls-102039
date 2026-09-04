@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "2026-08-14-ns4-e8-validation-report-v2",
+  "moduleName": "controleChamados",
+  "attempts": [
+    {
+      "round": 1,
+      "checkedAt": "2026-09-04T01:40:43.858Z",
+      "workspaces": 5,
+      "blocking": 0,
+      "issues": [],
+      "systemDecisions": [
+        {
+          "decisionId": "catalogueAudienceAtendente",
+          "stage": "e8-workspaces",
+          "question": "Nenhuma jornada opera Atendente: quem mantém esse cadastro?",
+          "chosen": "internalProfiles",
+          "alternatives": [
+            "internalProfiles",
+            "restrictToNamedProfile"
+          ],
+          "decidedBy": "system",
+          "findingRef": "NS4_E8_CATALOGUE_AUDIENCE:atendenteCatalogue",
+          "changeHint": "Adicione no E3 uma autoridade sobre Atendente para restringir esse cadastro a um perfil específico."
+        },
+        {
+          "decisionId": "hubCompositionChamadoHub",
+          "stage": "e8-workspaces",
+          "question": "A composição proposta para o painel de Chamado não respeitou o catálogo; usar a ordem padrão?",
+          "chosen": "keepDerivedComposition",
+          "alternatives": [
+            "keepDerivedComposition",
+            "reviewDashboardComposition"
+          ],
+          "decidedBy": "system",
+          "findingRef": "NS4_E8_HUB_COMPOSITION:chamadoHub",
+          "changeHint": "Revisar a ordem e os destaques do painel de Chamado no próximo round."
+        }
+      ]
+    }
+  ],
+  "finalStatus": "passed",
+  "updatedAt": "2026-09-04T01:40:43.858Z"
+}

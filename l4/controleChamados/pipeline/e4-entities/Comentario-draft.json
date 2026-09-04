@@ -1,0 +1,59 @@
+{
+  "planId": "e4-ontology-entity",
+  "moduleName": "controleChamados",
+  "reviewRound": 1,
+  "entityId": "Comentario",
+  "fields": [
+    {
+      "fieldId": "comentarioId",
+      "title": "Identificador do comentário",
+      "type": "uuid",
+      "required": true,
+      "description": "Identificador estável do comentário persistido no histórico de acompanhamento.",
+      "constraints": [
+        {
+          "constraintId": "uniqueComentarioId",
+          "kind": "unique",
+          "value": "true",
+          "description": "Cada comentário possui um identificador estável e exclusivo.",
+          "source": "inferred"
+        }
+      ]
+    },
+    {
+      "fieldId": "chamadoId",
+      "title": "Chamado",
+      "type": "uuid",
+      "required": true,
+      "description": "Chamado aberto selecionado ao qual o comentário pertence.",
+      "constraints": []
+    },
+    {
+      "fieldId": "atendenteId",
+      "title": "Atendente que registrou",
+      "type": "uuid",
+      "required": true,
+      "description": "Atendente autenticado identificado como responsável pelo registro do comentário.",
+      "constraints": []
+    },
+    {
+      "fieldId": "conteudo",
+      "title": "Comentário",
+      "type": "text",
+      "required": true,
+      "description": "Texto de acompanhamento escrito pelo atendente para o chamado.",
+      "constraints": [
+        {
+          "constraintId": "conteudoMinLength",
+          "kind": "minLength",
+          "value": "1",
+          "description": "O comentário deve conter texto.",
+          "source": "journey"
+        }
+      ]
+    }
+  ],
+  "useRules": [
+    "comentariosPermitidosSomenteEmChamadosAbertos"
+  ]
+}

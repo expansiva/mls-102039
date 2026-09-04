@@ -1,0 +1,13 @@
+{
+  "savedAt": "2026-09-04T02:09:08.506Z",
+  "planId": "materialize-atendentecatalogue-page21-l2-page",
+  "attempt": 4,
+  "findings": [
+    "cmdInactivateAtendente button is clickable with empty required atendenteId: bind ?disabled to cmdInactivateAtendenteAtendenteId and set title to the missing-precondition hint",
+    "cmdReactivateAtendente button is clickable with empty required atendenteId: bind ?disabled to cmdReactivateAtendenteAtendenteId and set title to the missing-precondition hint",
+    "atendenteCatalogue: generated page does not render textual mutation feedback: cmdCreateAtendente",
+    "atendenteCatalogue: generated page does not render textual mutation feedback: cmdUpdateAtendente",
+    "atendenteCatalogue: generated page does not render textual mutation feedback: cmdInactivateAtendente",
+    "atendenteCatalogue: generated page does not render textual mutation feedback: cmdReactivateAtendente"
+  ]
+}

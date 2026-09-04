@@ -1,0 +1,21 @@
+{
+  "runId": "20260904014218.1001",
+  "judgeRun": 1,
+  "batchIndex": 2,
+  "owners": [
+    "getComentario",
+    "locateChamado",
+    "registerComentario",
+    "closeChamado"
+  ],
+  "findings": [
+    {
+      "ownerId": "closeChamado",
+      "type": "estrutural",
+      "severity": "error",
+      "message": "functions[0].input do campo status não declara a restrição enumValues [\"closed\"] exigida pelo input L4 Chamado.status; ainda assim os steps afirmam que a validação decorre do enum declarado.",
+      "suggestion": "Adicionar enumValues: [\"closed\"] ao campo status da entrada de closeChamado, preservando a restrição do contrato L4."
+    }
+  ],
+  "savedAt": "2026-09-04T01:44:13.096Z"
+}

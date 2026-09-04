@@ -1,0 +1,87 @@
+/// <mls fileReference="_102039_/l2/controleChamados/web/shared/chamadoCatalogue.test.ts" enhancement="_102020_/l2/enhancementAura"/>
+
+import type { ControleChamadosChamadoCatalogueBase } from '/_102039_/l2/controleChamados/web/shared/chamadoCatalogue.js';
+import type { CmdCloseChamadoInput, CmdCloseChamadoOutput, CmdCreateChamadoInput, CmdCreateChamadoOutput, CmdDeleteChamadoInput, CmdDeleteChamadoOutput, CmdUpdateChamadoInput, CmdUpdateChamadoOutput, QryGetChamadoInput, QryGetChamadoOutput, QryListChamadoInput, QryListChamadoOutput, QryLocateChamadoOutput } from '/_102039_/l2/controleChamados/web/contracts/chamadoCatalogue.js';
+
+type IsAny<T> = 0 extends (1 & T) ? true : false;
+type Assignable<Actual, Expected> = IsAny<Actual> extends true ? false : [Actual] extends [Expected] ? true : false;
+type Assert<T extends true> = T;
+
+declare const page: ControleChamadosChamadoCatalogueBase;
+
+// This file is generated from .defs.ts. Add narrower state/action assertions here as materialization rules evolve.
+type _State_status = Assert<Assignable<typeof page.status, string>>;
+type _State_uiScenary = Assert<Assignable<typeof page.uiScenary, "base" | "detail" | "createChamado" | "updateChamado" | "closeChamado">>;
+type _State_qryListChamadoState = Assert<Assignable<typeof page.qryListChamadoState, "idle" | "loading" | "success" | "error">>;
+type _State_qryListChamadoSortBy = Assert<Assignable<typeof page.qryListChamadoSortBy, "open" | "closed" | QryListChamadoInput["sortBy"] | ''>>;
+type _State_qryListChamadoSortOrder = Assert<Assignable<typeof page.qryListChamadoSortOrder, "asc" | "desc" | QryListChamadoInput["sortOrder"] | ''>>;
+type _State_qryListChamadoData = Assert<Assignable<typeof page.qryListChamadoData, unknown[] | QryListChamadoOutput>>;
+type _State_cmdCreateChamadoState = Assert<Assignable<typeof page.cmdCreateChamadoState, "idle" | "loading" | "success" | "error">>;
+type _State_cmdCreateChamadoTitulo = Assert<Assignable<typeof page.cmdCreateChamadoTitulo, string | CmdCreateChamadoInput["titulo"]>>;
+type _State_cmdCreateChamadoDescricao = Assert<Assignable<typeof page.cmdCreateChamadoDescricao, string | CmdCreateChamadoInput["descricao"]>>;
+type _State_cmdCreateChamadoStatus = Assert<Assignable<typeof page.cmdCreateChamadoStatus, "open" | "closed" | CmdCreateChamadoInput["status"] | ''>>;
+type _State_cmdCreateChamadoOutput = Assert<Assignable<typeof page.cmdCreateChamadoOutput, CmdCreateChamadoOutput | null>>;
+type _State_cmdCreateChamadoError = Assert<Assignable<typeof page.cmdCreateChamadoError, string>>;
+type _State_cmdUpdateChamadoState = Assert<Assignable<typeof page.cmdUpdateChamadoState, "idle" | "loading" | "success" | "error">>;
+type _State_cmdUpdateChamadoChamadoId = Assert<Assignable<typeof page.cmdUpdateChamadoChamadoId, string | CmdUpdateChamadoInput["chamadoId"]>>;
+type _State_cmdUpdateChamadoTitulo = Assert<Assignable<typeof page.cmdUpdateChamadoTitulo, string | CmdUpdateChamadoInput["titulo"]>>;
+type _State_cmdUpdateChamadoDescricao = Assert<Assignable<typeof page.cmdUpdateChamadoDescricao, string | CmdUpdateChamadoInput["descricao"]>>;
+type _State_cmdUpdateChamadoStatus = Assert<Assignable<typeof page.cmdUpdateChamadoStatus, "open" | "closed" | CmdUpdateChamadoInput["status"] | ''>>;
+type _State_cmdUpdateChamadoOutput = Assert<Assignable<typeof page.cmdUpdateChamadoOutput, CmdUpdateChamadoOutput | null>>;
+type _State_cmdUpdateChamadoError = Assert<Assignable<typeof page.cmdUpdateChamadoError, string>>;
+type _State_cmdDeleteChamadoState = Assert<Assignable<typeof page.cmdDeleteChamadoState, "idle" | "loading" | "success" | "error">>;
+type _State_cmdDeleteChamadoChamadoId = Assert<Assignable<typeof page.cmdDeleteChamadoChamadoId, string | CmdDeleteChamadoInput["chamadoId"]>>;
+type _State_cmdDeleteChamadoOutput = Assert<Assignable<typeof page.cmdDeleteChamadoOutput, CmdDeleteChamadoOutput | null>>;
+type _State_cmdDeleteChamadoError = Assert<Assignable<typeof page.cmdDeleteChamadoError, string>>;
+type _State_qryGetChamadoState = Assert<Assignable<typeof page.qryGetChamadoState, "idle" | "loading" | "success" | "error">>;
+type _State_qryGetChamadoChamadoId = Assert<Assignable<typeof page.qryGetChamadoChamadoId, string | QryGetChamadoInput["chamadoId"]>>;
+type _State_qryGetChamadoData = Assert<Assignable<typeof page.qryGetChamadoData, QryGetChamadoOutput | null>>;
+type _State_qryLocateChamadoState = Assert<Assignable<typeof page.qryLocateChamadoState, "idle" | "loading" | "success" | "error">>;
+type _State_qryLocateChamadoData = Assert<Assignable<typeof page.qryLocateChamadoData, unknown[] | QryLocateChamadoOutput>>;
+type _State_cmdCloseChamadoState = Assert<Assignable<typeof page.cmdCloseChamadoState, "idle" | "loading" | "success" | "error">>;
+type _State_cmdCloseChamadoChamadoId = Assert<Assignable<typeof page.cmdCloseChamadoChamadoId, string | CmdCloseChamadoInput["chamadoId"]>>;
+type _State_cmdCloseChamadoStatus = Assert<Assignable<typeof page.cmdCloseChamadoStatus, "open" | "closed" | CmdCloseChamadoInput["status"] | ''>>;
+type _State_cmdCloseChamadoOutput = Assert<Assignable<typeof page.cmdCloseChamadoOutput, CmdCloseChamadoOutput | null>>;
+type _State_cmdCloseChamadoError = Assert<Assignable<typeof page.cmdCloseChamadoError, string>>;
+type _Action_loadQryListChamado = Assert<Assignable<typeof page.loadQryListChamado, (...args: any[]) => unknown>>;
+type _Handler_handleQryListChamadoClick = Assert<Assignable<typeof page.handleQryListChamadoClick, (...args: any[]) => unknown>>;
+type _Action_cmdCreateChamado = Assert<Assignable<typeof page.cmdCreateChamado, (...args: any[]) => unknown>>;
+type _Handler_handleCmdCreateChamadoClick = Assert<Assignable<typeof page.handleCmdCreateChamadoClick, (...args: any[]) => unknown>>;
+type _Action_cmdUpdateChamado = Assert<Assignable<typeof page.cmdUpdateChamado, (...args: any[]) => unknown>>;
+type _Handler_handleCmdUpdateChamadoClick = Assert<Assignable<typeof page.handleCmdUpdateChamadoClick, (...args: any[]) => unknown>>;
+type _Action_cmdDeleteChamado = Assert<Assignable<typeof page.cmdDeleteChamado, (...args: any[]) => unknown>>;
+type _Handler_handleCmdDeleteChamadoClick = Assert<Assignable<typeof page.handleCmdDeleteChamadoClick, (...args: any[]) => unknown>>;
+type _Action_loadQryGetChamado = Assert<Assignable<typeof page.loadQryGetChamado, (...args: any[]) => unknown>>;
+type _Handler_handleQryGetChamadoClick = Assert<Assignable<typeof page.handleQryGetChamadoClick, (...args: any[]) => unknown>>;
+type _Action_loadQryLocateChamado = Assert<Assignable<typeof page.loadQryLocateChamado, (...args: any[]) => unknown>>;
+type _Handler_handleQryLocateChamadoClick = Assert<Assignable<typeof page.handleQryLocateChamadoClick, (...args: any[]) => unknown>>;
+type _Action_cmdCloseChamado = Assert<Assignable<typeof page.cmdCloseChamado, (...args: any[]) => unknown>>;
+type _Handler_handleCmdCloseChamadoClick = Assert<Assignable<typeof page.handleCmdCloseChamadoClick, (...args: any[]) => unknown>>;
+type _Action_setQryListChamadoSortBy = Assert<Assignable<typeof page.setQryListChamadoSortBy, (...args: any[]) => unknown>>;
+type _Handler_handleQryListChamadoSortByChange = Assert<Assignable<typeof page.handleQryListChamadoSortByChange, (...args: any[]) => unknown>>;
+type _Action_setQryListChamadoSortOrder = Assert<Assignable<typeof page.setQryListChamadoSortOrder, (...args: any[]) => unknown>>;
+type _Handler_handleQryListChamadoSortOrderChange = Assert<Assignable<typeof page.handleQryListChamadoSortOrderChange, (...args: any[]) => unknown>>;
+type _Action_setCmdCreateChamadoTitulo = Assert<Assignable<typeof page.setCmdCreateChamadoTitulo, (...args: any[]) => unknown>>;
+type _Handler_handleCmdCreateChamadoTituloChange = Assert<Assignable<typeof page.handleCmdCreateChamadoTituloChange, (...args: any[]) => unknown>>;
+type _Action_setCmdCreateChamadoDescricao = Assert<Assignable<typeof page.setCmdCreateChamadoDescricao, (...args: any[]) => unknown>>;
+type _Handler_handleCmdCreateChamadoDescricaoChange = Assert<Assignable<typeof page.handleCmdCreateChamadoDescricaoChange, (...args: any[]) => unknown>>;
+type _Action_setCmdCreateChamadoStatus = Assert<Assignable<typeof page.setCmdCreateChamadoStatus, (...args: any[]) => unknown>>;
+type _Handler_handleCmdCreateChamadoStatusChange = Assert<Assignable<typeof page.handleCmdCreateChamadoStatusChange, (...args: any[]) => unknown>>;
+type _Action_setCmdUpdateChamadoChamadoId = Assert<Assignable<typeof page.setCmdUpdateChamadoChamadoId, (...args: any[]) => unknown>>;
+type _Handler_handleCmdUpdateChamadoChamadoIdChange = Assert<Assignable<typeof page.handleCmdUpdateChamadoChamadoIdChange, (...args: any[]) => unknown>>;
+type _Action_setCmdUpdateChamadoTitulo = Assert<Assignable<typeof page.setCmdUpdateChamadoTitulo, (...args: any[]) => unknown>>;
+type _Handler_handleCmdUpdateChamadoTituloChange = Assert<Assignable<typeof page.handleCmdUpdateChamadoTituloChange, (...args: any[]) => unknown>>;
+type _Action_setCmdUpdateChamadoDescricao = Assert<Assignable<typeof page.setCmdUpdateChamadoDescricao, (...args: any[]) => unknown>>;
+type _Handler_handleCmdUpdateChamadoDescricaoChange = Assert<Assignable<typeof page.handleCmdUpdateChamadoDescricaoChange, (...args: any[]) => unknown>>;
+type _Action_setCmdUpdateChamadoStatus = Assert<Assignable<typeof page.setCmdUpdateChamadoStatus, (...args: any[]) => unknown>>;
+type _Handler_handleCmdUpdateChamadoStatusChange = Assert<Assignable<typeof page.handleCmdUpdateChamadoStatusChange, (...args: any[]) => unknown>>;
+type _Action_setCmdDeleteChamadoChamadoId = Assert<Assignable<typeof page.setCmdDeleteChamadoChamadoId, (...args: any[]) => unknown>>;
+type _Handler_handleCmdDeleteChamadoChamadoIdChange = Assert<Assignable<typeof page.handleCmdDeleteChamadoChamadoIdChange, (...args: any[]) => unknown>>;
+type _Action_setQryGetChamadoChamadoId = Assert<Assignable<typeof page.setQryGetChamadoChamadoId, (...args: any[]) => unknown>>;
+type _Handler_handleQryGetChamadoChamadoIdChange = Assert<Assignable<typeof page.handleQryGetChamadoChamadoIdChange, (...args: any[]) => unknown>>;
+type _Action_setCmdCloseChamadoChamadoId = Assert<Assignable<typeof page.setCmdCloseChamadoChamadoId, (...args: any[]) => unknown>>;
+type _Handler_handleCmdCloseChamadoChamadoIdChange = Assert<Assignable<typeof page.handleCmdCloseChamadoChamadoIdChange, (...args: any[]) => unknown>>;
+type _Action_setCmdCloseChamadoStatus = Assert<Assignable<typeof page.setCmdCloseChamadoStatus, (...args: any[]) => unknown>>;
+type _Handler_handleCmdCloseChamadoStatusChange = Assert<Assignable<typeof page.handleCmdCloseChamadoStatusChange, (...args: any[]) => unknown>>;
+
+export {};

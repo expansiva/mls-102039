@@ -1,0 +1,73 @@
+{
+  "runId": "20260904014218.1001",
+  "judgeRun": 1,
+  "batchIndex": 1,
+  "owners": [
+    "listAtendente",
+    "createAtendente",
+    "updateAtendente",
+    "inactivateAtendente",
+    "reactivateAtendente",
+    "getAtendente",
+    "listChamado",
+    "createChamado",
+    "updateChamado",
+    "deleteChamado",
+    "getChamado",
+    "listComentario",
+    "createComentario",
+    "updateComentario",
+    "deleteComentario"
+  ],
+  "findings": [
+    {
+      "ownerId": "updateAtendente",
+      "type": "estrutural",
+      "severity": "error",
+      "message": "usecase .defs.ts missing for operation updateAtendente (worker failed or never saved)"
+    },
+    {
+      "ownerId": "updateAtendente",
+      "type": "estrutural",
+      "severity": "error",
+      "message": "generatedUsecaseDefs is null; the required usecase definition, including its function input for Atendente.atendenteId and Atendente.platformUserId, is missing.",
+      "suggestion": "Generate a complete updateAtendente definition matching the L4 inputs and output."
+    },
+    {
+      "ownerId": "updateChamado",
+      "type": "estrutural",
+      "severity": "error",
+      "message": "functions[0].rulesApplied contains \"comentariosPermitidosPermitidosSomenteEmChamadosAbertos\", but the L4 rule id is \"comentariosPermitidosSomenteEmChamadosAbertos\"; the required exact rule id is therefore missing.",
+      "suggestion": "Replace the misspelled rulesApplied entry with the exact L4 rule id \"comentariosPermitidosSomenteEmChamadosAbertos\"."
+    },
+    {
+      "ownerId": "createChamado",
+      "type": "estrutural",
+      "severity": "error",
+      "message": "rulesApplied declares \"comentariosPermitidosSomenteEmChamadosAbertos\", but createChamado has no Comentario input or entity operation, so this rule cannot run with the modeled data.",
+      "suggestion": "Remove this inapplicable rule from the generated usecase and correct the L4 rulesApplied contract if the rule is not intended to apply to creation."
+    },
+    {
+      "ownerId": "createChamado",
+      "type": "estrutural",
+      "severity": "error",
+      "message": "rulesApplied declares \"fechamentoExigeChamadoAberto\", but createChamado has no status-transition/close operation or transition input, so this rule cannot run with the modeled data.",
+      "suggestion": "Remove this inapplicable rule from the generated usecase and correct the L4 rulesApplied contract if the rule is not intended to apply to creation."
+    },
+    {
+      "ownerId": "createChamado",
+      "type": "estrutural",
+      "severity": "error",
+      "message": "rulesApplied declares \"chamadoFechadoNaoPodeSerReaberto\", but createChamado has no reopen operation or transition input, so this rule cannot run with the modeled data.",
+      "suggestion": "Remove this inapplicable rule from the generated usecase and correct the L4 rulesApplied contract if the rule is not intended to apply to creation."
+    },
+    {
+      "ownerId": "updateChamado",
+      "type": "estrutural",
+      "severity": "error",
+      "message": "rulesApplied declares \"comentariosPermitidosSomenteEmChamadosAbertos\", but updateChamado has no Comentario entity/input or comment operation, so this rule cannot run with the modeled data.",
+      "suggestion": "Remove this inapplicable rule from the generated usecase and correct the L4 rulesApplied contract if the rule is not intended to apply to Chamado updates."
+    }
+  ],
+  "savedAt": "2026-09-04T01:44:30.249Z"
+}

@@ -1,0 +1,104 @@
+{
+  "savedAt": "2026-09-04T01:43:34.893Z",
+  "agentName": "agentCbUsecase",
+  "stepId": 19,
+  "planning": null,
+  "status": "waiting_after_prompt",
+  "interaction": {
+    "cost": 0.0046,
+    "inputTokens": 14661,
+    "outputTokens": 1663,
+    "model": "code"
+  },
+  "counters": null,
+  "payload": {
+    "type": "flexible",
+    "result": {
+      "toolName": "submitUsecase",
+      "arguments": {
+        "status": "ok",
+        "result": {
+          "usecaseId": "inactivateAtendente",
+          "ports": [],
+          "rulesApplied": [],
+          "functions": [
+            {
+              "functionName": "inactivateAtendente",
+              "inputTypeName": "InactivateAtendenteInput",
+              "outputTypeName": "InactivateAtendenteOutput",
+              "input": [
+                {
+                  "name": "atendenteId",
+                  "type": "string",
+                  "required": true,
+                  "description": "Identificador estável do atendente reutilizado entre os módulos da organização.",
+                  "ofEntity": "Atendente",
+                  "fieldRef": "Atendente.atendenteId",
+                  "item": {
+                    "fields": []
+                  }
+                }
+              ],
+              "output": [
+                {
+                  "name": "atendenteId",
+                  "type": "string",
+                  "required": true,
+                  "ofEntity": "Atendente"
+                },
+                {
+                  "name": "platformUserId",
+                  "type": "string",
+                  "required": true,
+                  "ofEntity": "Atendente"
+                }
+              ],
+              "ports": [],
+              "rulesApplied": [],
+              "transactional": true,
+              "steps": [
+                "Load the Atendente master-data record by atendenteId through ctx.mdm.entity.get({ mdmId: atendenteId }).",
+                "If the Atendente record does not exist, return the documented master-data not-found error.",
+                "In the same transaction wrapper, inactivate the Atendente master-data record through ctx.mdm.entity.inactivate({ mdmId: atendenteId, mdmType: \"controleChamados.Atendente\" }).",
+                "Return atendenteId and platformUserId from the loaded record."
+              ],
+              "outputShape": {
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "atendenteId",
+                    "type": "string",
+                    "required": true,
+                    "fieldRef": "Atendente.atendenteId"
+                  },
+                  {
+                    "name": "platformUserId",
+                    "type": "string",
+                    "required": true,
+                    "fieldRef": "Atendente.platformUserId"
+                  }
+                ]
+              }
+            }
+          ],
+          "mdmRefs": [
+            "Atendente"
+          ],
+          "mdm": {
+            "lifecycle": "inactivate"
+          }
+        },
+        "questions": [],
+        "trace": [
+          "The operation is an MDM-owned inactivation, so no repository port is declared.",
+          "The selectedEntity input is public and required.",
+          "The outputShape is used verbatim at the top level."
+        ]
+      }
+    },
+    "status": "completed",
+    "stepId": 9,
+    "interaction": null,
+    "nextSteps": null
+  }
+}

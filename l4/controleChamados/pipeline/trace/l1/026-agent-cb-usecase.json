@@ -1,0 +1,125 @@
+{
+  "savedAt": "2026-09-04T01:43:42.305Z",
+  "agentName": "agentCbUsecase",
+  "stepId": 26,
+  "planning": null,
+  "status": "waiting_after_prompt",
+  "interaction": {
+    "cost": 0.0054,
+    "inputTokens": 15263,
+    "outputTokens": 2280,
+    "model": "code"
+  },
+  "counters": null,
+  "payload": {
+    "type": "flexible",
+    "result": {
+      "toolName": "submitUsecase",
+      "arguments": {
+        "status": "ok",
+        "result": {
+          "usecaseId": "getChamado",
+          "ports": [
+            "Chamado"
+          ],
+          "rulesApplied": [],
+          "functions": [
+            {
+              "functionName": "getChamado",
+              "inputTypeName": "GetChamadoInput",
+              "outputTypeName": "GetChamadoOutput",
+              "input": [
+                {
+                  "name": "chamadoId",
+                  "type": "string",
+                  "required": true,
+                  "description": "Identificador estável do chamado, transportado entre as etapas de acompanhamento.",
+                  "ofEntity": "Chamado",
+                  "fieldRef": "Chamado.chamadoId",
+                  "item": {
+                    "fields": []
+                  }
+                }
+              ],
+              "output": [
+                {
+                  "name": "chamadoId",
+                  "type": "string",
+                  "required": true,
+                  "ofEntity": "Chamado"
+                },
+                {
+                  "name": "titulo",
+                  "type": "string",
+                  "required": true,
+                  "ofEntity": "Chamado"
+                },
+                {
+                  "name": "descricao",
+                  "type": "string",
+                  "required": true,
+                  "ofEntity": "Chamado"
+                },
+                {
+                  "name": "status",
+                  "type": "string",
+                  "required": true,
+                  "ofEntity": "Chamado"
+                }
+              ],
+              "ports": [
+                "Chamado"
+              ],
+              "rulesApplied": [],
+              "transactional": false,
+              "steps": [
+                "Load the Chamado aggregate through the Chamado port using chamadoId.",
+                "Return chamadoId, titulo, descricao, and status from the loaded Chamado."
+              ],
+              "outputShape": {
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "chamadoId",
+                    "type": "string",
+                    "required": true,
+                    "fieldRef": "Chamado.chamadoId"
+                  },
+                  {
+                    "name": "titulo",
+                    "type": "string",
+                    "required": true,
+                    "fieldRef": "Chamado.titulo"
+                  },
+                  {
+                    "name": "descricao",
+                    "type": "string",
+                    "required": true,
+                    "fieldRef": "Chamado.descricao"
+                  },
+                  {
+                    "name": "status",
+                    "type": "string",
+                    "required": true,
+                    "fieldRef": "Chamado.status"
+                  }
+                ]
+              }
+            }
+          ],
+          "mdmRefs": []
+        },
+        "questions": [],
+        "trace": [
+          "getById access pattern requires the public key field Chamado.chamadoId.",
+          "The selectedEntity input is exposed as a required request input.",
+          "Output fields mirror the canonical outputShape exactly."
+        ]
+      }
+    },
+    "status": "completed",
+    "stepId": 40,
+    "interaction": null,
+    "nextSteps": null
+  }
+}

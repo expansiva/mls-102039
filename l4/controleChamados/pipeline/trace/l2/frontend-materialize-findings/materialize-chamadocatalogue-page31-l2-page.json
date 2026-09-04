@@ -1,0 +1,12 @@
+{
+  "savedAt": "2026-09-04T02:08:00.977Z",
+  "planId": "materialize-chamadocatalogue-page31-l2-page",
+  "attempt": 3,
+  "findings": [
+    "cmdDeleteChamado.chamadoId has no selection control: click a list row (visible selected state + setCmdDeleteChamadoChamadoId(id)) or render a <select> bound to cmdDeleteChamadoChamadoId — never a dead table",
+    "chamadoCatalogue: generated page does not render textual mutation feedback: cmdCreateChamado",
+    "chamadoCatalogue: generated page does not render textual mutation feedback: cmdUpdateChamado",
+    "chamadoCatalogue: generated page does not render textual mutation feedback: cmdDeleteChamado",
+    "chamadoCatalogue: generated page does not render textual mutation feedback: cmdCloseChamado"
+  ]
+}

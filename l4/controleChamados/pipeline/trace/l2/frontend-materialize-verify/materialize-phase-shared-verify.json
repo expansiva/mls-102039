@@ -1,0 +1,36 @@
+{
+  "savedAt": "2026-09-04T02:04:25.390Z",
+  "planId": "materialize-phase-shared-verify",
+  "attempt": 1,
+  "brokenCount": 2,
+  "broken": [
+    {
+      "planId": "materialize-atendentecatalogue-l2-shared",
+      "defPath": "_102039_/l2/controleChamados/web/shared/atendenteCatalogue.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/shared/atendenteCatalogue.ts",
+      "typecheck": "passed",
+      "errors": [
+        "cmdCreateAtendente error path does not read error.message (nor an i18n map keyed by error.code): the envelope message is the screen text, never the HTTP status",
+        "cmdUpdateAtendente error path does not read error.message (nor an i18n map keyed by error.code): the envelope message is the screen text, never the HTTP status",
+        "cmdInactivateAtendente error path does not read error.message (nor an i18n map keyed by error.code): the envelope message is the screen text, never the HTTP status",
+        "cmdReactivateAtendente error path does not read error.message (nor an i18n map keyed by error.code): the envelope message is the screen text, never the HTTP status"
+      ],
+      "warnings": [],
+      "severity": "repair"
+    },
+    {
+      "planId": "materialize-comentariocatalogue-l2-shared",
+      "defPath": "_102039_/l2/controleChamados/web/shared/comentarioCatalogue.defs.ts",
+      "outputPath": "_102039_/l2/controleChamados/web/shared/comentarioCatalogue.ts",
+      "typecheck": "passed",
+      "errors": [
+        "cmdCreateComentario error path does not read error.message (nor an i18n map keyed by error.code): the envelope message is the screen text, never the HTTP status",
+        "cmdUpdateComentario error path does not read error.message (nor an i18n map keyed by error.code): the envelope message is the screen text, never the HTTP status",
+        "cmdDeleteComentario error path does not read error.message (nor an i18n map keyed by error.code): the envelope message is the screen text, never the HTTP status"
+      ],
+      "warnings": [],
+      "severity": "repair"
+    }
+  ],
+  "agent": "agentCfeMaterializePhase"
+}

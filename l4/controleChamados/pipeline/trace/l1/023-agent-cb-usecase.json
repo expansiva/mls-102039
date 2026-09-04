@@ -1,0 +1,148 @@
+{
+  "savedAt": "2026-09-04T01:43:42.330Z",
+  "agentName": "agentCbUsecase",
+  "stepId": 23,
+  "planning": null,
+  "status": "waiting_after_prompt",
+  "interaction": {
+    "cost": 0.0065,
+    "inputTokens": 17006,
+    "outputTokens": 2791,
+    "model": "code"
+  },
+  "counters": null,
+  "payload": {
+    "type": "flexible",
+    "result": {
+      "toolName": "submitUsecase",
+      "arguments": {
+        "status": "ok",
+        "result": {
+          "usecaseId": "createChamado",
+          "ports": [
+            "Chamado"
+          ],
+          "rulesApplied": [
+            "comentariosPermitidosSomenteEmChamadosAbertos",
+            "fechamentoExigeChamadoAberto",
+            "chamadoFechadoNaoPodeSerReaberto"
+          ],
+          "functions": [
+            {
+              "functionName": "createChamado",
+              "inputTypeName": "CreateChamadoInput",
+              "outputTypeName": "CreateChamadoOutput",
+              "input": [
+                {
+                  "name": "titulo",
+                  "type": "string",
+                  "required": true,
+                  "description": "Resumo do assunto ou solicitação de atendimento registrada no chamado.",
+                  "ofEntity": "Chamado",
+                  "fieldRef": "Chamado.titulo",
+                  "item": {
+                    "fields": []
+                  }
+                },
+                {
+                  "name": "descricao",
+                  "type": "string",
+                  "required": true,
+                  "description": "Detalhamento da solicitação de atendimento registrada no chamado.",
+                  "ofEntity": "Chamado",
+                  "fieldRef": "Chamado.descricao",
+                  "item": {
+                    "fields": []
+                  }
+                }
+              ],
+              "output": [
+                {
+                  "name": "chamadoId",
+                  "type": "string",
+                  "required": true,
+                  "ofEntity": "Chamado"
+                },
+                {
+                  "name": "titulo",
+                  "type": "string",
+                  "required": true,
+                  "ofEntity": "Chamado"
+                },
+                {
+                  "name": "descricao",
+                  "type": "string",
+                  "required": true,
+                  "ofEntity": "Chamado"
+                },
+                {
+                  "name": "status",
+                  "type": "string",
+                  "required": true,
+                  "ofEntity": "Chamado"
+                }
+              ],
+              "ports": [
+                "Chamado"
+              ],
+              "rulesApplied": [
+                "comentariosPermitidosSomenteEmChamadosAbertos",
+                "fechamentoExigeChamadoAberto",
+                "chamadoFechadoNaoPodeSerReaberto"
+              ],
+              "transactional": true,
+              "steps": [
+                "Validate required titulo and descricao according to the Chamado entity field constraints.",
+                "Resolve the systemDefault status as the lifecycle initialState open using ctx.clock/context defaults; the client does not provide status.",
+                "Create the Chamado aggregate through the Chamado port inside a single transaction wrapper using ctx.data only for transaction scope.",
+                "Return the created Chamado projection with chamadoId, titulo, descricao, and status.",
+                "The referenced comment and close/reopen rules concern later comment or status-transition operations; no such transition occurs during creation."
+              ],
+              "outputShape": {
+                "kind": "object",
+                "fields": [
+                  {
+                    "name": "chamadoId",
+                    "type": "string",
+                    "required": true,
+                    "fieldRef": "Chamado.chamadoId"
+                  },
+                  {
+                    "name": "titulo",
+                    "type": "string",
+                    "required": true,
+                    "fieldRef": "Chamado.titulo"
+                  },
+                  {
+                    "name": "descricao",
+                    "type": "string",
+                    "required": true,
+                    "fieldRef": "Chamado.descricao"
+                  },
+                  {
+                    "name": "status",
+                    "type": "string",
+                    "required": true,
+                    "fieldRef": "Chamado.status"
+                  }
+                ]
+              }
+            }
+          ],
+          "mdmRefs": []
+        },
+        "questions": [],
+        "trace": [
+          "Public inputs include only userInput fields titulo and descricao; systemDefault status is resolved server-side.",
+          "The lifecycle initialState is open.",
+          "No reject predicate from the referenced rules applies to this create operation.",
+          "The Chamado port is the parent aggregate port and is used for both creation and persistence."
+        ]
+      }
+    },
+    "status": "completed",
+    "stepId": 41,
+    "interaction": null,
+    "nextSteps": null
+  }
+}

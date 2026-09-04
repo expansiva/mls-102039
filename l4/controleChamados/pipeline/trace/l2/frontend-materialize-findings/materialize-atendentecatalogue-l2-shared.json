@@ -1,0 +1,11 @@
+{
+  "savedAt": "2026-09-04T02:04:25.395Z",
+  "planId": "materialize-atendentecatalogue-l2-shared",
+  "attempt": 2,
+  "findings": [
+    "cmdCreateAtendente error path does not read error.message (nor an i18n map keyed by error.code): the envelope message is the screen text, never the HTTP status",
+    "cmdUpdateAtendente error path does not read error.message (nor an i18n map keyed by error.code): the envelope message is the screen text, never the HTTP status",
+    "cmdInactivateAtendente error path does not read error.message (nor an i18n map keyed by error.code): the envelope message is the screen text, never the HTTP status",
+    "cmdReactivateAtendente error path does not read error.message (nor an i18n map keyed by error.code): the envelope message is the screen text, never the HTTP status"
+  ]
+}
