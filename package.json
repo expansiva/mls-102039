@@ -1,0 +1,11 @@
+{
+  "name": "102039",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "publish": "node ../scripts/publishGit.mjs 102039 remote --git-url=https://102039.collabcodes.com",
+    "publish:git": "node ../scripts/publishGit.mjs 102039 local",
+    "publish:remote": "node ../scripts/publishGit.mjs 102039 remote --git-url=https://102039.collabcodes.com",
+    "buildCI": "node ../scripts/buildCI/buildCI.mjs 102039"
+  }
+}
