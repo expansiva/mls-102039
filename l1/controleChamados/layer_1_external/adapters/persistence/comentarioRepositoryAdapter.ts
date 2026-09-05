@@ -4,8 +4,8 @@ import { AppError, type RequestContext } from '/_102034_/l1/server/layer_2_contr
 import type {
   ComentarioListFilter,
   IComentarioRepository,
-} from '/_102039_/l1/controleChamados/layer_2_application/ports/comentarioRepository';
-import type { Comentario } from '/_102039_/l1/controleChamados/layer_3_domain/entities/comentario';
+} from '/_102039_/l1/controleChamados/layer_2_application/ports/comentarioRepository.js';
+import type { Comentario } from '/_102039_/l1/controleChamados/layer_3_domain/entities/comentario.js';
 
 interface ComentarioRow {
   comentario_id: string;

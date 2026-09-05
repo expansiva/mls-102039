@@ -2,10 +2,10 @@
 
 import { AppError, type RequestContext } from '/_102034_/l1/server/layer_2_controllers/contracts.js';
 import { resolveRepository } from '/_102034_/l1/server/layer_2_application/repositoryRegistry.js';
-import type { IComentarioRepository } from '/_102039_/l1/controleChamados/layer_2_application/ports/comentarioRepository';
-import type { IChamadoRepository } from '/_102039_/l1/controleChamados/layer_2_application/ports/chamadoRepository';
-import type { Comentario } from '/_102039_/l1/controleChamados/layer_3_domain/entities/comentario';
-import { isComentarioConteudoValido } from '/_102039_/l1/controleChamados/layer_3_domain/entities/comentario';
+import type { IComentarioRepository } from '/_102039_/l1/controleChamados/layer_2_application/ports/comentarioRepository.js';
+import type { IChamadoRepository } from '/_102039_/l1/controleChamados/layer_2_application/ports/chamadoRepository.js';
+import type { Comentario } from '/_102039_/l1/controleChamados/layer_3_domain/entities/comentario.js';
+import { isComentarioConteudoValido } from '/_102039_/l1/controleChamados/layer_3_domain/entities/comentario.js';
 
 export interface RegisterComentarioInput {
   atendenteId: string;

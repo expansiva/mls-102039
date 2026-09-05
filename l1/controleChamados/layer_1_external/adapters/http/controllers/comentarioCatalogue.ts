@@ -1,13 +1,13 @@
 /// <mls fileReference="_102039_/l1/controleChamados/layer_1_external/adapters/http/controllers/comentarioCatalogue.ts" enhancement="_blank"/>
 
 import { ok, fail, AppError, type BffHandler, type BffResponse, type ControllerRoute, type RequestContext } from '/_102034_/l1/server/layer_2_controllers/contracts.js';
-import { listComentario, type ListComentarioInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/listComentario';
-import { createComentario, type CreateComentarioInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/createComentario';
-import { updateComentario, type UpdateComentarioInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/updateComentario';
-import { deleteComentario, type DeleteComentarioInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/deleteComentario';
-import { getComentario, type GetComentarioInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/getComentario';
-import { listChamado, type ListChamadoInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/listChamado';
-import { listAtendente, type ListAtendenteInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/listAtendente';
+import { listComentario, type ListComentarioInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/listComentario.js';
+import { createComentario, type CreateComentarioInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/createComentario.js';
+import { updateComentario, type UpdateComentarioInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/updateComentario.js';
+import { deleteComentario, type DeleteComentarioInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/deleteComentario.js';
+import { getComentario, type GetComentarioInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/getComentario.js';
+import { listChamado, type ListChamadoInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/listChamado.js';
+import { listAtendente, type ListAtendenteInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/listAtendente.js';
 
 const ALLOWED: readonly string[] = ['internal'];
 

@@ -1,6 +1,6 @@
 /// <mls fileReference="_102039_/l1/controleChamados/layer_2_application/ports/comentarioRepository.ts" enhancement="_blank"/>
 
-import type { Comentario } from '/_102039_/l1/controleChamados/layer_3_domain/entities/comentario';
+import type { Comentario } from '/_102039_/l1/controleChamados/layer_3_domain/entities/comentario.js';
 
 export type ComentarioId = string;
 

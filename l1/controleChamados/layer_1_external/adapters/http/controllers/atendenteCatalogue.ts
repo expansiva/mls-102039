@@ -1,12 +1,12 @@
 /// <mls fileReference="_102039_/l1/controleChamados/layer_1_external/adapters/http/controllers/atendenteCatalogue.ts" enhancement="_blank"/>
 
 import { ok, fail, AppError, type BffHandler, type BffResponse, type ControllerRoute, type RequestContext } from '/_102034_/l1/server/layer_2_controllers/contracts.js';
-import { listAtendente, type ListAtendenteInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/listAtendente';
-import { createAtendente, type CreateAtendenteInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/createAtendente';
-import { updateAtendente, type UpdateAtendenteInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/updateAtendente';
-import { inactivateAtendente, type InactivateAtendenteInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/inactivateAtendente';
-import { reactivateAtendente, type ReactivateAtendenteInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/reactivateAtendente';
-import { getAtendente, type GetAtendenteInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/getAtendente';
+import { listAtendente, type ListAtendenteInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/listAtendente.js';
+import { createAtendente, type CreateAtendenteInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/createAtendente.js';
+import { updateAtendente, type UpdateAtendenteInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/updateAtendente.js';
+import { inactivateAtendente, type InactivateAtendenteInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/inactivateAtendente.js';
+import { reactivateAtendente, type ReactivateAtendenteInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/reactivateAtendente.js';
+import { getAtendente, type GetAtendenteInput } from '/_102039_/l1/controleChamados/layer_2_application/usecases/getAtendente.js';
 
 const ALLOWED: readonly string[] = ['internal'];
 
