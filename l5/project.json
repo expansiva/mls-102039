@@ -20,6 +20,10 @@
   "links": [],
   "servicesConfigEnabled": false,
   "appEnv": "presentation",
+  "typeCheck": {
+    "status": "permissive",
+    "reason": "Generated apps carry accumulated type debt (measured 04/09: 36 errors in generated .test.ts plus 6 in product). Declared here so lima and a remote VM cannot disagree; tightening is a decision, not a schedule."
+  },
   "projectType": "client",
   "modules": [
     {
