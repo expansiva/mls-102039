@@ -309,11 +309,6 @@
       "header": {
         "entrypoint": "./_102033_/l2/shared/layout/aura-header.js",
         "tag": "collab-aura-header"
-      },
-      "aside": {
-        "entrypoint": "./_102033_/l2/cbe/serviceRuntimeMessages.js",
-        "tag": "cbe--service-runtime-messages-102033",
-        "widthPx": 400
       }
     }
   }
