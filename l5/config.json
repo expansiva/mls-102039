@@ -311,5 +311,9 @@
         "tag": "collab-aura-header"
       }
     }
+  },
+  "projectSettings": {
+    "driver": "vm",
+    "url": "local/local/mls-102039"
   }
 }
