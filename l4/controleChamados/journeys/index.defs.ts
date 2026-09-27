@@ -1,6 +1,6 @@
 /// <mls fileReference="_102039_/l4/controleChamados/journeys/index.defs.ts" enhancement="_blank"/>
 
-import type { Ns4JourneyIndex } from '/_102020_/l2/agentNewSolution/types.js';
+import type { Ns4JourneyIndex } from '/_102035_/l2/solution/helpers/ns4Types.js';
 
 export const controleChamadosJourneyIndex = {
   "schemaVersion": "2026-08-15-ns4-journey-index-v7",

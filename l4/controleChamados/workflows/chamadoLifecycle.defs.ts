@@ -1,6 +1,6 @@
 /// <mls fileReference="_102039_/l4/controleChamados/workflows/chamadoLifecycle.defs.ts" enhancement="_blank"/>
 
-import type { Ns4WorkflowArtifactV2 } from '/_102020_/l2/agentNewSolution/types.js';
+import type { Ns4WorkflowArtifactV2 } from '/_102035_/l2/solution/helpers/ns4Types.js';
 
 export const chamadoLifecycleWorkflow = {
   "schemaVersion": "2026-08-11-ns4-workflow-v4",

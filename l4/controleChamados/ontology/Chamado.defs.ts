@@ -1,6 +1,6 @@
 /// <mls fileReference="_102039_/l4/controleChamados/ontology/Chamado.defs.ts" enhancement="_blank"/>
 
-import type { Ns4OntologyEntityArtifact } from '/_102020_/l2/agentNewSolution/types.js';
+import type { Ns4OntologyEntityArtifact } from '/_102035_/l2/solution/helpers/ns4Types.js';
 
 export const controleChamadosEntityChamado = {
   "schemaVersion": "2026-08-11-ns4-ontology-v6",

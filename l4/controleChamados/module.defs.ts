@@ -1,6 +1,6 @@
 /// <mls fileReference="_102039_/l4/controleChamados/module.defs.ts" enhancement="_blank"/>
 
-import type { Ns4ModuleArtifact } from '/_102020_/l2/agentNewSolution/types.js';
+import type { Ns4ModuleArtifact } from '/_102035_/l2/solution/helpers/ns4Types.js';
 
 export const controleChamadosModule = {
   "schemaVersion": "2026-08-06-ns4-module-v4",

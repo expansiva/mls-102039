@@ -1,6 +1,6 @@
 /// <mls fileReference="_102039_/l4/controleChamados/access/access-matrix.defs.ts" enhancement="_blank"/>
 
-import type { Ns4AccessMatrixArtifact } from '/_102020_/l2/agentNewSolution/types.js';
+import type { Ns4AccessMatrixArtifact } from '/_102035_/l2/solution/helpers/ns4Types.js';
 
 export const controleChamadosAccessMatrix = {
   "schemaVersion": "2026-08-10-ns4-access-matrix-v3",

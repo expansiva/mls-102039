@@ -1,6 +1,6 @@
 /// <mls fileReference="_102039_/l4/controleChamados/rules/rules.defs.ts" enhancement="_blank"/>
 
-import type { Ns4RulesArtifact } from '/_102020_/l2/agentNewSolution/types.js';
+import type { Ns4RulesArtifact } from '/_102035_/l2/solution/helpers/ns4Types.js';
 
 export const controleChamadosRules = {
   "schemaVersion": "2026-08-09-ns4-rules-v2",

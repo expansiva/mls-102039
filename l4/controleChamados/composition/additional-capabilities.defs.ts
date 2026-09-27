@@ -1,6 +1,6 @@
 /// <mls fileReference="_102039_/l4/controleChamados/composition/additional-capabilities.defs.ts" enhancement="_blank"/>
 
-import type { Ns4CompositionArtifact } from '/_102020_/l2/agentNewSolution/types.js';
+import type { Ns4CompositionArtifact } from '/_102035_/l2/solution/helpers/ns4Types.js';
 
 export const controleChamadosAdditionalCapabilities = {
   "schemaVersion": "2026-08-09-ns4-composition-v1",

@@ -1,6 +1,6 @@
 /// <mls fileReference="_102039_/l4/controleChamados/usecases/index.defs.ts" enhancement="_blank"/>
 
-import type { Ns4UseCaseIndexArtifactV3 } from '/_102020_/l2/agentNewSolution/types.js';
+import type { Ns4UseCaseIndexArtifactV3 } from '/_102035_/l2/solution/helpers/ns4Types.js';
 
 export const controleChamadosUseCaseIndex = {
   "schemaVersion": "2026-08-10-ns4-usecase-index-v3",

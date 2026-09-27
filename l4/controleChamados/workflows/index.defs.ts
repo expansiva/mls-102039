@@ -1,6 +1,6 @@
 /// <mls fileReference="_102039_/l4/controleChamados/workflows/index.defs.ts" enhancement="_blank"/>
 
-import type { Ns4WorkflowIndexArtifactV3 } from '/_102020_/l2/agentNewSolution/types.js';
+import type { Ns4WorkflowIndexArtifactV3 } from '/_102035_/l2/solution/helpers/ns4Types.js';
 
 export const controleChamadosWorkflowIndex = {
   "schemaVersion": "2026-08-12-ns4-workflow-index-v5",
