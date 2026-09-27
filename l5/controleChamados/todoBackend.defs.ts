@@ -1,6 +1,6 @@
 /// <mls fileReference="_102039_/l5/controleChamados/todoBackend.defs.ts" enhancement="_blank"/>
 
-import type { Ns4L5TodoBackendArtifact } from '/_102020_/l2/agentNewSolution/types.js';
+import type { Ns4L5TodoBackendArtifact } from '/_102035_/l2/solution/helpers/ns4Types.js';
 
 export const controleChamadosTodoBackend = {
   "schemaVersion": "2026-08-13-ns4-todo-backend-v1",

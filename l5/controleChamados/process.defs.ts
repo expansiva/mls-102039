@@ -1,6 +1,6 @@
 /// <mls fileReference="_102039_/l5/controleChamados/process.defs.ts" enhancement="_blank"/>
 
-import type { Ns4L5ProcessArtifact } from '/_102020_/l2/agentNewSolution/types.js';
+import type { Ns4L5ProcessArtifact } from '/_102035_/l2/solution/helpers/ns4Types.js';
 
 export const controleChamadosProcess = {
   "schemaVersion": "2026-08-13-ns4-process-v1",
