@@ -304,11 +304,42 @@
   },
   "clientShell": {
     "mode": "spa",
-    "activeProfile": "defaultAura",
+    "activeProfile": "header",
     "regions": {
       "header": {
-        "entrypoint": "./_102033_/l2/shared/layout/aura-header.js",
-        "tag": "collab-aura-header"
+        "activeProfile": "header",
+        "profiles": {
+          "header": {
+            "renderer": {
+              "entrypoint": "/_102039_/l2/layout/appHeaderHeader.js",
+              "source": "l2/layout/appHeaderHeader.ts",
+              "tag": "layout--app-header-header-102039"
+            },
+            "heightPx": 66,
+            "brand": {
+              "title": "App",
+              "logoSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><rect x=\"5\" y=\"5\" width=\"9.5\" height=\"9.5\" rx=\"2.5\" fill=\"currentColor\"/><rect x=\"17.5\" y=\"5\" width=\"9.5\" height=\"9.5\" rx=\"2.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"5\" y=\"17.5\" width=\"9.5\" height=\"9.5\" rx=\"2.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"17.5\" y=\"17.5\" width=\"9.5\" height=\"9.5\" rx=\"2.5\" fill=\"currentColor\"/></svg>"
+            },
+            "props": {
+              "actions": [
+                "language",
+                "user"
+              ]
+            }
+          }
+        }
+      },
+      "aside": {
+        "activeProfile": "messages",
+        "profiles": {
+          "messages": {
+            "renderer": {
+              "entrypoint": "./_102033_/l2/cbe/serviceRuntimeMessages.js",
+              "tag": "cbe--service-runtime-messages-102033"
+            },
+            "widthPx": 400
+          }
+        }
       }
     }
   },
