@@ -1,0 +1,84 @@
+import { StateLitElement } from '/_102029_/l2/stateLitElement.js';
+import type { AccessMember, CountryOption, ConsentState } from '/_102039_/l2/onboarding/web/contracts/my_access.defs.js';
+export type { My_accessContracts, AccessMember, CountryOption, PrivacyText, ConsentState } from '/_102039_/l2/onboarding/web/contracts/my_access.defs.js';
+export type ErrorState = {
+    code: string;
+    message: string;
+    details?: unknown;
+} | null;
+/** Draft of the saveMyAccess command: only what the person types or ticks; id and version come from the loaded member. */
+export type SaveMyAccessDraft = {
+    details: {
+        identification: {
+            name: string | null;
+            countryCode: string | null;
+        };
+        person: {
+            privacyConsent: {
+                consentVersion: string | null;
+                consentedAt: string | null;
+                channel: string | null;
+            };
+        };
+    };
+};
+export declare function emptySaveMyAccessDraft(): SaveMyAccessDraft;
+export declare class OnboardingMy_accessShared extends StateLitElement {
+    /** state member — the signed-in person's own access record: identity data, read-only login e-mail and the computed access status; source getMyAccess.member; organisms accessStatusSummary, missingDataForm, saveAccessActions */
+    member: AccessMember | null;
+    /** state countries — the active countries of the module list, with ISO code, English name and name in the user language; source getMyAccess.countries; organism missingDataForm */
+    countries: CountryOption[];
+    /** state consent — the privacy consent situation (required, valid, and the current privacy text when required) for the saved country or, after checkCountryConsent, for the country chosen on screen; source getMyAccess.consent; organism privacyConsentDetail */
+    consent: ConsentState | null;
+    /** state selectedOrganizationMember — the id of the OrganizationMember selected in missingDataForm; source entry.params.organizationMemberId; organisms missingDataForm, privacyConsentDetail; lives in the URL only */
+    selectedOrganizationMember: string | null;
+    /** state saveMyAccessDraft — the form draft of saveMyAccess: typed name, chosen country and the explicit privacy acceptance (all null until filled); source saveMyAccess.input; organism missingDataForm */
+    saveMyAccessDraft: SaveMyAccessDraft;
+    /** state pageStatus — overall status of the page load: idle, loading, empty (no active countries), success or error; source page */
+    pageStatus: 'idle' | 'loading' | 'empty' | 'success' | 'error';
+    /** state getMyAccessStatus — status of the getMyAccess request; source getMyAccess */
+    getMyAccessStatus: 'idle' | 'loading' | 'success' | 'error';
+    /** state getMyAccessError — error of the getMyAccess request, null when none; source getMyAccess */
+    getMyAccessError: ErrorState;
+    /** state checkCountryConsentStatus — status of the checkCountryConsent request; source checkCountryConsent */
+    checkCountryConsentStatus: 'idle' | 'loading' | 'success' | 'error';
+    /** state checkCountryConsentError — error of the checkCountryConsent request, null when none; source checkCountryConsent */
+    checkCountryConsentError: ErrorState;
+    /** state saveMyAccessStatus — status of the saveMyAccess command; source saveMyAccess */
+    saveMyAccessStatus: 'idle' | 'loading' | 'success' | 'error';
+    /** state saveMyAccessError — error of the saveMyAccess command, null when none; source saveMyAccess */
+    saveMyAccessError: ErrorState;
+    /** state scenary — the visible scene of the page; '' until the page shows its first scene */
+    scenary: string;
+    private pendingConsentCountry;
+    private publish;
+    private assignState;
+    private readonly onPopState;
+    connectedCallback(): void;
+    disconnectedCallback(): void;
+    handleIcaStateChange(key: string, value: any): void;
+    /** Resets every transient member (statuses, errors, scene, draft) at the start of a visit. */
+    private resetVisit;
+    /** Clears the result of every command so an old success or error never sits next to new input. */
+    private resetCommandResults;
+    private applyEntryParams;
+    private unexpectedError;
+    /** scene — publishes the visible scene of the page; resets the result of any command. */
+    setScenario(value: string): void;
+    /** draft — replaces the whole saveMyAccess form draft (name, country, acceptance); resets the result of the command. */
+    setSaveMyAccessDraft(value: SaveMyAccessDraft): void;
+    /** draft — sets the typed name in the saveMyAccess draft (only asked when the member name is missing); null or '' clears it. */
+    setMemberName(name: string | null): void;
+    /** select — chooses the country (ISO code from the active list) in the draft, drops any privacy acceptance already ticked (never auto-accepted) and asks checkCountryConsent for the chosen country; null or '' clears the choice. Other typed data is kept. */
+    chooseCountry(countryCode: string | null): void;
+    /** draft — ticks (true) or unticks (false) the explicit acceptance of the current privacy text shown in consent.privacyText; ticking records its version code, the moment and the channel; it always starts unticked. */
+    acceptPrivacy(accepted: boolean): void;
+    /** select — selects the OrganizationMember by id (null clears); the id must be the loaded member's id, otherwise client.selectionInvalid is published in getMyAccessError. */
+    selectOrganizationMember(id: string | null): void;
+    /** request getMyAccess — loads the signed-in person's access record, the active countries and the consent situation for the saved country in one call; redraws member, countries and consent (replace); no arguments, also the method to reload the page */
+    getMyAccess(): Promise<void>;
+    /** request checkCountryConsent — tells, for the country chosen on screen and before saving, whether privacy consent is required and brings the current privacy text; redraws consent (replace); countryCode: two-letter ISO code picked from the active list. Prefer chooseCountry, which also updates the draft. */
+    checkCountryConsent(countryCode: string): Promise<void>;
+    /** request saveMyAccess — saves the missing name and country from sasaveMyAccessDraft and, when ticked, the explicit privacy acceptance; id and version come from member; redraws member and consent (replace with the returned values, no reload) and empties the draft; does nothing when the draft has nothing to send; no arguments */
+    saveMyAccess(): Promise<void>;
+}

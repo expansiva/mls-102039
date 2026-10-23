@@ -1,0 +1,105 @@
+import { StateLitElement } from '/_102029_/l2/stateLitElement.js';
+import type { CountriesContracts, CountryItem } from '/_102039_/l2/onboarding/web/contracts/countries.defs.js';
+export type { CountriesContracts, CountryDetails, CountryItem } from '/_102039_/l2/onboarding/web/contracts/countries.defs.js';
+type Output<R extends keyof CountriesContracts> = CountriesContracts[R]['output'];
+export type ErrorState = {
+    code: string;
+    message: string;
+    details?: unknown;
+} | null;
+export type RequestStatus = 'idle' | 'loading' | 'success' | 'error';
+export type PageStatus = 'idle' | 'loading' | 'empty' | 'success' | 'error';
+export type CountryStatusFilter = 'active' | 'inactive';
+export type CountriesPage = Output<'onboarding.countries.listCountries'>['countries'];
+/** Form draft of the add-country command: every leaf is null until typed. */
+export type AddCountryDraft = {
+    isoCode: string | null;
+    name: string | null;
+};
+/** Form draft of the edit-country command: id and version come from the selected record, the person types isoCode and name. */
+export type SaveCountryChangesDraft = {
+    id: string | null;
+    version: number | null;
+    isoCode: string | null;
+    name: string | null;
+};
+export declare class OnboardingCountriesShared extends StateLitElement {
+    /** state countries — the paged list of countries of the module (ISO code, English name, status, name in the user language, version); source listCountries.countries; organism countryActions, countryForm, countryList */
+    countries: CountriesPage | null;
+    /** state selectedCountry — the id of the country selected in countryList (the record is the getter countryForm); source entry.params.countryId; organism countryForm, countryList; lives in the URL query */
+    selectedCountry: string | null;
+    /** state searchTerm — draft of the text typed in the country search (ISO code or English name); filter of searchCountries, '' means all; source searchCountries.input; organism countryList */
+    searchTerm: string;
+    /** state statusFilter — draft of the status filter of the country search, null means both statuses; source searchCountries.input; organism countryList */
+    statusFilter: CountryStatusFilter | null;
+    /** state addCountryDraft — form draft of the country being added (ISO code and English name); source addCountry.input; organism countryForm */
+    addCountryDraft: AddCountryDraft;
+    /** state saveCountryChangesDraft — form draft of the country being edited, filled from the selected record (id, version, ISO code, English name); source saveCountryChanges.input; organism countryForm */
+    saveCountryChangesDraft: SaveCountryChangesDraft;
+    /** state pageStatus — overall status of the page load: loading, empty when the list has no country, success, or error */
+    pageStatus: PageStatus;
+    /** state listCountriesStatus — status of the initial list request */
+    listCountriesStatus: RequestStatus;
+    /** state listCountriesError — error of the list request (also client.selectionInvalid when the selected id is not in the loaded list), null when none */
+    listCountriesError: ErrorState;
+    /** state searchCountriesStatus — status of the search request */
+    searchCountriesStatus: RequestStatus;
+    /** state searchCountriesError — error of the search request, null when none */
+    searchCountriesError: ErrorState;
+    /** state addCountryStatus — status of the add-country command */
+    addCountryStatus: RequestStatus;
+    /** state addCountryError — error of the add-country command, null when none */
+    addCountryError: ErrorState;
+    /** state saveCountryChangesStatus — status of the edit-country command */
+    saveCountryChangesStatus: RequestStatus;
+    /** state saveCountryChangesError — error of the edit-country command, null when none */
+    saveCountryChangesError: ErrorState;
+    /** state inactivateCountryStatus — status of the inactivate-country command */
+    inactivateCountryStatus: RequestStatus;
+    /** state inactivateCountryError — error of the inactivate-country command, null when none */
+    inactivateCountryError: ErrorState;
+    /** state reactivateCountryStatus — status of the reactivate-country command */
+    reactivateCountryStatus: RequestStatus;
+    /** state reactivateCountryError — error of the reactivate-country command, null when none */
+    reactivateCountryError: ErrorState;
+    /** state scenary — the visible scene of the page; '' until the page shows its first scene */
+    scenary: string;
+    private publish;
+    private assignState;
+    private readonly onPopState;
+    connectedCallback(): void;
+    disconnectedCallback(): void;
+    handleIcaStateChange(key: string, value: any): void;
+    private startVisit;
+    private resetVisit;
+    private applyEntryParams;
+    private resetCommandResults;
+    private unexpectedError;
+    private findCountry;
+    /** The country selected in countryList/countryForm as a record: the loaded row whose id is selectedCountry, or null when nothing is selected or the row is not loaded. */
+    get countryForm(): CountryItem | null;
+    private fillEditDraft;
+    private upsertCountry;
+    private writePage;
+    private resolveSelection;
+    /** select — selects the country with this id (or clears the selection with null) for editing and for inactivate/reactivate; the record is read through the getter countryForm and the edit draft is filled from it; an id that is not in the loaded list publishes client.selectionInvalid in listCountriesError. */
+    selectCountry(id: string | null): void;
+    /** draft — replaces the add-country form draft (ISO code and English name typed by the owner). */
+    setAddCountryDraft(value: AddCountryDraft): void;
+    /** draft — replaces the edit-country form draft (id and version come from the selected record, the owner types ISO code and English name). */
+    setSaveCountryChangesDraft(value: SaveCountryChangesDraft): void;
+    /** Publishes the visible scene of the page (reset command results). */
+    setScenario(value: string): void;
+    /** request listCountries — loads the whole module country list (active and inactive), the initial load and the way to reload or page the list; redraws countries (replace, or append the next page when append is true; page and hasMore stay in the list), pageStatus and listCountriesStatus/listCountriesError; arguments: page = page to load (default 1), append = add the page to the loaded items instead of replacing them (load more) */
+    listCountries(page?: number, append?: boolean): Promise<void>;
+    /** request searchCountries — finds countries by ISO code or English name, optionally limited to one status; redraws countries (replace, or append the next page when append is true) and publishes searchTerm and statusFilter; arguments: search = text typed ('' means all), status = 'active' | 'inactive' or null for both, page = page to load (default 1), append = add the page to the loaded items (load more) */
+    searchCountries(search: string, status: CountryStatusFilter | null, page?: number, append?: boolean): Promise<void>;
+    /** request addCountry — adds a new active country from the add-country draft (ISO code and English name); redraws countries (the created row is inserted at the head of the loaded list) and resets addCountryDraft to empty; no arguments, fill the draft with setAddCountryDraft first */
+    addCountry(): Promise<void>;
+    /** request saveCountryChanges — saves the corrected ISO code and English name of the selected country from the edit draft (id and version included); redraws countries (the row is updated by id, so the getter countryForm shows it) and fills the edit draft again from the returned record; no arguments, select a country and edit the draft first */
+    saveCountryChanges(): Promise<void>;
+    /** request inactivateCountry — inactivates the selected country (countryForm) so it is no longer offered; redraws countries (the row is updated by id with its new status and version) and the edit draft; no arguments, select a country first (nothing selected gives client.requiredMissing) */
+    inactivateCountry(): Promise<void>;
+    /** request reactivateCountry — reactivates the selected inactive country (countryForm) so it is offered again; redraws countries (the row is updated by id with its new status and version) and the edit draft; no arguments, select a country first (nothing selected gives client.requiredMissing) */
+    reactivateCountry(): Promise<void>;
+}

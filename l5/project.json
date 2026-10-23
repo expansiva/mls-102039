@@ -61,6 +61,45 @@
           "controleChamados.registrarComentarioChamado.qryLocateChamado"
         ]
       }
+    },
+    {
+      "moduleName": "onboarding",
+      "backend": {
+        "backendControllers": "./_102039_/l1/onboarding/layer_1_external/adapters/http/controllers",
+        "routeKeys": [
+          "onboarding.company_setup.getCompanySetup",
+          "onboarding.company_setup.saveCompany",
+          "onboarding.countries.addCountry",
+          "onboarding.countries.inactivateCountry",
+          "onboarding.countries.listCountries",
+          "onboarding.countries.reactivateCountry",
+          "onboarding.countries.saveCountryChanges",
+          "onboarding.countries.searchCountries",
+          "onboarding.my_access.checkCountryConsent",
+          "onboarding.my_access.getMyAccess",
+          "onboarding.my_access.saveMyAccess",
+          "onboarding.organization_people.qryOrganizationPeopleOverview",
+          "onboarding.organization_people.qryOrganizationPerson",
+          "onboarding.organization_people.qrySearchOrganizationPeople",
+          "onboarding.privacy_text.createPrivacyVersion",
+          "onboarding.privacy_text.getPrivacyTextPage",
+          "onboarding.privacy_text.publishPrivacyVersion"
+        ],
+        "materialization": {
+          "phase": "verified",
+          "behaviorVerified": true
+        },
+        "persistence": {
+          "tableDefsDir": "./_102039_/l1/onboarding/layer_1_external/adapters/persistence"
+        },
+        "pageTests": [
+          "_102039_/l1/onboarding/layer_1_external/adapters/http/controllers/company_setup.test.ts",
+          "_102039_/l1/onboarding/layer_1_external/adapters/http/controllers/countries.test.ts",
+          "_102039_/l1/onboarding/layer_1_external/adapters/http/controllers/my_access.test.ts",
+          "_102039_/l1/onboarding/layer_1_external/adapters/http/controllers/organization_people.test.ts",
+          "_102039_/l1/onboarding/layer_1_external/adapters/http/controllers/privacy_text.test.ts"
+        ]
+      }
     }
   ],
   "masters": {

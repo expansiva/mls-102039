@@ -6,8 +6,23 @@
     "102025",
     "102027",
     "102029",
-    "102036"
+    "102036",
+    "100554",
+    "100555",
+    "102033",
+    "102034",
+    "102035",
+    "102040",
+    "102041"
   ],
+  "onboarding": {
+    "moduleId": "onboarding",
+    "entryPath": "/onboarding/my_access",
+    "personType": "onboarding.OrganizationMember",
+    "companyType": "onboarding.OrganizationCompany",
+    "organizationSource": "project-file",
+    "redirect": true
+  },
   "modules": [
     {
       "moduleId": "controleChamados",
@@ -101,6 +116,10 @@
     "102034": {
       "root": "../mls-102034",
       "type": "master backend"
+    },
+    "102035": {
+      "root": "../mls-102035",
+      "type": "lib"
     },
     "102039": {
       "root": ".",
@@ -287,12 +306,159 @@
               "_102039_/l2/controleChamados/web/desktop/page11/registrarComentarioChamado.test.js"
             ]
           }
+        },
+        {
+          "moduleId": "onboarding",
+          "basePath": "/onboarding",
+          "userLanguage": "en",
+          "navigation": [
+            {
+              "id": "company_setup",
+              "label": "Company setup",
+              "href": "/onboarding/company_setup",
+              "description": "Help the company owner see whether the company is prepared, fill in only the company data that is still missing, save it, and then follow the guidance to create the first module in Studio.",
+              "actors": [
+                "companyOwner"
+              ],
+              "landing": true
+            },
+            {
+              "id": "organization_people",
+              "label": "Organization people",
+              "href": "/onboarding/organization_people",
+              "description": "Let the company owner see who in the organization has completed their access and who still has something missing, find any person by name or login e-mail, and open a person to see each pending item and who resolves it.",
+              "actors": [
+                "companyOwner"
+              ]
+            },
+            {
+              "id": "countries",
+              "label": "Countries",
+              "href": "/onboarding/countries",
+              "description": "Keep the module country list correct.",
+              "actors": [
+                "companyOwner"
+              ]
+            },
+            {
+              "id": "privacy_text",
+              "label": "Privacy text",
+              "href": "/onboarding/privacy_text",
+              "description": "Let the company owner read the privacy text that is current today, see every version and which one is current, and write and publish a new version.",
+              "actors": [
+                "companyOwner"
+              ]
+            },
+            {
+              "id": "my_access",
+              "label": "Complete my access",
+              "href": "/onboarding/my_access",
+              "description": "Help the signed-in person finish their own access in one place.",
+              "actors": [
+                "companyOwner",
+                "organizationMember"
+              ],
+              "landing": true
+            }
+          ],
+          "headerLinks": [],
+          "shellMode": "spa",
+          "languages": [
+            "en"
+          ],
+          "frontend": {
+            "layer": "l2",
+            "pages": [
+              {
+                "pageId": "company_setup",
+                "route": "/onboarding/company_setup",
+                "source": "l2/onboarding/web/desktop/page11/company_setup.ts",
+                "definition": "l2/onboarding/web/desktop/page11/company_setup.defs.ts",
+                "componentTag": "onboarding--web--desktop--page11--company_setup-102039",
+                "title": "Company setup",
+                "actors": [
+                  "companyOwner"
+                ]
+              },
+              {
+                "pageId": "organization_people",
+                "route": "/onboarding/organization_people",
+                "source": "l2/onboarding/web/desktop/page11/organization_people.ts",
+                "definition": "l2/onboarding/web/desktop/page11/organization_people.defs.ts",
+                "componentTag": "onboarding--web--desktop--page11--organization_people-102039",
+                "title": "Organization people",
+                "actors": [
+                  "companyOwner"
+                ]
+              },
+              {
+                "pageId": "countries",
+                "route": "/onboarding/countries",
+                "source": "l2/onboarding/web/desktop/page11/countries.ts",
+                "definition": "l2/onboarding/web/desktop/page11/countries.defs.ts",
+                "componentTag": "onboarding--web--desktop--page11--countries-102039",
+                "title": "Countries",
+                "actors": [
+                  "companyOwner"
+                ]
+              },
+              {
+                "pageId": "privacy_text",
+                "route": "/onboarding/privacy_text",
+                "source": "l2/onboarding/web/desktop/page11/privacy_text.ts",
+                "definition": "l2/onboarding/web/desktop/page11/privacy_text.defs.ts",
+                "componentTag": "onboarding--web--desktop--page11--privacy_text-102039",
+                "title": "Privacy text",
+                "actors": [
+                  "companyOwner"
+                ]
+              },
+              {
+                "pageId": "my_access",
+                "route": "/onboarding/my_access",
+                "source": "l2/onboarding/web/desktop/page11/my_access.ts",
+                "definition": "l2/onboarding/web/desktop/page11/my_access.defs.ts",
+                "componentTag": "onboarding--web--desktop--page11--my_access-102039",
+                "title": "Complete my access",
+                "actors": [
+                  "companyOwner",
+                  "organizationMember"
+                ]
+              }
+            ]
+          },
+          "backendControllers": "./_102039_/l1/onboarding/layer_1_external/adapters/http/controllers",
+          "backend": {
+            "pageTests": [
+              "_102039_/l1/onboarding/layer_1_external/adapters/http/controllers/company_setup.test.js",
+              "_102039_/l1/onboarding/layer_1_external/adapters/http/controllers/countries.test.js",
+              "_102039_/l1/onboarding/layer_1_external/adapters/http/controllers/my_access.test.js",
+              "_102039_/l1/onboarding/layer_1_external/adapters/http/controllers/organization_people.test.js",
+              "_102039_/l1/onboarding/layer_1_external/adapters/http/controllers/privacy_text.test.js"
+            ]
+          },
+          "landings": [
+            {
+              "actorId": "companyOwner",
+              "pageId": "company_setup",
+              "route": "/onboarding/company_setup"
+            },
+            {
+              "actorId": "organizationMember",
+              "pageId": "my_access",
+              "route": "/onboarding/my_access"
+            }
+          ]
         }
       ],
       "persistenceModules": [
         {
           "moduleId": "controleChamados",
           "tableDefsDir": "./_102039_/l1/controleChamados/layer_1_external/adapters/persistence"
+        },
+        {
+          "moduleId": "onboarding",
+          "tableDefsDir": "./_102039_/l1/onboarding/layer_1_external/adapters/persistence"
         }
       ]
     }

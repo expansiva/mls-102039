@@ -1,0 +1,64 @@
+import { StateLitElement } from '/_102029_/l2/stateLitElement.js';
+import type { PrivacyTextVersionRecord } from '/_102039_/l2/onboarding/web/contracts/privacy_text.defs.js';
+export type { Privacy_textContracts, PrivacyTextVersionDetails, PrivacyTextVersionRecord } from '/_102039_/l2/onboarding/web/contracts/privacy_text.defs.js';
+export type ErrorState = {
+    code: string;
+    message: string;
+    details?: unknown;
+} | null;
+/** Draft of the new privacy text version the owner is writing; every leaf is null until typed. */
+export type CreatePrivacyVersionDraft = {
+    details: {
+        text: string | null;
+        changeNote: string | null;
+    };
+};
+export declare class OnboardingPrivacy_textShared extends StateLitElement {
+    /** state current — the current published privacy text version with its code, publication moment, text and provisional flag; null when nothing is published; source getPrivacyTextPage.current; organism currentPrivacyText */
+    current: PrivacyTextVersionRecord | null;
+    /** state versions — the full history of privacy text versions, drafts first then published, with code, status, publication moment, change note and isCurrent flag; source getPrivacyTextPage.versions; organism privacyVersionList */
+    versions: PrivacyTextVersionRecord[];
+    /** state draft — the latest pending draft version of the privacy text, null when there is none; this is the version publishPrivacyVersion publishes; source getPrivacyTextPage.draft; organism versionActions */
+    draft: PrivacyTextVersionRecord | null;
+    /** state createPrivacyVersionDraft — form draft of the new version (details.text required, details.changeNote optional); source createPrivacyVersion.input; organism newVersionForm */
+    createPrivacyVersionDraft: CreatePrivacyVersionDraft;
+    /** state pageStatus — overall state of the page: idle, loading, empty (nothing loaded), success or error */
+    pageStatus: 'idle' | 'loading' | 'empty' | 'success' | 'error';
+    /** state getPrivacyTextPageStatus — status of the initial load request */
+    getPrivacyTextPageStatus: 'idle' | 'loading' | 'success' | 'error';
+    /** state getPrivacyTextPageError — error of the initial load request, null when none */
+    getPrivacyTextPageError: ErrorState;
+    /** state createPrivacyVersionStatus — status of the create-draft command */
+    createPrivacyVersionStatus: 'idle' | 'loading' | 'success' | 'error';
+    /** state createPrivacyVersionError — error of the create-draft command, null when none */
+    createPrivacyVersionError: ErrorState;
+    /** state publishPrivacyVersionStatus — status of the publish command */
+    publishPrivacyVersionStatus: 'idle' | 'loading' | 'success' | 'error';
+    /** state publishPrivacyVersionError — error of the publish command, null when none */
+    publishPrivacyVersionError: ErrorState;
+    /** state scenary — the visible scene of the page; '' until the page shows its first scene */
+    scenary: string;
+    private publish;
+    private assignState;
+    private onPopState;
+    connectedCallback(): void;
+    disconnectedCallback(): void;
+    handleIcaStateChange(key: string, value: any): void;
+    private startVisit;
+    /** Transient members go back to their initial value on every entry. */
+    private resetVisit;
+    private resetCommandResults;
+    /** setScenario — publishes the visible scene of the page (state scenary); clears old command results */
+    setScenario(value: string): void;
+    /** draft — replaces the whole form draft of the new version (details.text required, details.changeNote optional); clears old command results */
+    setCreatePrivacyVersionDraft(value: CreatePrivacyVersionDraft): void;
+    private unexpectedError;
+    /** Inserts or updates a version by id in the history; a new row goes first (drafts at the top). */
+    private upsertVersion;
+    /** request getPrivacyTextPage — loads the current privacy text, the pending draft and the full version history; redraws current, draft and versions (replace). No arguments; also the method to reload the page data. */
+    getPrivacyTextPage(): Promise<void>;
+    /** request createPrivacyVersion — creates a new privacy text version as a draft from the form draft (createPrivacyVersionDraft); redraws draft (replace with the new draft), versions (upsert by id, new row first) and clears the form draft; no arguments; a missing text publishes client.requiredMissing */
+    createPrivacyVersion(): Promise<void>;
+    /** request publishPrivacyVersion — publishes the pending draft (state draft, with its concurrency version) so it becomes the current privacy text; redraws current (replace with the published version), draft (cleared) and versions (upsert by id); no arguments; with no draft it publishes client.requiredMissing */
+    publishPrivacyVersion(): Promise<void>;
+}

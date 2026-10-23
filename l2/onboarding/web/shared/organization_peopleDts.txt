@@ -1,0 +1,65 @@
+import { StateLitElement } from '/_102029_/l2/stateLitElement.js';
+import type { Organization_peopleContracts, AccessHighlights, PersonPendingDetail } from '/_102039_/l2/onboarding/web/contracts/organization_people.defs.js';
+export type { Organization_peopleContracts, AccessHighlights, PersonRow, PrivacyVersionRef, PersonPendingDetail } from '/_102039_/l2/onboarding/web/contracts/organization_people.defs.js';
+export type ErrorState = {
+    code: string;
+    message: string;
+    details?: unknown;
+} | null;
+type Output<R extends keyof Organization_peopleContracts> = Organization_peopleContracts[R]['output'];
+/** Platform status of a person, as filtered in the people list. */
+export type PersonStatus = 'Active' | 'Inactive' | 'Merged' | 'Blocked';
+type PeoplePage = Output<'onboarding.organization_people.qryOrganizationPeopleOverview'>['people'];
+export declare class OnboardingOrganization_peopleShared extends StateLitElement {
+    /** state highlights — counts of the organization people by access situation (complete, pending, valid and invalid consent); source qryOrganizationPeopleOverview.highlights; organism accessHighlights */
+    highlights: AccessHighlights | null;
+    /** state people — the page of organization people with status, country, access completion and what is still missing; source qryOrganizationPeopleOverview.people (also written by qrySearchOrganizationPeople); organism peopleList */
+    people: PeoplePage | null;
+    /** state person — one organization person with login e-mail, country, consent situation, missing items with who resolves each and the current privacy text version; source qryOrganizationPerson.person; organism personPendingDetail */
+    person: PersonPendingDetail | null;
+    /** state selectedOrganizationMember — the id of the organization member selected in peopleList (the record is in person); source entry.params.organizationMemberId; organism peopleList, personPendingDetail; lives in the URL */
+    selectedOrganizationMember: string | null;
+    /** state searchText — text typed to search people by name or login e-mail; filter of qrySearchOrganizationPeople; organism peopleList */
+    searchText: string;
+    /** state statusFilter — platform status chosen to filter the people list, null for every status; filter of qrySearchOrganizationPeople; organism peopleList */
+    statusFilter: PersonStatus | null;
+    /** state pageStatus — overall page situation: loading while the initial load runs, empty when no person was loaded, success or error */
+    pageStatus: 'idle' | 'loading' | 'empty' | 'success' | 'error';
+    /** state qryOrganizationPeopleOverviewStatus — status of the initial load of indicators and first page of people */
+    qryOrganizationPeopleOverviewStatus: 'idle' | 'loading' | 'success' | 'error';
+    /** state qryOrganizationPeopleOverviewError — error of the initial load, null when none */
+    qryOrganizationPeopleOverviewError: ErrorState;
+    /** state qrySearchOrganizationPeopleStatus — status of the people search */
+    qrySearchOrganizationPeopleStatus: 'idle' | 'loading' | 'success' | 'error';
+    /** state qrySearchOrganizationPeopleError — error of the people search, null when none */
+    qrySearchOrganizationPeopleError: ErrorState;
+    /** state qryOrganizationPersonStatus — status of loading the selected person */
+    qryOrganizationPersonStatus: 'idle' | 'loading' | 'success' | 'error';
+    /** state qryOrganizationPersonError — error of loading the selected person, null when none */
+    qryOrganizationPersonError: ErrorState;
+    /** state scenary — the visible scene of the page; '' until the page shows its first scene */
+    scenary: string;
+    private publish;
+    private assignState;
+    private syncUrlParam;
+    private unexpected;
+    private popstateHandler;
+    connectedCallback(): void;
+    disconnectedCallback(): void;
+    handleIcaStateChange(key: string, value: any): void;
+    private readEntryParams;
+    private resetVisit;
+    private startVisit;
+    /** publish the visible scene of the page */
+    setScenario(value: string): void;
+    /** request qryOrganizationPeopleOverview — opens the page: access indicators and a page of organization people (initial load; also the method to reload the unfiltered list and to page it); redraws highlights (replace) and people (replace, or append the next page when append is true; page and hasMore follow the loaded page) and clears the search filters on a reload; page: page to load (default 1); append: add the page to the current items instead of replacing them (a "load more"), does nothing when the list has no more pages */
+    qryOrganizationPeopleOverview(page?: number, append?: boolean): Promise<void>;
+    /** request qrySearchOrganizationPeople — searches and pages the organization people by name or login e-mail and by status; redraws people (replace with the first page of the new filter, or append the next page when append is true); search: text contained in the name or login e-mail ('' for none); status: platform status filter or null for every status (both are published into searchText and statusFilter); page: page to load (default 1); append: add the page to the current items (a "load more"), does nothing when there is no more */
+    qrySearchOrganizationPeople(search: string, status: PersonStatus | null, page?: number, append?: boolean): Promise<void>;
+    /** request qryOrganizationPerson — loads one organization person with each pending item and who resolves it; redraws person (replace; cleared when the call fails); memberId: id of the person picked in the people list (null does not call and publishes client.requiredMissing) */
+    qryOrganizationPerson(memberId: string | null): Promise<void>;
+    /** select — picks the organization member (peopleList row) to inspect: publishes its id in selectedOrganizationMember (kept in the URL) and loads the record into person through qryOrganizationPerson; id: the member id, or null to clear the selection and the person; ignored while a person is loading */
+    selectOrganizationMember(id: string | null): Promise<void>;
+    /** navigate — opens the privacy text page from the person detail (personPendingDetail); carries nothing */
+    openPrivacyText(): void;
+}

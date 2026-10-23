@@ -1,0 +1,67 @@
+import { StateLitElement } from '/_102029_/l2/stateLitElement.js';
+import type { Company, CompanyIdentification, CountryOption, Address } from '/_102039_/l2/onboarding/web/contracts/company_setup.defs.js';
+export type { Company_setupContracts, CompanyIdentification, CompanyBase, CompanyLegal, CompanyOnboarding, CompanyDetails, Company, CountryDetails, CountryOption, ContactSummary, Address, GeoPoint } from '/_102039_/l2/onboarding/web/contracts/company_setup.defs.js';
+export type ErrorState = {
+    code: string;
+    message: string;
+    details?: unknown;
+} | null;
+type DocType = NonNullable<CompanyIdentification['docType']>;
+/** Draft of the saveCompany command: only the company data the owner types (id and version come from the loaded company). Every leaf is null until typed. */
+export type SaveCompanyDraft = {
+    details: {
+        identification: {
+            name: string | null;
+            docType: DocType | null;
+            docId: string | null;
+            countryCode: string | null;
+        };
+        company: {
+            legalName: string | null;
+        };
+        base: {
+            addresses: Address[] | null;
+        };
+    };
+};
+export declare function emptySaveCompanyDraft(): SaveCompanyDraft;
+export declare class OnboardingCompany_setupShared extends StateLitElement {
+    /** state company — the organization company of the signed-in login with its data and its computed preparation status; source getCompanySetup.company; organisms companyDataForm, companyReadiness, saveCompanyActions, studioGuidance */
+    company: Company | null;
+    /** state countries — the list of active countries the owner may choose as company country; source getCompanySetup.countries; organism companyDataForm */
+    countries: CountryOption[];
+    /** state saveCompanyDraft — draft of the company data the owner types (name, legal name, document type and number, country, addresses); source saveCompany.input; organism companyDataForm; the docId entry param prefills it */
+    saveCompanyDraft: SaveCompanyDraft;
+    /** state pageStatus — overall status of the page: idle, loading, empty, success or error */
+    pageStatus: 'idle' | 'loading' | 'empty' | 'success' | 'error';
+    /** state getCompanySetupStatus — status of the getCompanySetup request */
+    getCompanySetupStatus: 'idle' | 'loading' | 'success' | 'error';
+    /** state getCompanySetupError — error of the getCompanySetup request, null when none */
+    getCompanySetupError: ErrorState;
+    /** state saveCompanyStatus — status of the saveCompany command */
+    saveCompanyStatus: 'idle' | 'loading' | 'success' | 'error';
+    /** state saveCompanyError — error of the saveCompany command, null when none (an authority error code differs from a validation one) */
+    saveCompanyError: ErrorState;
+    /** state scenary — the visible scene of the page; '' until the page shows its first scene */
+    scenary: string;
+    private readonly popstateHandler;
+    private publish;
+    private assignState;
+    connectedCallback(): void;
+    disconnectedCallback(): void;
+    handleIcaStateChange(key: string, value: any): void;
+    /** Publishes the initial value of every transient member: a new visit never shows an old error, scene or half-filled form. */
+    private resetVisit;
+    /** Clears the result of every command so an old success or error never sits next to new input. */
+    private resetCommandResults;
+    /** Reads the docId entry param (URL wins over localStorage) and prefills the document number of the form draft. */
+    private applyEntryParams;
+    /** scene — publishes the visible scene of the page; clears the result of the commands */
+    setScenario(value: string): void;
+    /** draft — replaces the saveCompany form draft (name, legal name, document type and number, country code, addresses); clears the result of the command. Send a new object. */
+    setSaveCompanyDraft(value: SaveCompanyDraft): void;
+    /** request getCompanySetup — loads the company of the signed-in login with its computed preparation status and the active countries; redraws company and countries (replace); no arguments. Also the method to reload the page. */
+    getCompanySetup(): Promise<void>;
+    /** request saveCompany — saves the missing company data typed in the draft through the platform update, with the loaded company id and version; redraws company with the returned record (replace, new version, recomputed missingData and isPrepared) and empties the draft; no arguments, fill the draft with setSaveCompanyDraft first. */
+    saveCompany(): Promise<void>;
+}
